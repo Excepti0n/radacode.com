@@ -10,3 +10,10 @@ _ReSharper.*
 *.swp
 /Build
 NDependOut
+
+# ReSharper is a .NET coding add-in
+_ReSharper*
+*\bin
+*\obj
+
+*\_ReSharper*
