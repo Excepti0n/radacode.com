@@ -1,0 +1,18 @@
+﻿<header>
+			<div id="logo">
+                <a href="@Url.Action("Index", "Home")">
+                    <img src="@Url.Content("/Content/global/top-logo.png")"/>
+                    <span>РадаКод</span>
+                </a>
+			</div>
+			
+			<menu>
+				@{Html.RenderAction("RenderTopMenu", "Navigation");}
+			</menu>
+			
+@*			<div id="langSelect">
+				@{Html.RenderAction("RenderLanguages", "Navigation");}
+			</div>*@
+		
+			<div class="clear"></div>
+	</header>

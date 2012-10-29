@@ -1,0 +1,172 @@
+﻿/*@font-face {
+	font-family: 'RexBoldBold';
+	src: url('fonts/rex/rex_bold-webfont.eot');
+	src: url('fonts/rex/rex_bold-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('fonts/rex/rex_bold-webfont.woff') format('woff'),
+		 url('fonts/rex/rex_bold-webfont.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}*/
+
+@font-face {
+	font-family: 'RexLightRegular';
+	src: url('fonts/rel-light-cyr/rex_light-webfont.eot');
+	src: url('fonts/rel-light-cyr/rex_light-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('fonts/rel-light-cyr/rex_light-webfont.woff') format('woff'),
+		 url('fonts/rel-light-cyr/rex_light-webfont.ttf') format('truetype'),
+		 url('fonts/rel-light-cyr/rex_light-webfont.svg#RexLightRegular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+    font-family: 'ProtoSans03';
+    src: url('fonts/ProtoSans03/protosans03-webfont.eot');
+    src: url('fonts/ProtoSans03/protosans03-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/ProtoSans03/protosans03-webfont.woff') format('woff'),
+         url('fonts/ProtoSans03/protosans03-webfont.ttf') format('truetype'),
+         url('fonts/ProtoSans03/protosans03-webfont.svg#proto_sans_03regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ProtoSans30';
+    src: url('fonts/ProtoSans30/protosans30-webfont.eot');
+    src: url('fonts/ProtoSans30/protosans30-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/ProtoSans30/protosans30-webfont.woff') format('woff'),
+         url('fonts/ProtoSans30/protosans30-webfont.ttf') format('truetype'),
+         url('fonts/ProtoSans30/protosans30-webfont.svg#proto_sans_30regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+#main {
+    padding: 0px;
+    margin-bottom: 0px;
+    background-color: #F5F5F3;
+    background-image: url('flower-tile.png');
+}
+
+#banner-block {
+    position: relative;
+    top: -230px;
+}
+
+#dynamic-banner {
+    height: 590px;
+    background-color: #e7cb22;
+    background-repeat: repeat-x;
+    background-position: center bottom;
+    background-image: url('banner-footer.png');
+}
+
+#back-layer {
+    height: 100%;
+}
+
+#back-layer .left-starpath {
+    background: url('left-starpath.png') repeat-x;
+    position: absolute;
+    left: 0px;
+    top: 170px;
+    height: 200px;
+    width: 25%;
+}
+
+#back-layer .right-starpath {
+    background: url('right-starpath.png') no-repeat;
+    position: absolute;
+    right: 0px;
+    top: 320px;
+    height: 200px;
+    width: 25%;
+}
+
+#front-layer {
+    position: absolute;
+    top: 175px;
+    width: 100%;
+}
+
+#front-layer .description {
+    width: 320px;
+    padding-left: 30px;
+    padding-top: 25px;
+    background-image: url('umnie-box.png');
+    background-position: 23px 18px;
+    background-repeat: no-repeat;
+}
+
+#front-layer .description h1 {
+    font-family: 'ProtoSans03';
+    font-size: 46px;
+    line-height: 1.2em;
+}
+
+.image-text-block {
+    margin-top: 15px;
+    width: 910px;
+    top: 170px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.image-text-block div {
+    display: inline-block;
+    vertical-align: top;
+}
+
+#banner-block .news-block {
+    background-color: #e6ca21;
+    height: 100px;
+    font-size: 16px;
+    font-family: 'ProtoSans30';
+}
+
+#banner-block .news-block .under-construction-warning {
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 40px;
+}
+
+#smart-site-info {
+    background-color: #F5F5F3;
+    background-image: url('flower-tile.png');
+    height: 300px;
+    width: 100%;
+    position: relative;
+    margin-top: -230px;
+}
+
+#smart-site-info .smart-site-knows {
+    width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#smart-site-info .smart-site-knows div {
+    display: inline-block;
+    vertical-align: top;
+}
+
+#smart-site-info .smart-site-knows .initiation-text {
+    font-family: 'ProtoSans03';
+    font-size: 18px;
+    color: #5e5d5f;
+    width: 100px;
+    margin-top: 170px;
+}
+
+.alpha60 {
+	/* Fallback for web browsers that doesn't support RGBa */
+	background: rgb(0, 0, 0);
+	/* RGBa with 0.6 opacity */
+	background: rgba(0, 0, 0, 0.6);
+	/* For IE 5.5 - 7*/
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
+	/* For IE 8*/
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
+}
+    
