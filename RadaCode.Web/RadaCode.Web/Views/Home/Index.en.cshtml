@@ -1,11 +1,34 @@
 ﻿@{
-    ViewBag.Title = "RadaCode";
+    ViewBag.Title = "Умные сайты, мобильный приложения, Банк 2.0 - РадаКод";
 
     Html.RequiresCss("Home/home.css", "Content", 101);
-
-    Layout = "~/Views/Shared/_Layout.en.cshtml";
 }
 
-<div id="slogan">
-    <h1>Programming the World</h1>
+<div id="banner-block">
+    <div id="dynamic-banner">
+        <div id="back-layer">
+            <div class="left-starpath"></div>
+            <div class="right-starpath"></div>
+        </div>
+        <div id="front-layer">
+            <div class="image-text-block">
+                <div class="image">
+                    <img src="@Url.Content("../Content/home/device-set.png")"/>
+                </div>
+                <div class="description">
+                    <h1>УМНЫЕ РЕШЕНИЯ ДЛЯ БИЗНЕСА</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="news-block">
+        <div class="under-construction-warning">МЫ ОБНОВЛЯЕМ НАШ САЙТ. ПРИНОСИМ ИЗВИНЕНИЯ ЗА ВРЕМЕННЫЕ НЕУДОБСТВА.</div>
+    </div>
 </div>
+@*<div id="smart-site-info">
+    <div class="smart-site-knows">
+        <div class="initiation-text">
+            Умный сайт знает:
+        </div>
+    </div>
+</div>*@
