@@ -167,8 +167,11 @@
     <Content Include="Content\home\fonts\ProtoSans30\protosans30-webfont.svg" />
     <Content Include="Content\home\fonts\rel-light-cyr\rex_light-webfont.svg" />
     <Content Include="Content\home\home.css" />
+    <Content Include="Content\home\home.js" />
     <Content Include="Content\home\left-starpath.png" />
     <Content Include="Content\home\right-starpath.png" />
+    <Content Include="Content\home\rotatorcontrols_shadow.png" />
+    <Content Include="Content\home\starline.png" />
     <Content Include="Content\home\umnie-box.png" />
     <Content Include="Content\html5.css" />
     <Content Include="Content\global\logoRadaCode.png" />

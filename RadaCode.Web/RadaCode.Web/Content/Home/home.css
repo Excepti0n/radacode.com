@@ -48,9 +48,13 @@
     background-image: url('flower-tile.png');
 }
 
-#banner-block {
-    position: relative;
+#main > div {
     top: -230px;
+    position: relative;
+}
+
+#banner-block {
+    overflow: hidden;
 }
 
 #dynamic-banner {
@@ -61,35 +65,20 @@
     background-image: url('banner-footer.png');
 }
 
-#back-layer {
-    height: 100%;
-}
-
-#back-layer .left-starpath {
-    background: url('left-starpath.png') repeat-x;
+#dynamic-banner > div > * {
     position: absolute;
-    left: 0px;
-    top: 170px;
-    height: 200px;
-    width: 27%;
 }
 
-#back-layer .right-starpath {
-    background: url('right-starpath.png') no-repeat;
-    position: absolute;
-    right: 0px;
-    top: 320px;
-    height: 200px;
-    width: 23%;
+#dynamic-banner > div > .banner-data-container {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1115px;
+    height: 590px;
+    position: relative;
+    top: 190px;
 }
 
-#front-layer {
-    position: absolute;
-    top: 175px;
-    width: 100%;
-}
-
-#front-layer .description {
+#dynamic-banner > #main_banner > .banner-data-container > .description {
     width: 320px;
     padding-left: 30px;
     padding-top: 25px;
@@ -98,33 +87,35 @@
     background-repeat: no-repeat;
 }
 
-#front-layer .description h1 {
+#dynamic-banner > #main_banner > .banner-data-container > * {
+    position: absolute; 
+}
+
+#dynamic-banner > #main_banner > .banner-data-container > .description h1 {
     font-family: 'ProtoSans03';
     font-size: 46px;
     line-height: 1.2em;
 }
 
-.image-text-block {
-    margin-top: 15px;
-    width: 910px;
-    top: 170px;
-    margin-right: auto;
-    margin-left: auto;
-}
+.rotator_control { position: absolute; top: 0; height: 100%; width: 130px; text-align: center; line-height: 471px; color: #fff; font-size: 24px; text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4); z-index: 1; display: none; background: url('rotatorcontrols_shadow.png') repeat-y 0 0; }
+/*.rotator_control:hover { -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=100)"; filter: alpha(opacity=100); opacity: 1.0; }*/
+.rotator_control.left { left: 0; background-position: 0 0; }
+.rotator_control.right { right: 0; background-position: -260px 0; }
+.rotator_control div { position: absolute; top: 0; left: 0; width: 130px; height: 100%; background: url('rotatorcontrols_shadow.png') repeat-y 0 0; }
+.rotator_control div.ss-icon { background: none; }
+.rotator_control div.bg { display: none; }
+.rotator_control.left div.bg { background-position: 0 0; }
+.rotator_control.right div.bg { background-position: -260px 0; }
 
-.image-text-block div {
-    display: inline-block;
-    vertical-align: top;
-}
 
-#banner-block .news-block {
+.news-block {
     background-color: #e6ca21;
     height: 100px;
     font-size: 16px;
     font-family: 'ProtoSans30';
 }
 
-#banner-block .news-block .under-construction-warning {
+.news-block .under-construction-warning {
     width: 600px;
     margin-left: auto;
     margin-right: auto;
@@ -136,8 +127,6 @@
     background-image: url('flower-tile.png');
     height: 300px;
     width: 100%;
-    position: relative;
-    margin-top: -230px;
 }
 
 #smart-site-info .smart-site-knows {

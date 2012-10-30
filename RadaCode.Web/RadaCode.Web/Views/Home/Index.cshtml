@@ -2,33 +2,38 @@
     ViewBag.Title = "Умные сайты, мобильный приложения, Банк 2.0 - РадаКод";
 
     Html.RequiresCss("Home/home.css", "Content", 101);
+    Html.RequiresJs("Home/home.js", "Content", 11);
 }
 
 <div id="banner-block">
     <div id="dynamic-banner">
-        <div id="back-layer">
-            <div class="left-starpath"></div>
-            <div class="right-starpath"></div>
-        </div>
-        <div id="front-layer">
-            <div class="image-text-block">
-                <div class="image">
-                    <img src="@Url.Content("../Content/home/device-set.png")"/>
-                </div>
-                <div class="description">
+        <div id="main_banner"> 
+            <img src="@Url.Content("~/Content/home/starline.png")" class="item_0" data-left="-45px" data-top="170px" style="left: -45px; top: 170px;"/>
+            <img src="@Url.Content("~/Content/home/starline.png")" class="item_0" data-right="-55px" data-top="320px" style="right: -55px; top: 320px;"/>
+            <div class="banner-data-container">
+                <img src="@Url.Content("../Content/home/device-set.png")" class="item_0" data-left="85px" style="left: 85px;"/>
+                <div class="description item_0" data-left="60%" style="left: 60%;">
                     <h1>УМНЫЕ РЕШЕНИЯ ДЛЯ БИЗНЕСА</h1>
                 </div>
             </div>
         </div>
     </div>
-    <div class="news-block">
-        <div class="under-construction-warning">МЫ ОБНОВЛЯЕМ НАШ САЙТ. ПРИНОСИМ ИЗВИНЕНИЯ ЗА ВРЕМЕННЫЕ НЕУДОБСТВА.</div>
-    </div>
+    <a href="#prev" class="rotator_control left">
+        <div class="bg"></div>
+        <div class="ss-icon">&#x25C5;</div>
+    </a>
+    <a href="#next" class="rotator_control right">
+        <div class="bg"></div>
+        <div class="ss-icon">&#x25BB;</div>
+    </a>
 </div>
-@*<div id="smart-site-info">
+<div class="news-block">
+        <div class="under-construction-warning">МЫ ОБНОВЛЯЕМ НАШ САЙТ. ПРИНОСИМ ИЗВИНЕНИЯ ЗА ВРЕМЕННЫЕ НЕУДОБСТВА.</div>
+</div>
+<div id="smart-site-info">
     <div class="smart-site-knows">
         <div class="initiation-text">
             Умный сайт знает:
         </div>
     </div>
-</div>*@
+</div>
