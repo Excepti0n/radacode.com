@@ -129,6 +129,7 @@
     <Compile Include="Controllers\AccessController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\NavigationController.cs" />
+    <Compile Include="Controllers\WebDevelopmentController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -166,6 +167,7 @@
     <Content Include="Content\home\flower-tile.png" />
     <Content Include="Content\home\fonts\ProtoSans03\protosans03-webfont.svg" />
     <Content Include="Content\home\fonts\ProtoSans30\protosans30-webfont.svg" />
+    <Content Include="Content\home\fonts\ProtoSans40\protosans40-webfont.svg" />
     <Content Include="Content\home\fonts\rel-light-cyr\rex_light-webfont.svg" />
     <Content Include="Content\home\geo-data.png" />
     <Content Include="Content\home\home.css" />
@@ -263,6 +265,9 @@
     <Content Include="Content\home\fonts\ProtoSans30\protosans30-webfont.eot" />
     <Content Include="Content\home\fonts\ProtoSans30\protosans30-webfont.ttf" />
     <Content Include="Content\home\fonts\ProtoSans30\protosans30-webfont.woff" />
+    <Content Include="Content\home\fonts\ProtoSans40\protosans40-webfont.eot" />
+    <Content Include="Content\home\fonts\ProtoSans40\protosans40-webfont.ttf" />
+    <Content Include="Content\home\fonts\ProtoSans40\protosans40-webfont.woff" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Scripts\history.js\amplify.store.js" />
@@ -306,6 +311,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Shared\_Header.cshtml" />
     <Content Include="Views\Navigation\_TopMenu.cshtml" />
+    <Content Include="Views\WebDevelopment\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\Expansion\Models\" />

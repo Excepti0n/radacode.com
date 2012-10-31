@@ -86,15 +86,22 @@ header
     text-decoration: none;
 }
 
-#logo a span {
+#logo span {
     font-family: 'ProtoSans32';
     text-decoration: none;
-    cursor: pointer;
     color: #4D4D4D;
     font-size: 22px;
     margin-left: 141px;
     position: relative;
     bottom: 83px;
+}
+
+#logo a > span {
+    cursor: pointer;
+}
+
+#logo div > span {
+    cursor: default;
 }
 
 /* MENU   
@@ -126,6 +133,7 @@ ul#menu li p {
     color: #817f84;
     font-size: 12px;
     font-family: 'OpenSansRegular';
+    cursor: default;
 }
 
 ul#menu li h2 {

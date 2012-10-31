@@ -65,43 +65,43 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/06/2012 20:19:36</publishTime>
     </File>
     <File Include="bin/ClientDependency.Core.dll">
-      <publishTime>10/27/2012 22:11:12</publishTime>
+      <publishTime>10/29/2012 20:45:49</publishTime>
     </File>
     <File Include="bin/ClientDependency.Core.Mvc.dll">
-      <publishTime>10/27/2012 22:11:12</publishTime>
+      <publishTime>10/29/2012 20:45:49</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
-      <publishTime>10/27/2012 22:10:44</publishTime>
+      <publishTime>10/29/2012 21:07:08</publishTime>
     </File>
     <File Include="bin/Microsoft.Web.Infrastructure.dll">
-      <publishTime>09/06/2012 20:19:38</publishTime>
+      <publishTime>10/29/2012 20:46:09</publishTime>
     </File>
     <File Include="bin/Ninject.dll">
-      <publishTime>10/27/2012 22:10:58</publishTime>
+      <publishTime>10/29/2012 20:45:31</publishTime>
     </File>
     <File Include="bin/Ninject.Web.Common.dll">
-      <publishTime>09/06/2012 20:19:41</publishTime>
+      <publishTime>10/29/2012 20:46:12</publishTime>
     </File>
     <File Include="bin/Ninject.Web.Mvc.dll">
-      <publishTime>09/06/2012 20:19:41</publishTime>
+      <publishTime>10/29/2012 20:46:11</publishTime>
     </File>
     <File Include="bin/NuGet.Core.dll">
       <publishTime>09/06/2012 20:19:38</publishTime>
     </File>
     <File Include="bin/RadaCode.Web.Core.dll">
-      <publishTime>10/29/2012 03:03:19</publishTime>
+      <publishTime>10/31/2012 15:30:07</publishTime>
     </File>
     <File Include="bin/RadaCode.Web.Data.dll">
-      <publishTime>10/29/2012 03:03:19</publishTime>
+      <publishTime>10/31/2012 15:30:08</publishTime>
     </File>
     <File Include="bin/RadaCode.Web.dll">
-      <publishTime>10/29/2012 03:05:37</publishTime>
+      <publishTime>10/31/2012 15:30:11</publishTime>
     </File>
     <File Include="bin/RouteMagic.dll">
-      <publishTime>10/27/2012 22:11:18</publishTime>
+      <publishTime>10/29/2012 20:46:14</publishTime>
     </File>
     <File Include="bin/RouteMagic.Mvc.dll">
-      <publishTime>09/06/2012 20:19:41</publishTime>
+      <publishTime>10/29/2012 20:46:17</publishTime>
     </File>
     <File Include="bin/System.Json.dll">
       <publishTime>09/06/2012 20:19:38</publishTime>
@@ -161,7 +161,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/06/2012 20:19:38</publishTime>
     </File>
     <File Include="bin/WebActivator.dll">
-      <publishTime>10/27/2012 22:11:04</publishTime>
+      <publishTime>10/29/2012 20:46:17</publishTime>
     </File>
     <File Include="bin/WebMatrix.Data.dll">
       <publishTime>09/06/2012 20:19:38</publishTime>
@@ -197,7 +197,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/06/2012 20:19:37</publishTime>
     </File>
     <File Include="Content/global.css">
-      <publishTime>10/29/2012 03:02:35</publishTime>
+      <publishTime>10/31/2012 12:36:16</publishTime>
     </File>
     <File Include="Content/global.en.css">
       <publishTime>09/06/2012 20:19:37</publishTime>
@@ -289,6 +289,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Content/home/device-set.png">
       <publishTime>10/29/2012 01:37:19</publishTime>
     </File>
+    <File Include="Content/home/device-type.png">
+      <publishTime>10/31/2012 12:15:35</publishTime>
+    </File>
     <File Include="Content/home/flower-tile.png">
       <publishTime>10/29/2012 02:37:57</publishTime>
     </File>
@@ -316,6 +319,18 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Content/home/fonts/ProtoSans30/protosans30-webfont.woff">
       <publishTime>10/29/2012 02:20:57</publishTime>
     </File>
+    <File Include="Content/home/fonts/ProtoSans40/protosans40-webfont.eot">
+      <publishTime>10/31/2012 14:52:20</publishTime>
+    </File>
+    <File Include="Content/home/fonts/ProtoSans40/protosans40-webfont.svg">
+      <publishTime>10/31/2012 14:52:20</publishTime>
+    </File>
+    <File Include="Content/home/fonts/ProtoSans40/protosans40-webfont.ttf">
+      <publishTime>10/31/2012 14:52:20</publishTime>
+    </File>
+    <File Include="Content/home/fonts/ProtoSans40/protosans40-webfont.woff">
+      <publishTime>10/31/2012 14:52:20</publishTime>
+    </File>
     <File Include="Content/home/fonts/rel-light-cyr/rex_light-webfont.eot">
       <publishTime>09/06/2012 20:19:37</publishTime>
     </File>
@@ -337,8 +352,14 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Content/home/fonts/rex-bold/rex_bold-webfont.woff">
       <publishTime>09/06/2012 20:19:37</publishTime>
     </File>
+    <File Include="Content/home/geo-data.png">
+      <publishTime>10/31/2012 12:15:36</publishTime>
+    </File>
     <File Include="Content/home/home.css">
-      <publishTime>10/29/2012 03:02:35</publishTime>
+      <publishTime>10/31/2012 15:27:30</publishTime>
+    </File>
+    <File Include="Content/home/home.js">
+      <publishTime>10/30/2012 17:38:28</publishTime>
     </File>
     <File Include="Content/home/left-starpath.png">
       <publishTime>10/29/2012 01:23:20</publishTime>
@@ -346,8 +367,17 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Content/home/right-starpath.png">
       <publishTime>10/29/2012 02:10:22</publishTime>
     </File>
+    <File Include="Content/home/rotatorcontrols_shadow.png">
+      <publishTime>10/30/2012 16:50:17</publishTime>
+    </File>
+    <File Include="Content/home/starline.png">
+      <publishTime>10/30/2012 15:44:53</publishTime>
+    </File>
     <File Include="Content/home/umnie-box.png">
       <publishTime>10/29/2012 01:57:42</publishTime>
+    </File>
+    <File Include="Content/home/work-target.png">
+      <publishTime>10/31/2012 12:15:36</publishTime>
     </File>
     <File Include="Content/html5.css">
       <publishTime>10/28/2012 23:32:50</publishTime>
@@ -539,7 +569,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/06/2012 20:19:37</publishTime>
     </File>
     <File Include="packages.config">
-      <publishTime>10/28/2012 18:58:04</publishTime>
+      <publishTime>10/29/2012 20:51:32</publishTime>
     </File>
     <File Include="README.jQuery.vsdoc.txt">
       <publishTime>10/27/2012 22:11:43</publishTime>
@@ -632,13 +662,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/06/2012 20:19:38</publishTime>
     </File>
     <File Include="Views/Home/Index.cshtml">
-      <publishTime>10/29/2012 03:00:33</publishTime>
+      <publishTime>10/31/2012 15:26:40</publishTime>
     </File>
     <File Include="Views/Home/Index.en.cshtml">
-      <publishTime>09/06/2012 20:19:38</publishTime>
+      <publishTime>10/30/2012 13:45:39</publishTime>
     </File>
     <File Include="Views/Navigation/_TopMenu.cshtml">
-      <publishTime>10/28/2012 23:30:29</publishTime>
+      <publishTime>10/31/2012 11:18:30</publishTime>
     </File>
     <File Include="Views/Shared/Error.cshtml">
       <publishTime>09/06/2012 20:19:38</publishTime>
@@ -647,7 +677,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/28/2012 22:48:06</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>10/29/2012 03:00:33</publishTime>
+      <publishTime>10/30/2012 13:45:39</publishTime>
     </File>
     <File Include="Views/Shared/_LoginPartial.cshtml">
       <publishTime>09/06/2012 20:19:38</publishTime>
@@ -662,7 +692,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/06/2012 20:19:38</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>10/29/2012 03:05:41</publishTime>
+      <publishTime>10/31/2012 15:30:16</publishTime>
     </File>
   </ItemGroup>
 </Project>

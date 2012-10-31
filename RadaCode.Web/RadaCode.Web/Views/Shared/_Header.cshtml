@@ -1,10 +1,21 @@
 ﻿<header>
-			<div id="logo">
+    <div id="logo">
+        @{ if (@HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString() == "Home")
+           {
+               <div>
+                   <img src="@Url.Content("/Content/global/top-logo.png")"/>
+                    <span>РадаКод</span>
+               </div>
+               
+           } else
+           {
                 <a href="@Url.Action("Index", "Home")">
                     <img src="@Url.Content("/Content/global/top-logo.png")"/>
                     <span>РадаКод</span>
                 </a>
-			</div>
+           } 
+         }
+    </div>
 			
 			<menu>
 				@{Html.RenderAction("RenderTopMenu", "Navigation");}

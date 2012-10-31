@@ -41,11 +41,22 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'ProtoSans40';
+    src: url('fonts/ProtoSans40/protosans40-webfont.eot');
+    src: url('fonts/ProtoSans40/protosans40-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/ProtoSans40/protosans40-webfont.woff') format('woff'),
+         url('fonts/ProtoSans40/protosans40-webfont.ttf') format('truetype'),
+         url('fonts/ProtoSans40/protosans40-webfont.svg#proto_sans_40regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
 #main {
     padding: 0px;
     margin-bottom: 0px;
-    background-color: #F5F5F3;
-    background-image: url('flower-tile.png');
+    background-color: #FFFFFF;
+    /*background-image: url('flower-tile.png');*/
 }
 
 #main > div {
@@ -95,6 +106,7 @@
     font-family: 'ProtoSans03';
     font-size: 46px;
     line-height: 1.2em;
+    cursor: default;
 }
 
 .rotator_control { position: absolute; top: 0; height: 100%; width: 130px; text-align: center; line-height: 471px; color: #fff; font-size: 24px; text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4); z-index: 1; display: none; background: url('rotatorcontrols_shadow.png') repeat-y 0 0; }
@@ -125,8 +137,9 @@
 #smart-site-info {
     background-color: #F5F5F3;
     background-image: url('flower-tile.png');
-    height: 300px;
+    min-height: 350px;
     width: 100%;
+    cursor: default;
 }
 
 #smart-site-info #smart-site-centered-block {
@@ -141,7 +154,7 @@
 
 #smart-site-info #smart-site-centered-block .initiation-text {
     width: 375px;
-    margin-top: 50px;
+    margin-top: 15px;
     height: 60px;
 }
 
@@ -153,19 +166,20 @@
 
 #smart-site-info #smart-site-centered-block .smart-site-knows {
     width: 100px;
-    margin-top: 165px;
+    margin-top: 158px;
     height: 60px;
-    margin-left: 150px;
+    margin-left: 55px;
 }
 
 #smart-site-info #smart-site-centered-block .smart-site-knows > h2 {
     font-family: 'ProtoSans03';
-    font-size: 18px;
+    font-size: 20px;
     color: #5E5D5F;
 }
 
 #smart-site-info #smart-site-centered-block .features-list {
-    margin-left: 245px;
+    margin-left: 135px;
+    margin-top: 60px;
 }
 
 #smart-site-info #smart-site-centered-block .features-list > div {
@@ -176,19 +190,19 @@
 }
 
 #smart-site-info #smart-site-centered-block .features-list .geo-data {
-    background: url('geo-data.png') no-repeat left bottom;
+    background: url('geo-data.png') no-repeat left 190px;
 }
 
 #smart-site-info #smart-site-centered-block .features-list .behav-tracking {
-    background: url('work-target.png') no-repeat left bottom;
+    background: url('work-target.png') no-repeat left 190px;
 }
 
 #smart-site-info #smart-site-centered-block .features-list .device-specific {
-    background: url('device-type.png') no-repeat left bottom;
+    background: url('device-type.png') no-repeat left 190px;
 }
 
 #smart-site-info #smart-site-centered-block .features-list .interactive {
-    background: url('geo-data.png') no-repeat left bottom;
+    background: url('geo-data.png') no-repeat left 190px;
 }
 
 #smart-site-info #smart-site-centered-block .features-list .feature > div {
@@ -201,17 +215,23 @@
     color: #e7cb22;
 }
 
+#smart-site-info #smart-site-centered-block .features-list .feature {
+    min-height: 250px;
+    width: 200px;
+}
+
 #smart-site-info #smart-site-centered-block .features-list .feature > h3 {
     font-family: 'ProtoSans40';
     font-size: 15px;
     color: #1d2228;
+    max-width: 130px;
 }
 
 #smart-site-info #smart-site-centered-block .features-list .feature > p.feature-slug {
     font-family: 'OpenSansRegular';
     font-size: 13px;
     color: #4d5056;
-    max-width: 200px;
+    max-width: 160px;
 }
 
 
