@@ -129,24 +129,92 @@
     width: 100%;
 }
 
-#smart-site-info .smart-site-knows {
-    width: 900px;
+#smart-site-info #smart-site-centered-block {
+    max-width: 1115px;
     margin-left: auto;
     margin-right: auto;
 }
 
-#smart-site-info .smart-site-knows div {
-    display: inline-block;
-    vertical-align: top;
+#smart-site-info #smart-site-centered-block div {
+    position: absolute;
 }
 
-#smart-site-info .smart-site-knows .initiation-text {
+#smart-site-info #smart-site-centered-block .initiation-text {
+    width: 375px;
+    margin-top: 50px;
+    height: 60px;
+}
+
+#smart-site-info #smart-site-centered-block .initiation-text > h1 {
+    font-family: 'ProtoSans03';
+    font-size: 26px;
+    color: #5E5D5F;
+}
+
+#smart-site-info #smart-site-centered-block .smart-site-knows {
+    width: 100px;
+    margin-top: 165px;
+    height: 60px;
+    margin-left: 150px;
+}
+
+#smart-site-info #smart-site-centered-block .smart-site-knows > h2 {
     font-family: 'ProtoSans03';
     font-size: 18px;
-    color: #5e5d5f;
-    width: 100px;
-    margin-top: 170px;
+    color: #5E5D5F;
 }
+
+#smart-site-info #smart-site-centered-block .features-list {
+    margin-left: 245px;
+}
+
+#smart-site-info #smart-site-centered-block .features-list > div {
+    display: inline-block;
+    vertical-align: top;
+    padding-left: 65px;
+    position: relative;
+}
+
+#smart-site-info #smart-site-centered-block .features-list .geo-data {
+    background: url('geo-data.png') no-repeat left bottom;
+}
+
+#smart-site-info #smart-site-centered-block .features-list .behav-tracking {
+    background: url('work-target.png') no-repeat left bottom;
+}
+
+#smart-site-info #smart-site-centered-block .features-list .device-specific {
+    background: url('device-type.png') no-repeat left bottom;
+}
+
+#smart-site-info #smart-site-centered-block .features-list .interactive {
+    background: url('geo-data.png') no-repeat left bottom;
+}
+
+#smart-site-info #smart-site-centered-block .features-list .feature > div {
+    display: block;
+}
+
+#smart-site-info #smart-site-centered-block .features-list .feature-number {
+    font-family: 'ProtoSans00';
+    font-size: 125px;
+    color: #e7cb22;
+}
+
+#smart-site-info #smart-site-centered-block .features-list .feature > h3 {
+    font-family: 'ProtoSans40';
+    font-size: 15px;
+    color: #1d2228;
+}
+
+#smart-site-info #smart-site-centered-block .features-list .feature > p.feature-slug {
+    font-family: 'OpenSansRegular';
+    font-size: 13px;
+    color: #4d5056;
+    max-width: 200px;
+}
+
+
 
 .alpha60 {
 	/* Fallback for web browsers that doesn't support RGBa */
