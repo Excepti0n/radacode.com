@@ -73,7 +73,11 @@ function InitRotator() {
             }
 
             if ($this.data('right')) {
-                right = $this.data('right');
+                if ($this.data('start-right')) {
+                    right = $this.data('start-right');
+                } else {
+                    right = $this.data('right');
+                }
                 $this.css({ top: top, right: right });
             } else {
 
@@ -129,7 +133,7 @@ function InitRotator() {
     };
     
     slide_next_func = function () {
-        nextItem = (item === 0) ? 0 : item + 1; //(item === n) - here, n is a zero-based count of current banner items
+        nextItem = (item === 1) ? 0 : item + 1; //(item === n) - here, n is a zero-based count of current banner items
 
         main_function();
 

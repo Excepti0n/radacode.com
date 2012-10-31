@@ -52,6 +52,17 @@
     font-style: normal;
 }
 
+@font-face {
+	font-family: "Scrawl";
+	src:url("SCRAWL__.eot?") 
+	format("eot"),url("fonts/Scrawl/SCRAWL__.woff") 
+	format("woff"),url("fonts/Scrawl/SCRAWL__.ttf") 
+	format("truetype"),url("fonts/Scrawl/SCRAWL__.svg#Scrawl") 
+	format("svg");
+	font-weight:normal;
+	font-style:normal;
+	}
+
 #main {
     padding: 0px;
     margin-bottom: 0px;
@@ -83,13 +94,13 @@
 #dynamic-banner > div > .banner-data-container {
     margin-left: auto;
     margin-right: auto;
-    max-width: 1115px;
+    max-width: 1170px;
     height: 590px;
     position: relative;
     top: 190px;
 }
 
-#dynamic-banner > #main_banner > .banner-data-container > .description {
+#dynamic-banner > .banner-data-container > .description.item_0 {
     width: 320px;
     padding-left: 30px;
     padding-top: 25px;
@@ -98,11 +109,26 @@
     background-repeat: no-repeat;
 }
 
-#dynamic-banner > #main_banner > .banner-data-container > * {
+#dynamic-banner > .banner-data-container > .description.item_1 {
+    width: 450px;
+    padding-left: 30px;
+    padding-top: 25px;
+    background-image: url('banner-mobile-box.png');
+    background-position: 23px 18px;
+    background-repeat: no-repeat;
+}
+
+#dynamic-banner > .banner-data-container .handwritten {
+    font-family: "Scrawl";
+    color: #FFFFFF;
+    font-size: 15px;
+}
+
+#dynamic-banner > div > .banner-data-container > * {
     position: absolute; 
 }
 
-#dynamic-banner > #main_banner > .banner-data-container > .description h1 {
+#dynamic-banner > div > .banner-data-container > .description h1 {
     font-family: 'ProtoSans03';
     font-size: 46px;
     line-height: 1.2em;

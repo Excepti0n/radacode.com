@@ -162,6 +162,11 @@
     <Content Include="Content\global\fonts\protoSans32Cyr\protosans32-webfont.svg" />
     <Content Include="Content\handheld.css" />
     <Content Include="Content\home\banner-footer.png" />
+    <Content Include="Content\home\banner-mobile-android-logo.png" />
+    <Content Include="Content\home\banner-mobile-apple-logo.png" />
+    <Content Include="Content\home\banner-mobile-arrow.png" />
+    <Content Include="Content\home\banner-mobile-box.png" />
+    <Content Include="Content\home\banner-mobile-windows-logo.png" />
     <Content Include="Content\home\device-set.png" />
     <Content Include="Content\home\device-type.png" />
     <Content Include="Content\home\flower-tile.png" />
@@ -169,9 +174,11 @@
     <Content Include="Content\home\fonts\ProtoSans30\protosans30-webfont.svg" />
     <Content Include="Content\home\fonts\ProtoSans40\protosans40-webfont.svg" />
     <Content Include="Content\home\fonts\rel-light-cyr\rex_light-webfont.svg" />
+    <Content Include="Content\home\fonts\Scrawl\SCRAWL__.svg" />
     <Content Include="Content\home\geo-data.png" />
     <Content Include="Content\home\home.css" />
     <Content Include="Content\home\home.js" />
+    <Content Include="Content\home\iphone5-banner.png" />
     <Content Include="Content\home\left-starpath.png" />
     <Content Include="Content\home\right-starpath.png" />
     <Content Include="Content\home\rotatorcontrols_shadow.png" />
@@ -244,7 +251,6 @@
     <Content Include="Content\themes\base\minified\jquery.ui.tooltip.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <Content Include="README.jQuery.vsdoc.txt" />
     <Content Include="robots.txt" />
     <Content Include="Scripts\global.js" />
     <Content Include="Content\global\fonts\protoSans32Cyr\protosans32-webfont.eot" />
@@ -268,6 +274,9 @@
     <Content Include="Content\home\fonts\ProtoSans40\protosans40-webfont.eot" />
     <Content Include="Content\home\fonts\ProtoSans40\protosans40-webfont.ttf" />
     <Content Include="Content\home\fonts\ProtoSans40\protosans40-webfont.woff" />
+    <Content Include="Content\home\fonts\Scrawl\SCRAWL__.eot" />
+    <Content Include="Content\home\fonts\Scrawl\SCRAWL__.ttf" />
+    <Content Include="Content\home\fonts\Scrawl\SCRAWL__.woff" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Scripts\history.js\amplify.store.js" />
