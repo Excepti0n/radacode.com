@@ -28,12 +28,16 @@ function InitRotator() {
     $(window).resize(function () {
         prefix = return_prefix();
 
+
+        //$('[class*="item_"]:not(.rotator_bg)').css({ left: $(this).width() + 'px' })
+        var $window = $(this);
+
         $('[class*="item_"]:not(.rotator_bg)').each(function() {
             var $this = $(this);
             if ($this.data('right')) {
                 $this.css({ right: $this.data('right') });
             } else {
-                $this.css({ left: $(this).width() + 'px' });
+                $this.css({ left: $window.width() + 'px' });
             }
         });
 
@@ -56,6 +60,8 @@ function InitRotator() {
     main_function = function () {
         prefix = return_prefix();
         var ww = $(window).width();
+
+
 
         // setup next frame
         $('.item_' + nextItem + ':not(.rotator_bg)').each(function () {
@@ -80,14 +86,12 @@ function InitRotator() {
                 }
                 $this.css({ top: top, right: right });
             } else {
-
                 if ($this.data('start-left')) {
                     left = $this.data('start-left');
                 } else {
                     //left = '200%';
                     left = ww + 'px';
                 }
-                
                 $this.css({ top: top, left: left });
             }
         });
@@ -133,6 +137,8 @@ function InitRotator() {
     };
     
     slide_next_func = function () {
+        if (item === 1) return;
+
         nextItem = (item === 1) ? 0 : item + 1; //(item === n) - here, n is a zero-based count of current banner items
 
         main_function();
@@ -140,7 +146,7 @@ function InitRotator() {
         item = nextItem;
     };
     slide_previous_func = function () {
-        nextItem = (item === 0) ? 2 : item - 1;
+        nextItem = (item === 0) ? 1 : item - 1; //Here ? n : is a zero-based count of current banner items 
 
         main_function();
 
@@ -165,7 +171,7 @@ function InitRotator() {
         return false;
     });
 
-    $('#home_rotator').hover(function () {
+    $('#banner-block').hover(function () {
         $('.rotator_control').fadeTo(0, 1);
     }, function () {
         $('.rotator_control').fadeTo(0, 0);

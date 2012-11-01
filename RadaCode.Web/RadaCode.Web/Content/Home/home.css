@@ -9,6 +9,17 @@
 }*/
 
 @font-face {
+	font-family: "SSStandard";
+	src: url('fonts/SSStandard/ss-standard.eot');
+	src: url('fonts/SSStandard/ss-standard.eot?#iefix') format('embedded-opentype'), 
+		 url('fonts/SSStandard/ss-standard.woff') format('woff'), 
+		 url('fonts/SSStandard/ss-standard.ttf')  format('truetype'),
+		 url('fonts/SSStandard/ss-standard.svg#SSStandard') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
 	font-family: 'RexLightRegular';
 	src: url('fonts/rel-light-cyr/rex_light-webfont.eot');
 	src: url('fonts/rel-light-cyr/rex_light-webfont.eot?#iefix') format('embedded-opentype'),
@@ -80,18 +91,18 @@
 }
 
 #dynamic-banner {
-    height: 590px;
+    height: 610px;
     background-color: #e7cb22;
     background-repeat: repeat-x;
     background-position: center bottom;
     background-image: url('banner-footer.png');
 }
 
-#dynamic-banner > div > * {
+#dynamic-banner > * {
     position: absolute;
 }
 
-#dynamic-banner > div > .banner-data-container {
+#dynamic-banner > .banner-data-container {
     margin-left: auto;
     margin-right: auto;
     max-width: 1170px;
@@ -109,6 +120,13 @@
     background-repeat: no-repeat;
 }
 
+#dynamic-banner > .banner-data-container > .extended-text.item_0 {
+    width: 270px;
+    top: 258px;
+    margin-left: 30px;
+    text-align: justify;
+}
+
 #dynamic-banner > .banner-data-container > .description.item_1 {
     width: 450px;
     padding-left: 30px;
@@ -122,19 +140,44 @@
     font-family: "Scrawl";
     color: #FFFFFF;
     font-size: 15px;
+    text-align: center;
+    width: 150px;
+    cursor: pointer;
 }
 
-#dynamic-banner > div > .banner-data-container > * {
+#dynamic-banner > .banner-data-container .platform {
+    cursor: pointer;
+}
+
+#dynamic-banner > .banner-data-container > .platform > * {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#dynamic-banner > .banner-data-container > .platform > img {
+    margin-bottom: 10px;
+}
+
+
+#dynamic-banner > .banner-data-container > * {
     position: absolute; 
 }
 
-#dynamic-banner > div > .banner-data-container > .description h1 {
+#dynamic-banner > .banner-data-container > .description h1 {
     font-family: 'ProtoSans03';
     font-size: 46px;
     line-height: 1.2em;
     cursor: default;
+    color: #5e5d5f;
 }
 
+#dynamic-banner > .banner-data-container > .extended-text span {
+    font-family: 'OpenSansLight';
+    font-size: 15px;
+}
+
+a.rotator_control {color:#fff}
 .rotator_control { position: absolute; top: 0; height: 100%; width: 130px; text-align: center; line-height: 471px; color: #fff; font-size: 24px; text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4); z-index: 1; display: none; background: url('rotatorcontrols_shadow.png') repeat-y 0 0; }
 /*.rotator_control:hover { -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=100)"; filter: alpha(opacity=100); opacity: 1.0; }*/
 .rotator_control.left { left: 0; background-position: 0 0; }
@@ -144,6 +187,41 @@
 .rotator_control div.bg { display: none; }
 .rotator_control.left div.bg { background-position: 0 0; }
 .rotator_control.right div.bg { background-position: -260px 0; }
+
+.ss-icon, .ss-icon.ss-standard, [class^="ss-"]::before, [class*=" ss-"]::before, [class^="ss-"].ss-standard::before, [class*=" ss-"].ss-standard::before, [class^="ss-"].right::after, [class*=" ss-"].right::after, [class^="ss-"].ss-standard.right::after, [class*=" ss-"].ss-standard.right::after {
+font-family: "SSStandard";
+font-style: normal;
+font-weight: normal;
+text-decoration: none;
+text-rendering: optimizeLegibility;
+white-space: nowrap;
+-webkit-font-feature-settings: "liga";
+-moz-font-feature-settings: "liga=1";
+-moz-font-feature-settings: "liga";
+-ms-font-feature-settings: "liga" 1;
+-o-font-feature-settings: "liga";
+font-feature-settings: "liga";
+-webkit-font-smoothing: antialiased;
+vertical-align: bottom;
+}
+
+.ss-icon, .ss-icon.ss-standard, [class^="ss-"]::before, [class*=" ss-"]::before, [class^="ss-"].ss-standard::before, [class*=" ss-"].ss-standard::before, [class^="ss-"].right::after, [class*=" ss-"].right::after, [class^="ss-"].ss-standard.right::after, [class*=" ss-"].ss-standard.right::after
+{
+    font-family: "SSStandard";
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: none;
+    text-rendering: optimizeLegibility;
+    white-space: nowrap;
+    -webkit-font-feature-settings: "liga";
+    -moz-font-feature-settings: "liga=1";
+    -moz-font-feature-settings: "liga";
+    -ms-font-feature-settings: "liga" 1;
+    -o-font-feature-settings: "liga";
+    font-feature-settings: "liga";
+    -webkit-font-smoothing: antialiased;
+    vertical-align: bottom;
+}
 
 
 .news-block {
@@ -257,7 +335,7 @@
     font-family: 'OpenSansRegular';
     font-size: 13px;
     color: #4d5056;
-    max-width: 160px;
+    max-width: 163px;
 }
 
 

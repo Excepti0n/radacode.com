@@ -95,7 +95,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/31/2012 15:30:08</publishTime>
     </File>
     <File Include="bin/RadaCode.Web.dll">
-      <publishTime>10/31/2012 15:30:11</publishTime>
+      <publishTime>11/01/2012 14:46:25</publishTime>
     </File>
     <File Include="bin/RouteMagic.dll">
       <publishTime>10/29/2012 20:46:14</publishTime>
@@ -197,7 +197,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/06/2012 20:19:37</publishTime>
     </File>
     <File Include="Content/global.css">
-      <publishTime>10/31/2012 12:36:16</publishTime>
+      <publishTime>10/31/2012 15:54:52</publishTime>
     </File>
     <File Include="Content/global.en.css">
       <publishTime>09/06/2012 20:19:37</publishTime>
@@ -286,6 +286,21 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Content/home/banner-footer.png">
       <publishTime>10/29/2012 00:42:39</publishTime>
     </File>
+    <File Include="Content/home/banner-mobile-android-logo.png">
+      <publishTime>11/01/2012 10:40:47</publishTime>
+    </File>
+    <File Include="Content/home/banner-mobile-apple-logo.png">
+      <publishTime>11/01/2012 10:40:47</publishTime>
+    </File>
+    <File Include="Content/home/banner-mobile-arrow.png">
+      <publishTime>11/01/2012 10:40:47</publishTime>
+    </File>
+    <File Include="Content/home/banner-mobile-box.png">
+      <publishTime>11/01/2012 10:40:47</publishTime>
+    </File>
+    <File Include="Content/home/banner-mobile-windows-logo.png">
+      <publishTime>11/01/2012 10:40:47</publishTime>
+    </File>
     <File Include="Content/home/device-set.png">
       <publishTime>10/29/2012 01:37:19</publishTime>
     </File>
@@ -352,14 +367,41 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Content/home/fonts/rex-bold/rex_bold-webfont.woff">
       <publishTime>09/06/2012 20:19:37</publishTime>
     </File>
+    <File Include="Content/home/fonts/Scrawl/SCRAWL__.eot">
+      <publishTime>11/01/2012 10:40:47</publishTime>
+    </File>
+    <File Include="Content/home/fonts/Scrawl/SCRAWL__.svg">
+      <publishTime>11/01/2012 10:40:47</publishTime>
+    </File>
+    <File Include="Content/home/fonts/Scrawl/SCRAWL__.ttf">
+      <publishTime>11/01/2012 10:40:47</publishTime>
+    </File>
+    <File Include="Content/home/fonts/Scrawl/SCRAWL__.woff">
+      <publishTime>11/01/2012 10:40:47</publishTime>
+    </File>
+    <File Include="Content/home/fonts/SSStandard/ss-standard.eot">
+      <publishTime>11/01/2012 14:02:53</publishTime>
+    </File>
+    <File Include="Content/home/fonts/SSStandard/ss-standard.svg">
+      <publishTime>11/01/2012 14:02:53</publishTime>
+    </File>
+    <File Include="Content/home/fonts/SSStandard/ss-standard.ttf">
+      <publishTime>11/01/2012 14:02:53</publishTime>
+    </File>
+    <File Include="Content/home/fonts/SSStandard/ss-standard.woff">
+      <publishTime>11/01/2012 14:02:53</publishTime>
+    </File>
     <File Include="Content/home/geo-data.png">
       <publishTime>10/31/2012 12:15:36</publishTime>
     </File>
     <File Include="Content/home/home.css">
-      <publishTime>10/31/2012 15:27:30</publishTime>
+      <publishTime>11/01/2012 14:23:48</publishTime>
     </File>
     <File Include="Content/home/home.js">
-      <publishTime>10/30/2012 17:38:28</publishTime>
+      <publishTime>11/01/2012 14:21:18</publishTime>
+    </File>
+    <File Include="Content/home/iphone5-banner.png">
+      <publishTime>11/01/2012 12:16:54</publishTime>
     </File>
     <File Include="Content/home/left-starpath.png">
       <publishTime>10/29/2012 01:23:20</publishTime>
@@ -662,10 +704,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/06/2012 20:19:38</publishTime>
     </File>
     <File Include="Views/Home/Index.cshtml">
-      <publishTime>10/31/2012 15:26:40</publishTime>
+      <publishTime>11/01/2012 14:38:05</publishTime>
     </File>
     <File Include="Views/Home/Index.en.cshtml">
-      <publishTime>10/30/2012 13:45:39</publishTime>
+      <publishTime>11/01/2012 10:40:47</publishTime>
     </File>
     <File Include="Views/Navigation/_TopMenu.cshtml">
       <publishTime>10/31/2012 11:18:30</publishTime>
@@ -674,7 +716,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/06/2012 20:19:38</publishTime>
     </File>
     <File Include="Views/Shared/_Header.cshtml">
-      <publishTime>10/28/2012 22:48:06</publishTime>
+      <publishTime>10/31/2012 15:49:17</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
       <publishTime>10/30/2012 13:45:39</publishTime>
@@ -688,11 +730,14 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Views/Web.config">
       <publishTime>09/06/2012 20:19:38</publishTime>
     </File>
+    <File Include="Views/WebDevelopment/Index.cshtml">
+      <publishTime>10/31/2012 16:06:40</publishTime>
+    </File>
     <File Include="Views/_ViewStart.cshtml">
       <publishTime>09/06/2012 20:19:38</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>10/31/2012 15:30:16</publishTime>
+      <publishTime>11/01/2012 14:46:29</publishTime>
     </File>
   </ItemGroup>
 </Project>

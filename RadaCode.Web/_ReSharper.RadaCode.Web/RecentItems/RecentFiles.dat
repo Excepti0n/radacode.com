@@ -5,23 +5,25 @@
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Views/f:_ViewStart.cshtml" caret="52" fromTop="2" />
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Views/d:Shared/f:_Layout.cshtml" caret="0" fromTop="0" />
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Views/d:Navigation/f:_TopMenu.cshtml" caret="73" fromTop="3" />
-    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Content/f:global.css" caret="3919" fromTop="14" />
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Views/d:Shared/f:_Header.cshtml" caret="598" fromTop="16" />
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Controllers/f:WebDevelopmentController.cs" caret="184" fromTop="8" />
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Views/d:WebDevelopment/f:Index.cshtml" caret="72" fromTop="1" />
-    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/f:Web.config" caret="692" fromTop="8" />
-    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Views/d:Home/f:Index.cshtml" caret="3022" fromTop="34" />
-    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Content/d:home/f:home.css" caret="3868" fromTop="24" />
-    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Content/d:home/f:home.js" caret="2251" fromTop="58" />
+    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/f:Web.config" caret="683" fromTop="8" />
+    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Views/d:Home/f:Index.en.cshtml" caret="4919" fromTop="86" />
+    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Content/d:home/f:home.css" caret="4585" fromTop="20" />
+    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Content/d:home/f:home.js" caret="4444" fromTop="28" />
+    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Content/f:global.css" caret="1607" fromTop="20" />
+    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Views/d:Home/f:Index.cshtml" caret="4919" fromTop="86" />
   </RecentFiles>
   <RecentEdits>
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Views/d:Navigation/f:_TopMenu.cshtml" caret="330" fromTop="10" />
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Views/d:Shared/f:_Header.cshtml" caret="598" fromTop="16" />
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Content/f:global.css" caret="3919" fromTop="14" />
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Views/d:WebDevelopment/f:Index.cshtml" caret="72" fromTop="1" />
-    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/f:Web.config" caret="692" fromTop="8" />
-    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Content/d:home/f:home.js" caret="2251" fromTop="22" />
-    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Views/d:Home/f:Index.cshtml" caret="644" fromTop="12" />
-    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Content/d:home/f:home.css" caret="3868" fromTop="30" />
+    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/f:Web.config" caret="683" fromTop="8" />
+    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Content/d:home/f:home.js" caret="4444" fromTop="28" />
+    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Content/d:home/f:home.css" caret="4585" fromTop="20" />
+    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Views/d:Home/f:Index.cshtml" caret="2283" fromTop="22" />
+    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Views/d:Home/f:Index.en.cshtml" caret="4919" fromTop="39" />
   </RecentEdits>
 </RecentFiles>

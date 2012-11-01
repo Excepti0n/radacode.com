@@ -175,6 +175,7 @@
     <Content Include="Content\home\fonts\ProtoSans40\protosans40-webfont.svg" />
     <Content Include="Content\home\fonts\rel-light-cyr\rex_light-webfont.svg" />
     <Content Include="Content\home\fonts\Scrawl\SCRAWL__.svg" />
+    <Content Include="Content\home\fonts\SSStandard\ss-standard.svg" />
     <Content Include="Content\home\geo-data.png" />
     <Content Include="Content\home\home.css" />
     <Content Include="Content\home\home.js" />
@@ -277,6 +278,9 @@
     <Content Include="Content\home\fonts\Scrawl\SCRAWL__.eot" />
     <Content Include="Content\home\fonts\Scrawl\SCRAWL__.ttf" />
     <Content Include="Content\home\fonts\Scrawl\SCRAWL__.woff" />
+    <Content Include="Content\home\fonts\SSStandard\ss-standard.eot" />
+    <Content Include="Content\home\fonts\SSStandard\ss-standard.ttf" />
+    <Content Include="Content\home\fonts\SSStandard\ss-standard.woff" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Scripts\history.js\amplify.store.js" />
