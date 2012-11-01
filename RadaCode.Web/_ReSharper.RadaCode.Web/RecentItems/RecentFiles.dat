@@ -1,6 +1,5 @@
 ﻿<RecentFiles>
   <RecentFiles>
-    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Views/f:Web.config" caret="0" fromTop="0" />
     <File id="65490A0F-0FED-4E33-85A3-7113456DB32A/f:App.config" caret="398" fromTop="4" />
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Views/f:_ViewStart.cshtml" caret="52" fromTop="2" />
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Views/d:Shared/f:_Layout.cshtml" caret="0" fromTop="0" />
@@ -17,15 +16,17 @@
     <File id="D2E694FC-88A0-46C9-9ADA-930B53CCB47A/d:Entities/f:Industry.cs" caret="221" fromTop="9" />
     <File id="D2E694FC-88A0-46C9-9ADA-930B53CCB47A/d:Entities/f:SoftwareProject.cs" caret="938" fromTop="9" />
     <File id="D2E694FC-88A0-46C9-9ADA-930B53CCB47A/d:Migrations/f:Configuration.cs" caret="0" fromTop="0" />
-    <File id="D2E694FC-88A0-46C9-9ADA-930B53CCB47A/f:App.config" caret="423" fromTop="6" />
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/f:Web.config" caret="570" fromTop="7" />
     <File id="D2E694FC-88A0-46C9-9ADA-930B53CCB47A/d:Migrations/f:201211011949334_AddedProjects.cs" caret="88" fromTop="3" />
     <File id="D2E694FC-88A0-46C9-9ADA-930B53CCB47A/f:WebDataDependenciesModule.cs" caret="0" fromTop="0" />
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:App_Start/f:NinjectWebCommon.cs" caret="0" fromTop="0" />
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Application/d:Composition/f:WebCompositionModule.cs" caret="0" fromTop="0" />
     <File id="8D2C41C2-1E19-44E2-A384-55895B2181FE/f:RadaCodeWebCoreModule.cs" caret="0" fromTop="0" />
-    <File id="D2E694FC-88A0-46C9-9ADA-930B53CCB47A/d:EF/f:RadaCodeWebStoreContext.cs" caret="457" fromTop="11" />
     <File id="D2E694FC-88A0-46C9-9ADA-930B53CCB47A/d:Entities/f:Customer.cs" caret="482" fromTop="14" />
+    <File id="D2E694FC-88A0-46C9-9ADA-930B53CCB47A/d:EF/f:RadaCodeWebStoreContext.cs" caret="0" fromTop="0" />
+    <File id="D2E694FC-88A0-46C9-9ADA-930B53CCB47A/d:EF/f:RadaCodeWebStoreContextInitializer.cs" caret="462" fromTop="11" />
+    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Views/f:Web.config" caret="1028" fromTop="11" />
+    <File id="D2E694FC-88A0-46C9-9ADA-930B53CCB47A/f:App.config" caret="421" fromTop="6" />
   </RecentFiles>
   <RecentEdits>
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Views/d:Navigation/f:_TopMenu.cshtml" caret="330" fromTop="10" />
@@ -44,5 +45,7 @@
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/f:Web.config" caret="691" fromTop="8" />
     <File id="D2E694FC-88A0-46C9-9ADA-930B53CCB47A/f:App.config" caret="423" fromTop="6" />
     <File id="D2E694FC-88A0-46C9-9ADA-930B53CCB47A/d:Migrations/f:201211011949334_AddedProjects.cs" caret="0" fromTop="0" />
+    <File id="D2E694FC-88A0-46C9-9ADA-930B53CCB47A/d:EF/f:RadaCodeWebStoreContextInitializer.cs" caret="174" fromTop="4" />
+    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Views/f:Web.config" caret="1028" fromTop="11" />
   </RecentEdits>
 </RecentFiles>

@@ -2,7 +2,7 @@
 
 namespace RadaCode.Web.Data.EF
 {
-    public class RadaCodeWebStoreContextInitializer : DropCreateDatabaseAlways<RadaCodeWebStoreContext> //DropCreateDatabaseIfModelChanges<FilexStoreContext>
+    public class RadaCodeWebStoreContextInitializer : DropCreateDatabaseIfModelChanges<RadaCodeWebStoreContext> //DropCreateDatabaseAlways<RadaCodeWebStoreContext> 
     {
         protected override void Seed(RadaCodeWebStoreContext context)
         {
