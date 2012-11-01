@@ -1,1 +1,5 @@
-2012/11/01-10:44:46.629 a20 Delete type=3 #1
+2012/11/01-20:50:27.581 bec Recovering log #3
+2012/11/01-20:50:27.595 bec Level-0 table #5: started
+2012/11/01-20:50:27.688 bec Level-0 table #5: 168674 bytes OK
+2012/11/01-20:50:27.791 bec Delete type=0 #3
+2012/11/01-20:50:27.791 bec Delete type=3 #2
