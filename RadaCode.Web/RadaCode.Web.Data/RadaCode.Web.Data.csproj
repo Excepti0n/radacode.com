@@ -64,6 +64,7 @@
     <Compile Include="Entities\Customer.cs" />
     <Compile Include="Entities\IdableEntity.cs" />
     <Compile Include="Entities\Industry.cs" />
+    <Compile Include="Entities\RolePermission.cs" />
     <Compile Include="Entities\SoftwareProject.cs" />
     <Compile Include="Entities\UserActivity.cs" />
     <Compile Include="Entities\WebUser.cs" />

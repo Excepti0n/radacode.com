@@ -10,7 +10,7 @@ namespace RadaCode.Web.Data.Entities
         public string Name { get; set; }
         public string Description { get; set; }
         public virtual Customer Customer { get; set; }
-        public List<string> TechnologiesUsed { get; set; }
+        public virtual List<string> TechnologiesUsed { get; set; }
         public DateTime? DateStarted { get; set; }
         public TimeSpan ProjectEstimate { get; set; }
         public TimeSpan ProjectActualCompletionSpan { get; set; }
@@ -18,7 +18,7 @@ namespace RadaCode.Web.Data.Entities
         public string WebSiteUrl { get; set; }
         public int CurrentUsersCount { get; set; }
         public int ROIpercentage { get; set; }
-        public List<string> SpecialFeatures { get; set; }
+        public virtual List<string> SpecialFeatures { get; set; }
         public bool IsCloudConnected { get; set; }
         public string ProjectDescriptionMarkup { get; set; }
     }
@@ -30,6 +30,6 @@ namespace RadaCode.Web.Data.Entities
 
     public class MobileDevelopment: SoftwareProject
     {
-        public List<string> PlatformsSupported { get; set; }
+        public virtual List<string> PlatformsSupported { get; set; }
     }
 }

@@ -1,0 +1,56 @@
+﻿@model putaty.web.Areas.SuperUser.Models.LoginModel
+
+@{
+	ViewBag.Title = "Вход для СуперПользователя";
+}
+
+@section ViewScripts {
+	<script type="text/javascript">
+
+	    $(document).ready(function () {
+
+	        $("#yes").click(function () {
+	            $("#login-form").show("slow");
+	            $("#no").hide();
+	            $("#yes").hide();
+	        });
+
+	        $("#no").click(function () {
+	            var url = '@Url.Action("WhereToGo", "Authorization")';
+
+	            $.getJSON(url,
+	                null,
+	                function (data) {
+	                    window.location = data;
+	                });
+	        });
+	    });
+	</script>
+}
+
+<div id="login-block">
+	<h2>Достоин?</h2>
+	<button id="yes">Да</button>
+	<button id="no">Нет</button>
+
+	@using (Html.BeginForm("Authenticate", "Authorization", FormMethod.Post, new {id = "login-form"}))
+	{
+        <div class="editor-label">
+					@Html.LabelFor(m => m.Name)
+		</div>
+		<div class="editor-field">
+			@Html.TextBoxFor(m => m.Name, new { id="username" })
+			@Html.ValidationMessageFor(m => m.Name)
+		</div>
+     
+		<div class="editor-label">
+					@Html.LabelFor(m => m.Pazz)
+		</div>
+        <div class="editor-field">
+            @Html.PasswordFor(m => m.Pazz, new { id="pazz" })
+            @Html.ValidationMessageFor(m => m.Pazz)
+        </div>
+     
+        <input type="submit" value="Нок нок нок"/>
+	}
+</div>

@@ -13,6 +13,7 @@ namespace RadaCode.Web.Data.EF
         public DbSet<Industry> Industries { get; set; }
         public DbSet<SoftwareProject> SoftwareProjects { get; set; }
         public DbSet<UserActivity> UserActivities { get; set; }
+        public DbSet<RolePermission> RolePermissions { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

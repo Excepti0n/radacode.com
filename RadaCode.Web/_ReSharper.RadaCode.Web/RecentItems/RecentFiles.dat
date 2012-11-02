@@ -1,35 +1,35 @@
 ﻿<RecentFiles>
   <RecentFiles>
-    <File id="65490A0F-0FED-4E33-85A3-7113456DB32A/f:App.config" caret="398" fromTop="4" />
-    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Views/f:_ViewStart.cshtml" caret="52" fromTop="2" />
-    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Views/d:Shared/f:_Layout.cshtml" caret="0" fromTop="0" />
-    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Views/d:Navigation/f:_TopMenu.cshtml" caret="73" fromTop="3" />
-    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Views/d:Shared/f:_Header.cshtml" caret="598" fromTop="16" />
-    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Controllers/f:WebDevelopmentController.cs" caret="184" fromTop="8" />
-    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Views/d:WebDevelopment/f:Index.cshtml" caret="72" fromTop="1" />
-    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Views/d:Home/f:Index.en.cshtml" caret="4919" fromTop="86" />
-    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Content/d:home/f:home.css" caret="4585" fromTop="20" />
-    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Content/d:home/f:home.js" caret="4444" fromTop="28" />
-    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Content/f:global.css" caret="1607" fromTop="20" />
-    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Views/d:Home/f:Index.cshtml" caret="4919" fromTop="86" />
-    <File id="D2E694FC-88A0-46C9-9ADA-930B53CCB47A/d:Entities/f:Industry.cs" caret="221" fromTop="9" />
-    <File id="D2E694FC-88A0-46C9-9ADA-930B53CCB47A/d:Entities/f:SoftwareProject.cs" caret="938" fromTop="9" />
-    <File id="D2E694FC-88A0-46C9-9ADA-930B53CCB47A/d:Migrations/f:201211011949334_AddedProjects.cs" caret="88" fromTop="3" />
-    <File id="D2E694FC-88A0-46C9-9ADA-930B53CCB47A/f:WebDataDependenciesModule.cs" caret="0" fromTop="0" />
-    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:App_Start/f:NinjectWebCommon.cs" caret="0" fromTop="0" />
-    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Application/d:Composition/f:WebCompositionModule.cs" caret="0" fromTop="0" />
-    <File id="8D2C41C2-1E19-44E2-A384-55895B2181FE/f:RadaCodeWebCoreModule.cs" caret="0" fromTop="0" />
-    <File id="D2E694FC-88A0-46C9-9ADA-930B53CCB47A/d:Entities/f:Customer.cs" caret="482" fromTop="14" />
-    <File id="D2E694FC-88A0-46C9-9ADA-930B53CCB47A/d:Entities/f:IdableEntity.cs" caret="550" fromTop="25" />
-    <File id="D2E694FC-88A0-46C9-9ADA-930B53CCB47A/d:Entities/f:ActionStampable.cs" caret="94" fromTop="3" />
-    <File id="D2E694FC-88A0-46C9-9ADA-930B53CCB47A/d:Entities/f:UserActivity.cs" caret="124" fromTop="5" />
-    <File id="D2E694FC-88A0-46C9-9ADA-930B53CCB47A/d:Entities/f:WebUser.cs" caret="0" fromTop="0" />
-    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Views/f:Web.config" caret="859" fromTop="10" />
-    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/f:Web.config" caret="683" fromTop="8" />
     <File id="D2E694FC-88A0-46C9-9ADA-930B53CCB47A/f:App.config" caret="0" fromTop="0" />
     <File id="D2E694FC-88A0-46C9-9ADA-930B53CCB47A/d:EF/f:RadaCodeWebStoreContextInitializer.cs" caret="1006" fromTop="24" />
-    <File id="D2E694FC-88A0-46C9-9ADA-930B53CCB47A/d:EF/f:RadaCodeWebStoreContext.cs" caret="1139" fromTop="23" />
     <File id="D2E694FC-88A0-46C9-9ADA-930B53CCB47A/d:Migrations/f:AutomaticMigrationConfiguration.cs" caret="1896" fromTop="36" />
+    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Areas/d:Shipyard/f:ShipyardAreaRegistration.cs" caret="0" fromTop="0" />
+    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Areas/d:Expansion/f:ExpansionAreaRegistration.cs" caret="0" fromTop="0" />
+    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Areas/d:SuperUser/f:SuperUserAreaRegistration.cs" caret="47" fromTop="2" />
+    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Areas/d:SuperUser/d:Views/d:Authorization/f:Authenticate.cshtml" caret="0" fromTop="0" />
+    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Areas/d:SuperUser/d:Views/d:Shared/f:_Layout.cshtml" caret="0" fromTop="0" />
+    <File id="7020124F-9FFC-4AC3-8F3D-AAB8E0240759/f:LoginController.cs/l:..?..?apid.com.ua-sources?apid.web?apid.web?Areas?Admin?Controllers?LoginController.cs" caret="1101" fromTop="25" />
+    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Areas/d:SuperUser/d:Controllers/f:AuthorizationController.cs" caret="1144" fromTop="23" />
+    <File id="D2E694FC-88A0-46C9-9ADA-930B53CCB47A/d:EF/f:RadaCodeWebStoreContext.cs" caret="683" fromTop="15" />
+    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Application/d:ActionFilters/f:GlobalSecurityActionFilter.cs" caret="0" fromTop="0" />
+    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Application/d:ActionFilters/f:PermissionsBasedAuthorizationFilter.cs" caret="0" fromTop="0" />
+    <File id="8D2C41C2-1E19-44E2-A384-55895B2181FE/f:RadaCodeWebCoreModule.cs" caret="0" fromTop="0" />
+    <File id="8D2C41C2-1E19-44E2-A384-55895B2181FE/d:Setttings/f:LocalRadaCodeWebSettings.cs" caret="0" fromTop="0" />
+    <File id="8D2C41C2-1E19-44E2-A384-55895B2181FE/d:Setttings/f:IRadaCodeWebSettings.cs" caret="0" fromTop="0" />
+    <File id="D2E694FC-88A0-46C9-9ADA-930B53CCB47A/d:Entities/f:Customer.cs" caret="0" fromTop="0" />
+    <File id="D2E694FC-88A0-46C9-9ADA-930B53CCB47A/d:Entities/f:IdableEntity.cs" caret="550" fromTop="25" />
+    <File id="D2E694FC-88A0-46C9-9ADA-930B53CCB47A/d:Entities/f:Industry.cs" caret="0" fromTop="0" />
+    <File id="D2E694FC-88A0-46C9-9ADA-930B53CCB47A/d:Entities/f:RolePermission.cs" caret="196" fromTop="7" />
+    <File id="D2E694FC-88A0-46C9-9ADA-930B53CCB47A/d:Entities/f:SoftwareProject.cs" caret="418" fromTop="13" />
+    <File id="D2E694FC-88A0-46C9-9ADA-930B53CCB47A/d:Entities/f:ActionStampable.cs" caret="0" fromTop="0" />
+    <File id="D2E694FC-88A0-46C9-9ADA-930B53CCB47A/d:Entities/f:WebUserRole.cs" caret="0" fromTop="0" />
+    <File id="D2E694FC-88A0-46C9-9ADA-930B53CCB47A/d:Entities/f:UserActivity.cs" caret="124" fromTop="5" />
+    <File id="8D2C41C2-1E19-44E2-A384-55895B2181FE/f:ActivityBrocker.cs" caret="105" fromTop="4" />
+    <File id="D2E694FC-88A0-46C9-9ADA-930B53CCB47A/d:Entities/f:WebUser.cs" caret="1511" fromTop="36" />
+    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Areas/d:SuperUser/d:Views/d:PutatyManagement/f:_Parties.cshtml" caret="0" fromTop="0" />
+    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Areas/d:SuperUser/d:Views/d:PutatyManagement/f:Index.cshtml" caret="0" fromTop="0" />
+    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Areas/d:SuperUser/d:Views/d:PutatyManagement/f:_Users.cshtml" caret="0" fromTop="0" />
+    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Areas/d:SuperUser/d:Controllers/f:PutatyManagementController.cs" caret="1365" fromTop="18" />
   </RecentFiles>
   <RecentEdits>
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Views/d:Navigation/f:_TopMenu.cshtml" caret="330" fromTop="10" />
@@ -42,16 +42,24 @@
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Views/d:Home/f:Index.en.cshtml" caret="4919" fromTop="39" />
     <File id="D2E694FC-88A0-46C9-9ADA-930B53CCB47A/d:Entities/f:Industry.cs" caret="221" fromTop="9" />
     <File id="D2E694FC-88A0-46C9-9ADA-930B53CCB47A/d:Entities/f:Customer.cs" caret="482" fromTop="14" />
-    <File id="D2E694FC-88A0-46C9-9ADA-930B53CCB47A/d:Entities/f:SoftwareProject.cs" caret="938" fromTop="9" />
     <File id="D2E694FC-88A0-46C9-9ADA-930B53CCB47A/d:Migrations/f:201211011949334_AddedProjects.cs" caret="0" fromTop="0" />
     <File id="D2E694FC-88A0-46C9-9ADA-930B53CCB47A/d:Entities/f:ActionStampable.cs" caret="94" fromTop="3" />
     <File id="D2E694FC-88A0-46C9-9ADA-930B53CCB47A/d:Entities/f:IdableEntity.cs" caret="550" fromTop="25" />
     <File id="D2E694FC-88A0-46C9-9ADA-930B53CCB47A/d:Entities/f:UserActivity.cs" caret="124" fromTop="5" />
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Views/f:Web.config" caret="859" fromTop="10" />
     <File id="D2E694FC-88A0-46C9-9ADA-930B53CCB47A/d:EF/f:RadaCodeWebStoreContextInitializer.cs" caret="1017" fromTop="25" />
-    <File id="D2E694FC-88A0-46C9-9ADA-930B53CCB47A/d:EF/f:RadaCodeWebStoreContext.cs" caret="1139" fromTop="23" />
     <File id="D2E694FC-88A0-46C9-9ADA-930B53CCB47A/f:App.config" caret="534" fromTop="7" />
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/f:Web.config" caret="683" fromTop="8" />
     <File id="D2E694FC-88A0-46C9-9ADA-930B53CCB47A/d:Migrations/f:AutomaticMigrationConfiguration.cs" caret="1338" fromTop="26" />
+    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Areas/d:SuperUser/f:SuperUserAreaRegistration.cs" caret="47" fromTop="2" />
+    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Areas/d:SuperUser/d:Controllers/f:AuthorizationController.cs" caret="1170" fromTop="20" />
+    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Application/d:ActionFilters/f:GlobalSecurityActionFilter.cs" caret="48" fromTop="1" />
+    <File id="D2E694FC-88A0-46C9-9ADA-930B53CCB47A/d:Entities/f:RolePermission.cs" caret="339" fromTop="12" />
+    <File id="D2E694FC-88A0-46C9-9ADA-930B53CCB47A/d:EF/f:RadaCodeWebStoreContext.cs" caret="683" fromTop="15" />
+    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Application/d:ActionFilters/f:PermissionsBasedAuthorizationFilter.cs" caret="396" fromTop="12" />
+    <File id="D2E694FC-88A0-46C9-9ADA-930B53CCB47A/d:Entities/f:WebUser.cs" caret="1511" fromTop="36" />
+    <File id="D2E694FC-88A0-46C9-9ADA-930B53CCB47A/d:Entities/f:SoftwareProject.cs" caret="1133" fromTop="32" />
+    <File id="8D2C41C2-1E19-44E2-A384-55895B2181FE/f:ActivityBrocker.cs" caret="105" fromTop="4" />
+    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Areas/d:SuperUser/d:Controllers/f:PutatyManagementController.cs" caret="1365" fromTop="18" />
   </RecentEdits>
 </RecentFiles>

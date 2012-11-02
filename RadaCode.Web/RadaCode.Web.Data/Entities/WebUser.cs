@@ -34,5 +34,6 @@ namespace RadaCode.Web.Data.Entities
         public virtual DateTime? PasswordVerificationTokenExpirationDate { get; set; }
 
         public virtual IList<WebUserRole> Roles { get; set; }
+        public virtual IList<UserActivity> Activities { get; set; }
     }
 }

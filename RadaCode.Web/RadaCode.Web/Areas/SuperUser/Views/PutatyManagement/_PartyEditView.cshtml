@@ -1,0 +1,23 @@
+﻿<div id="party-edit-block">
+    <div class="input-prepend">
+        <span class="add-on">Редактирование партии</span><input class="span2 party-name" id="prependedInput" size="16" data-bind="value: Name" type="text">
+    </div>
+    <br />
+    <div data-bind="visible: HasDescr" style="margin-bottom: 15px;">
+        <span>Описание:</span><br /> <textarea name="party-descr" data-bind="ckeditor: Descr"></textarea>
+    </div>
+    <button class="btn btn-success" data-bind="visible: !HasDescr(), click: CreatePartyProfile">
+        <i class="icon-plus-sign icon-white"></i>
+        <span>Создать профиль партии</span>
+    </button>
+    <div data-bind="style: { height: !DeputiesShown() ? '30px' : '0px' }">
+        <button class="btn btn-warning" data-bind="click: SaveEdits, visible: HasUnsavedChanges">
+            <i class="icon-ok icon-white"></i>
+            <span data-bind="text: SaveChangesText"></span>
+        </button>
+            <button class="btn btn-primary load-deputies" data-bind="click: ListPartyDeputies, visible: !DeputiesShown()">
+                <i class="icon-list icon-white"></i>
+                <span>Загрузить список депутатов партии</span>
+        </button>
+    </div>
+</div>
