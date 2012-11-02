@@ -13,4 +13,15 @@ namespace RadaCode.Web.Data.Entities
             Id = Guid.NewGuid();
         }
     }
+
+    public abstract class ActionStampableIdableEntity : ActionStampable
+    {
+        [Key]
+        public Guid Id { get; set; }
+
+        protected ActionStampableIdableEntity()
+        {
+            Id = Guid.NewGuid();
+        }
+    }
 }

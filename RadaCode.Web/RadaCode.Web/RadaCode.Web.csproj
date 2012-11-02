@@ -329,6 +329,7 @@
   <ItemGroup>
     <Folder Include="Areas\Expansion\Models\" />
     <Folder Include="Areas\Shipyard\Models\" />
+    <Folder Include="Areas\SuperUser\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
