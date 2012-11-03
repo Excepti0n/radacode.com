@@ -12,21 +12,6 @@ namespace putaty.web.Areas.SuperUser.FileHandler
     {
         private readonly JavaScriptSerializer _js;
 
-        private string PartyBoysFolder
-        {
-            get { return Path.Combine(System.Web.HttpContext.Current.Server.MapPath("~/Content/voting/images/party-boys/")); }
-        }
-
-        private string PartyLogosFolder
-        {
-            get { return Path.Combine(System.Web.HttpContext.Current.Server.MapPath("~/Content/voting/images/party-logos/")); }
-        }
-
-        private string DeputiesPhotosFolder
-        {
-            get { return Path.Combine(System.Web.HttpContext.Current.Server.MapPath("~/Content/party-view/images/deputies/")); }
-        }
-
         private string CustomContentFolder
         {
             get { return Path.Combine(System.Web.HttpContext.Current.Server.MapPath("~/Content/ObligContent/")); }
@@ -113,15 +98,6 @@ namespace putaty.web.Areas.SuperUser.FileHandler
             {
                 switch (fileType)
                 {
-                    case "boy":
-                        filePath = PartyBoysFolder + oid + ".png";
-                        break;
-                    case "logo":
-                        filePath = PartyLogosFolder + oid + ".png";
-                        break;
-                    case "dep-photo":
-                        filePath = DeputiesPhotosFolder + oid + ".png";
-                        break;
                     case "oblig-content":
                         filePath = CustomContentFolder + name;
                         break;
@@ -201,15 +177,6 @@ namespace putaty.web.Areas.SuperUser.FileHandler
 
                 switch (fileType)
                 {
-                    case "boy":
-                        dirPath = PartyBoysFolder;// + context.Request["f"];
-                        break;
-                    case "logo":
-                        dirPath = PartyLogosFolder;// + context.Request["f"];
-                        break;
-                    case "dep-photo":
-                        dirPath = DeputiesPhotosFolder;// + context.Request["f"];
-                        break;
                     case "oblig-content":
                         dirPath = CustomContentFolder;
                         break;
@@ -270,12 +237,6 @@ namespace putaty.web.Areas.SuperUser.FileHandler
 
             switch (fileType)
             {
-                case "boy":
-                    filePath = PartyBoysFolder + context.Request["f"];
-                    break;
-                case "logo":
-                    filePath = PartyLogosFolder + context.Request["f"];
-                    break;
                 default:
                     return;
             }

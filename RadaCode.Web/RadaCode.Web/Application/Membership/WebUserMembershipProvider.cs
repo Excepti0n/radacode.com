@@ -53,6 +53,27 @@ namespace RadaCode.Web.Application.Membership
                 newBorn.LastActivityDate.Value, newBorn.LastPasswordChangedDate.Value, newBorn.LastLockoutDate.Value);
         }
 
+        public bool ChangePassword(string userName, string newPassword)
+        {
+            var user = _userRepository.GetUser(userName);
+            if (user == null)
+            {
+                return false;
+            }
+
+            user.PasswordFailuresSinceLastSuccess = 0;
+
+            var newHashedPassword = Crypto.HashPassword(newPassword);
+            if (newHashedPassword.Length > 128)
+            {
+                return false;
+            }
+            user.Password = newHashedPassword;
+            user.LastPasswordChangedDate = DateTime.UtcNow;
+            _userRepository.SaveChanges();
+            return true;
+        }
+
         public override bool ChangePassword(string username, string oldPassword, string newPassword)
         {
             if (string.IsNullOrEmpty(username))
@@ -218,6 +239,23 @@ namespace RadaCode.Web.Application.Membership
                                           user.LastLoginDate.Value, user.LastActivityDate.Value,
                                           user.LastPasswordChangedDate.Value, user.LastLockoutDate.Value);
             }
+        }
+
+        public MembershipUserCollection GetAllUsersInRole(string roleName)
+        {
+            var MembershipUsers = new MembershipUserCollection();
+
+            IQueryable<WebUser> Users = _userRepository.GetUsersInRole(roleName).AsQueryable();
+
+            foreach (var user in Users)
+            {
+                MembershipUsers.Add(new RadaCodeWebMembershipUser(System.Web.Security.Membership.Provider.Name, user.UserName, user.Id,
+                                          user.Email, null, null, true, user.IsLockedOut, user.CreateDate.Value,
+                                          user.LastLoginDate.Value, user.LastActivityDate.Value,
+                                          user.LastPasswordChangedDate.Value, user.LastLockoutDate.Value));
+            }
+
+            return MembershipUsers;
         }
 
         public override bool DeleteUser(string username, bool deleteAllRelatedData)

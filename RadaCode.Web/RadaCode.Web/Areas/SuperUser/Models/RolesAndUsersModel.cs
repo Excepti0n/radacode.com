@@ -1,16 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using putaty.web.Application.Membership;
+using RadaCode.Web.Application.Membership;
+using putaty.web.Areas.SuperUser.Models;
 
-namespace putaty.web.Areas.SuperUser.Models
+namespace RadaCode.Web.Areas.SuperUser.Models
 {
     public class RolesAndUsersModel
     {
         public List<RoleModel> RoleModels { get; set; }
         public List<PermissionModel> PermissionsModels { get; set; } 
-        public List<PutatyMembershipUser> UsersInFirstRole { get; set; }
+        public List<RadaCodeWebMembershipUser> UsersInFirstRole { get; set; }
 
         public List<ControllerAndActionsGroupModel> AllControllersAndActions { get; set; } 
     }

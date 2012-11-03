@@ -56,5 +56,6 @@ namespace RadaCode.Web.Data.Repositories
         bool UserExists(WebUser user);
         bool RoleExists(WebUserRole role);
         bool UserNameTaken(string userName);
+        void ClearUserRoles(string userName);
     }
 }

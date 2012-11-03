@@ -16,6 +16,10 @@ namespace RadaCode.Web.Data.Entities
 
         public virtual string Description { get; set; }
 
-        public virtual IList<WebUser> Users { get; set; } 
+        public virtual IList<WebUser> Users { get; set; }
+
+        public bool AdminFeaturesAvailable { get; set; }
+
+        public virtual IList<RolePermission> RolePermissions { get; set; } 
     }
 }

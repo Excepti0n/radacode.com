@@ -36,18 +36,18 @@
 }
 
 @Html.Hidden("FileHandlerUrl", "/Areas/SuperUser/FileHandler/Handler.ashx")
-<h1 style="text-align: center">Путатопульт приветствует тебя!</h1>
+<h1 style="text-align: center">Управление radacode.com</h1>
 <div id="management-area">
     <div id="control-area">
         <ul>
-		    <li><a href="#parties-control">Управление партиями и депутатами</a></li>
+		    <li><a href="#projects-control">Проекты РадаКод</a></li>
 		    <li><a href="#users-control">Управление пользователями</a></li>
 	    </ul>
-        <div id="parties-control">
-            @Html.Action("GetPartiesControl", "PutatyManagement")
+        <div id="projects-control">
+            @Html.Action("GetProjectsControl", "RadaCodeWebManagement")
         </div>
         <div id="users-control">
-            @Html.Action("GetUsersControl", "PutatyManagement")
+            @Html.Action("GetUsersControl", "RadaCodeWebManagement")
         </div>
     </div>
     <div id="content-browser-area" class="collapsed clearfix">

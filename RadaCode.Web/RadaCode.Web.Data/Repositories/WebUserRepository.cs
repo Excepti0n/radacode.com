@@ -241,6 +241,12 @@ namespace RadaCode.Web.Data.Repositories
             return (_db.WebUsers.SingleOrDefault(u => u.UserName == userName) != null);
         }
 
+        public void ClearUserRoles(string userName)
+        {
+            var user = _db.WebUsers.Single(vis => vis.UserName == userName);
+            user.Roles.Clear();
+        }
+
         public bool RoleExists(WebUserRole role)
         {
             if (role == null)

@@ -1,9 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
+using System.Web.Compilation;
 using System.Web.Mvc;
 using System.Web.Security;
+using Newtonsoft.Json;
+using RadaCode.Web.Application.MVC;
 using RadaCode.Web.Application.Membership;
+using RadaCode.Web.Areas.SuperUser.Models;
 using RadaCode.Web.Core.Setttings;
 using RadaCode.Web.Data.EF;
 using RadaCode.Web.Data.Entities;
@@ -12,7 +17,7 @@ using putaty.web.Areas.SuperUser.Models;
 
 namespace RadaCode.Web.Areas.SuperUser.Controllers
 {
-    [UrlAuthorize(Roles = "SuperUser", AuthUrl = "~/SuperUser/Authorization/Authenticate")]
+    [UrlAuthorize(Roles = "Admin", AuthUrl = "~/SuperUser/Authorization/Authenticate")]
     public class RadaCodeWebManagementController : Controller
     {
         private readonly IRadaCodeWebSettings _settings;
@@ -52,12 +57,12 @@ namespace RadaCode.Web.Areas.SuperUser.Controllers
             {
                 users = _membershipProvider.GetAllUsersInRole(roleNamesArray[0]);
 
-                foreach (PutatyMembershipUser user in users)
+                foreach (RadaCodeWebMembershipUser user in users)
                 {
                     user.Roles = _roleProvider.GetRolesForUser(user.UserName).ToList();
                 }
 
-                model.UsersInFirstRole = users.Cast<PutatyMembershipUser>().ToList();
+                model.UsersInFirstRole = users.Cast<RadaCodeWebMembershipUser>().ToList();
             }
 
             var CADict = GetAllControllersAndActions();
@@ -131,14 +136,15 @@ namespace RadaCode.Web.Areas.SuperUser.Controllers
         {
             var users = _membershipProvider.GetAllUsersInRole(roleName);
 
-            foreach (PutatyMembershipUser user in users)
+            foreach (RadaCodeWebMembershipUser user in users)
             {
                 user.Roles = _roleProvider.GetRolesForUser(user.UserName).ToList();
             }
 
             return Json(new { 
-                    status = "SPCD: OK", 
-                    users = users.Cast<PutatyMembershipUser>().ToList() },
+                    status = "SPCD: OK",
+                    users = users.Cast<RadaCodeWebMembershipUser>().ToList()
+            },
                 JsonRequestBehavior.AllowGet);
         }
 
@@ -162,7 +168,7 @@ namespace RadaCode.Web.Areas.SuperUser.Controllers
                 var rolesList = JsonConvert.DeserializeObject<List<string>>(newRoles);
                 foreach (var roleName in rolesList)
                 {
-                    permission.VisitorRoles.Add(_context.VisitorRoles.Single(rl => rl.RoleName == roleName));
+                    permission.VisitorRoles.Add(_context.WebUserRoles.Single(rl => rl.RoleName == roleName));
                 }
 
                 _context.SaveChanges();
@@ -302,21 +308,6 @@ namespace RadaCode.Web.Areas.SuperUser.Controllers
         #region Users
 
         [HttpPost]
-        public ActionResult UpdateDisplayName(string userName, string newDisplayName)
-        {
-            try
-            {
-                _membershipProvider.UpdateUserDisplayName(userName, newDisplayName);
-            }
-            catch(Exception ex)
-            {
-                return Json("SPCD: ERR - " + ex.Message);
-            }
-
-            return Json("SPCD: USRNMUPDATED");
-        }
-
-        [HttpPost]
         public ActionResult UpdateUserPassword(string userName, string newPass)
         {
             if (_membershipProvider.ChangePassword(userName, newPass)) return Json("SPCD: OK");
@@ -336,7 +327,7 @@ namespace RadaCode.Web.Areas.SuperUser.Controllers
             if (String.IsNullOrEmpty(roles)) return Json(new { status = "SPCD: ERR-NO-ROLES-PROVIDED" });
 
             MembershipCreateStatus status;
-            var user = _membershipProvider.CreateUser(userName, pass, email, null, null, true, null, "", "", "", displayName, out status);
+            var user = (RadaCodeWebMembershipUser)_membershipProvider.CreateUser(userName, pass, email, null, null, true, null, out status);
             if (status != MembershipCreateStatus.Success) return Json(new { status = "SPCD: ERR - " + status.ToString() });
 
             if (roles != null)
@@ -361,6 +352,97 @@ namespace RadaCode.Web.Areas.SuperUser.Controllers
         }
 
         #endregion
+
+        #endregion
+
+        #region Projects controller
+
+        public ActionResult GetProjectsControl()
+        {
+            
+        }
+
+        #endregion
+
+        #region Private Subroutines
+
+        private Dictionary<string, List<string>> GetAllControllersAndActions()
+        {
+            var controllersAndActions = new Dictionary<string, List<string>>();
+
+            foreach (var controller in GetControllers())
+            {
+                var newDictionaryEntry = new KeyValuePair<string, List<string>>(controller.Name, new List<string>());
+
+                var controllerDescriptor = new ReflectedControllerDescriptor(controller);
+
+                ActionDescriptor[] actions = controllerDescriptor.GetCanonicalActions();
+                foreach (var action in actions)
+                {
+                    var paramSignatureString = GetParamSignatureString(action);
+                    newDictionaryEntry.Value.Add(action.ActionName + paramSignatureString);
+                    //controllersAndActions.Add(action.ControllerDescriptor.ControllerName + " -> " + action.ActionName + paramSignatureString);
+
+                }
+
+                controllersAndActions.Add(newDictionaryEntry.Key, newDictionaryEntry.Value);
+            }
+
+            return controllersAndActions;
+        }
+
+        private string GetParamSignatureString(ActionDescriptor action)
+        {
+            var res = "(";
+
+            ReflectedActionDescriptor aD = action as ReflectedActionDescriptor;
+
+            foreach (var parameterDescriptor in aD.GetParameters())
+            {
+                res += parameterDescriptor.ParameterType.Name + " " + parameterDescriptor.ParameterName + ", ";
+            }
+
+            if (res == "(")
+            {
+                res += ")";
+                return res;
+            }
+
+            if (res.Substring(res.Length - 2) == ", ")
+            {
+                res = res.Substring(0, res.Length - 2);
+                res += ")";
+            }
+
+            return res;
+        }
+
+        private IEnumerable<Type> GetControllers()
+        {
+            IEnumerable<Type> typesSoFar = Type.EmptyTypes;
+            var assemblies = BuildManager.GetReferencedAssemblies();
+            foreach (Assembly assembly in assemblies)
+            {
+                Type[] typesInAsm;
+                try
+                {
+                    typesInAsm = assembly.GetTypes();
+                }
+                catch (ReflectionTypeLoadException ex)
+                {
+                    typesInAsm = ex.Types;
+                }
+                typesSoFar = typesSoFar.Concat(typesInAsm);
+            }
+            return typesSoFar.Where(type =>
+                type != null &&
+                type.IsPublic &&
+                type.IsClass &&
+                !type.IsAbstract &&
+                typeof(RadaCodeBaseController).IsAssignableFrom(type)
+                //typeof(IController).IsAssignableFrom(type)
+            );
+        }
 
         #endregion
 

@@ -65,6 +65,9 @@
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.10\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="Ninject, Version=3.0.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Ninject.3.0.1.10\lib\net40\Ninject.dll</HintPath>
@@ -116,13 +119,15 @@
     <Compile Include="Application\ActionFilters\GlobalSecurityActionFilter.cs" />
     <Compile Include="Application\ActionFilters\PermissionsBasedAuthorizationFilter.cs" />
     <Compile Include="Application\Composition\WebCompositionModule.cs" />
+    <Compile Include="Application\Membership\RadaCodeWebMembershipUser.cs" />
     <Compile Include="Application\Membership\UrlAuthorizeAttribute.cs" />
     <Compile Include="Application\Membership\WebUserMembershipProvider.cs" />
     <Compile Include="Application\Membership\WebUserRoleProvider.cs" />
+    <Compile Include="Application\MVC\RadaCodeBaseController.cs" />
     <Compile Include="Application\Routing\DomainData.cs" />
     <Compile Include="Application\Routing\DomainRoute.cs" />
     <Compile Include="Application\Routing\RoutingModule.cs" />
-    <Compile Include="Application\ViewEngine\RadaCodeViewEngine.cs" />
+    <Compile Include="Application\MVC\RadaCodeViewEngine.cs" />
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="Areas\Expansion\Controllers\ExpansionController.cs" />
     <Compile Include="Areas\Expansion\ExpansionAreaRegistration.cs" />
@@ -136,9 +141,8 @@
     </Compile>
     <Compile Include="Areas\SuperUser\Models\AddNewPermissionResultModel.cs" />
     <Compile Include="Areas\SuperUser\Models\ControllerAndActionsGroupsModel.cs" />
-    <Compile Include="Areas\SuperUser\Models\DeputyEditModel.cs" />
     <Compile Include="Areas\SuperUser\Models\LoginModel.cs" />
-    <Compile Include="Areas\SuperUser\Models\PartiesManagementModel.cs" />
+    <Compile Include="Areas\SuperUser\Models\ProjectsManagementModel.cs" />
     <Compile Include="Areas\SuperUser\Models\RolesAndUsersModel.cs" />
     <Compile Include="Areas\SuperUser\SuperUserAreaRegistration.cs" />
     <Compile Include="Controllers\AccessController.cs" />

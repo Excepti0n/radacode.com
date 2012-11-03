@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
 using System.Web.Security;
+using RadaCode.Web.Data.Entities;
 using RadaCode.Web.Data.Repositories;
 
 namespace RadaCode.Web.Application.Membership
@@ -29,6 +31,27 @@ namespace RadaCode.Web.Application.Membership
             var roles = _repository.GetRolesForUser(userName);
 
             return roles.Any(webUserRole => !_repository.RoleExists(webUserRole)) ? new string[] { string.Empty } : roles.Select(rl => rl.RoleName).ToArray();
+        }
+
+        public void ClearUserRoles(string userName)
+        {
+            _repository.ClearUserRoles(userName);
+            _repository.SaveChanges();
+        }
+
+        public void AddUserToRole(string userName, string roleName)
+        {
+            var user = _repository.GetUser(userName);
+            var role = _repository.GetRole(roleName);
+
+            if (user.Roles == null) user.Roles = new List<WebUserRole>();
+
+            if (!user.Roles.Contains(role))
+            {
+                user.Roles.Add(role);
+            }
+
+            _repository.SaveChanges();
         }
 
         public override void CreateRole(string roleName)
@@ -153,6 +176,29 @@ namespace RadaCode.Web.Application.Membership
                 if (value == null) throw new ArgumentNullException("value");
                 this.ApplicationName = this.GetType().Assembly.GetName().Name.ToString();
             }
+        }
+
+        public bool ShouldShowUserAnAdminFeatures(string userName)
+        {
+            var userRoles = _repository.GetRolesForUser(userName).ToList();
+
+            return userRoles.Any(visitorRole => visitorRole.AdminFeaturesAvailable);
+        }
+
+        public bool DoesRoleHaveAnAdminFeatures(string roleName)
+        {
+            return _repository.GetRole(roleName).AdminFeaturesAvailable;
+        }
+
+        public void SetAdminFeaturesAvailabilityForRole(string roleName, bool adminFeaturesAvailabilityValue)
+        {
+            var role = _repository.GetRole(roleName);
+
+            if (role == null) throw new Exception("No role with such name found");
+
+            role.AdminFeaturesAvailable = adminFeaturesAvailabilityValue;
+
+            _repository.SaveChanges();
         }
     }
 }
