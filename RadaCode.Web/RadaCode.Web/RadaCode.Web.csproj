@@ -129,7 +129,7 @@
     <Compile Include="Areas\Shipyard\Controllers\HomeController.cs" />
     <Compile Include="Areas\Shipyard\ShipyardAreaRegistration.cs" />
     <Compile Include="Areas\SuperUser\Controllers\AuthorizationController.cs" />
-    <Compile Include="Areas\SuperUser\Controllers\PutatyManagementController.cs" />
+    <Compile Include="Areas\SuperUser\Controllers\RadaCodeWebManagementController.cs" />
     <Compile Include="Areas\SuperUser\FileHandler\FilesStatus.cs" />
     <Compile Include="Areas\SuperUser\FileHandler\Handler.ashx.cs">
       <DependentUpon>Handler.ashx</DependentUpon>
@@ -1136,11 +1136,11 @@
     <Content Include="Areas\SuperUser\Content\ckeditor\ckeditor.pack" />
     <Content Include="Areas\SuperUser\FileHandler\Handler.ashx" />
     <Content Include="Areas\SuperUser\Views\Authorization\Authenticate.cshtml" />
-    <Content Include="Areas\SuperUser\Views\PutatyManagement\Index.cshtml" />
-    <Content Include="Areas\SuperUser\Views\PutatyManagement\_Deputies.cshtml" />
-    <Content Include="Areas\SuperUser\Views\PutatyManagement\_Parties.cshtml" />
-    <Content Include="Areas\SuperUser\Views\PutatyManagement\_PartyEditView.cshtml" />
-    <Content Include="Areas\SuperUser\Views\PutatyManagement\_Users.cshtml" />
+    <Content Include="Areas\SuperUser\Views\RadaCodeWebManagement\Index.cshtml" />
+    <Content Include="Areas\SuperUser\Views\RadaCodeWebManagement\_Deputies.cshtml" />
+    <Content Include="Areas\SuperUser\Views\RadaCodeWebManagement\_Parties.cshtml" />
+    <Content Include="Areas\SuperUser\Views\RadaCodeWebManagement\_PartyEditView.cshtml" />
+    <Content Include="Areas\SuperUser\Views\RadaCodeWebManagement\_Users.cshtml" />
     <Content Include="Areas\SuperUser\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\SuperUser\Views\Web.config" />
     <Content Include="Areas\SuperUser\Views\_ViewStart.cshtml" />

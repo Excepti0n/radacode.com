@@ -1,0 +1,27 @@
+﻿@using System.Web.Script.Serialization
+
+@{
+    Html.RequiresJs("parties-management.js", "ViewScripts", 10);
+    Html.RequiresJs("deputies-management.js", "ViewScripts", 11);
+	var initValue = @Html.Raw(new JavaScriptSerializer().Serialize(Model));
+}
+
+
+@Html.Hidden("GetDescrUrl", Url.Action("GetPartyDescription", "PutatyManagement"))
+@Html.Hidden("GetDeputiesForPartyUrl", Url.Action("GetDeputiesForParty", "PutatyManagement"))
+@Html.Hidden("GetDeputiesManagementViewUrl", Url.Action("GetDeputiesManagementView", "PutatyManagement"))
+@Html.Hidden("CreatePartyProfileUrl", Url.Action("CreatePartyProfile", "PutatyManagement"))
+@Html.Hidden("UpdatePartyInfoUrl", Url.Action("UpdatePartyInfo", "PutatyManagement"))
+@Html.Hidden("UpdateDeputyInfoUrl", Url.Action("UpdateDeputyInfo", "PutatyManagement"))
+@Html.Hidden("GetPartyEditViewUrl", Url.Action("GetPartyEditBlock", "PutatyManagement"))
+<div id="parties-management-view">
+    @Html.Hidden("initial-parties-list", (HtmlString)initValue)
+    <div class="outlined" id="parties-list-wrapper">
+    <ul id="parties-list" class="unstyled" data-bind="foreach: Parties">
+        <li data-bind="text: Name, click: OpenPartyForEdit, css: { selected: Selected() }"></li>
+    </ul>
+    </div>
+    <div id="party-edit-block-wrapper" class="outlined" data-bind="visible: PartyEditBlockVisible">
+    </div>
+
+</div>

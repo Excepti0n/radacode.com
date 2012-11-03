@@ -43,20 +43,7 @@ namespace RadaCode.Web.Areas.SuperUser.Controllers
                     }
                     else
                     {
-                        return RedirectToAction("Index", "Projects");
-                    }
-
-                    if (!String.IsNullOrEmpty(HttpContext.Request.UrlReferrer.AbsoluteUri))
-                        returnUrl = HttpContext.Request.UrlReferrer.AbsoluteUri;
-
-                    if (Url.IsLocalUrl(returnUrl) && returnUrl.Length > 1 && returnUrl.StartsWith("/")
-                        && !returnUrl.StartsWith("//") && !returnUrl.StartsWith("/\\"))
-                    {
-                        return new RedirectResult(returnUrl);
-                    }
-                    else
-                    {
-                        return RedirectToAction("Index", "PutatyManagement");
+                        return RedirectToAction("Index", "RadaCodeWebManagement");
                     }
                 }
                 else
