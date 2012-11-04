@@ -1,6 +1,5 @@
 ﻿<RecentFiles>
   <RecentFiles>
-    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Areas/d:SuperUser/f:SuperUserAreaRegistration.cs" caret="0" fromTop="0" />
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Areas/d:SuperUser/d:Views/d:Shared/f:_Layout.cshtml" caret="2711" fromTop="64" />
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Areas/d:SuperUser/d:FileHandler/f:FilesStatus.cs" caret="0" fromTop="0" />
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Areas/d:SuperUser/d:Views/d:RadaCodeWebManagement/f:_Users.cshtml" caret="7387" fromTop="17" />
@@ -30,9 +29,9 @@
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Areas/d:SuperUser/d:Controllers/f:RadaCodeWebManagementController.cs" caret="12750" fromTop="19" />
     <File id="D2E694FC-88A0-46C9-9ADA-930B53CCB47A/d:Entities/f:SoftwareProject.cs" caret="1178" fromTop="20" />
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Areas/d:SuperUser/d:Models/f:ProjectsManagementModel.cs" caret="1644" fromTop="20" />
+    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Content/d:home/f:home.js" caret="4455" fromTop="7" />
   </RecentFiles>
   <RecentEdits>
-    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Views/f:Web.config" caret="859" fromTop="10" />
     <File id="D2E694FC-88A0-46C9-9ADA-930B53CCB47A/d:EF/f:RadaCodeWebStoreContextInitializer.cs" caret="1017" fromTop="25" />
     <File id="D2E694FC-88A0-46C9-9ADA-930B53CCB47A/f:App.config" caret="534" fromTop="7" />
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/f:Web.config" caret="683" fromTop="8" />
@@ -62,5 +61,6 @@
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Areas/d:SuperUser/d:Views/d:RadaCodeWebManagement/f:Index.cshtml" caret="2163" fromTop="10" />
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Areas/d:SuperUser/d:Controllers/f:RadaCodeWebManagementController.cs" caret="12723" fromTop="17" />
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Areas/d:SuperUser/d:Models/f:ProjectsManagementModel.cs" caret="1644" fromTop="20" />
+    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Content/d:home/f:home.js" caret="4455" fromTop="13" />
   </RecentEdits>
 </RecentFiles>
