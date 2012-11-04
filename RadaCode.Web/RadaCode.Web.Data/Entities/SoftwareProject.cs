@@ -23,12 +23,11 @@ namespace RadaCode.Web.Data.Entities
         public string ProjectDescriptionMarkup { get; set; }
     }
 
-    public class WebDevelopmentProject: SoftwareProject
-    {
-        
-    }
+    public class WebDevelopmentProject: SoftwareProject {}
 
-    public class MobileDevelopment: SoftwareProject
+    public class DistributedDevelopmentProject: SoftwareProject {}
+
+    public class MobileDevelopmentProject: SoftwareProject
     {
         public virtual List<string> PlatformsSupported { get; set; }
     }

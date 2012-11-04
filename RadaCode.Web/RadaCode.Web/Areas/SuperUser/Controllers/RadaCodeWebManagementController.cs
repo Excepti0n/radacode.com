@@ -308,6 +308,21 @@ namespace RadaCode.Web.Areas.SuperUser.Controllers
         #region Users
 
         [HttpPost]
+        public ActionResult UpdateDisplayName(string userName, string newDisplayName)
+        {
+            try
+            {
+                _membershipProvider.UpdateUserDisplayName(userName, newDisplayName);
+            }
+            catch (Exception ex)
+            {
+                return Json("SPCD: ERR - " + ex.Message);
+            }
+
+            return Json("SPCD: USRNMUPDATED");
+        }
+
+        [HttpPost]
         public ActionResult UpdateUserPassword(string userName, string newPass)
         {
             if (_membershipProvider.ChangePassword(userName, newPass)) return Json("SPCD: OK");
@@ -359,8 +374,494 @@ namespace RadaCode.Web.Areas.SuperUser.Controllers
 
         public ActionResult GetProjectsControl()
         {
-            
+            var projectsModel = new ProjectsManagementModel();
+
+            foreach (var industry in _context.Industries.ToList())
+            {
+                projectsModel.Industries.Add(new IndustryModel
+                                                 {
+                                                     Id = industry.Id,
+                                                     Name = industry.Name
+                                                 });
+            }
+
+            foreach (var customer in _context.Customers.ToList())
+            {
+                projectsModel.Clients.Add(new ClientModel
+                                              {
+                                                  Id = customer.Id,
+                                                  CustomerCompanySize = customer.CustomerCompanySize,
+                                                  IndustryId = customer.Industry.Id,
+                                                  IndustryName = customer.Industry.Name,
+                                                  Name = customer.CustomerName,
+                                                  NetRevenue = customer.NetRevenue,
+                                                  WebSiteUrl = customer.WebSiteUrl
+                                              });
+            }
+
+            foreach (var sp in _context.SoftwareProjects.ToList())
+            {
+                if(sp is WebDevelopmentProject)
+                {
+                    projectsModel.WebProjects.Add(new WebProjectModel
+                                                      {
+                                                          Id = sp.Id,
+                                                          ClientId = sp.Customer.Id,
+                                                          ClientName = sp.Customer.CustomerName,
+                                                          CurrentUsersCount = sp.CurrentUsersCount,
+                                                          DateFinished = sp.DateFinished,
+                                                          DateStarted = sp.DateStarted,
+                                                          Description = sp.Description,
+                                                          IsCloudConnected = sp.IsCloudConnected,
+                                                          Name = sp.Name,
+                                                          ProjectActualCompletionSpan = sp.ProjectActualCompletionSpan,
+                                                          ProjectEstimate = sp.ProjectEstimate,
+                                                          ProjectDescriptionMarkup = sp.ProjectDescriptionMarkup,
+                                                          ROIpercentage = sp.ROIpercentage, 
+                                                          SpecialFeatures = sp.SpecialFeatures,
+                                                          TechnologiesUsed = sp.TechnologiesUsed,
+                                                          WebSiteUrl = sp.WebSiteUrl
+                                                      });
+                } else if (sp is MobileDevelopmentProject)
+                {
+                    projectsModel.MobileProjects.Add(new MobileProjectModel
+                    {
+                        Id = sp.Id,
+                        ClientId = sp.Customer.Id,
+                        ClientName = sp.Customer.CustomerName,
+                        CurrentUsersCount = sp.CurrentUsersCount,
+                        DateFinished = sp.DateFinished,
+                        DateStarted = sp.DateStarted,
+                        Description = sp.Description,
+                        IsCloudConnected = sp.IsCloudConnected,
+                        Name = sp.Name,
+                        ProjectActualCompletionSpan = sp.ProjectActualCompletionSpan,
+                        ProjectEstimate = sp.ProjectEstimate,
+                        ProjectDescriptionMarkup = sp.ProjectDescriptionMarkup,
+                        ROIpercentage = sp.ROIpercentage,
+                        SpecialFeatures = sp.SpecialFeatures,
+                        TechnologiesUsed = sp.TechnologiesUsed,
+                        WebSiteUrl = sp.WebSiteUrl,
+                        PlatformsSupported = (sp as MobileDevelopmentProject).PlatformsSupported
+                    });
+                } else if (sp is DistributedDevelopmentProject)
+                {
+                    projectsModel.CloudProjects.Add(new DistributedProjectModel
+                    {
+                        Id = sp.Id,
+                        ClientId = sp.Customer.Id,
+                        ClientName = sp.Customer.CustomerName,
+                        CurrentUsersCount = sp.CurrentUsersCount,
+                        DateFinished = sp.DateFinished,
+                        DateStarted = sp.DateStarted,
+                        Description = sp.Description,
+                        IsCloudConnected = sp.IsCloudConnected,
+                        Name = sp.Name,
+                        ProjectActualCompletionSpan = sp.ProjectActualCompletionSpan,
+                        ProjectEstimate = sp.ProjectEstimate,
+                        ProjectDescriptionMarkup = sp.ProjectDescriptionMarkup,
+                        ROIpercentage = sp.ROIpercentage,
+                        SpecialFeatures = sp.SpecialFeatures,
+                        TechnologiesUsed = sp.TechnologiesUsed,
+                        WebSiteUrl = sp.WebSiteUrl
+                    });
+                }
+            }
+
+            return PartialView("_Projects", projectsModel);
         }
+
+        #region Industries
+
+        [HttpPost]
+        public JsonResult AddIndustry(string name)
+        {
+            if (String.IsNullOrEmpty(name)) return Json(new { status = "SPCD: PARAM-ERROR" });
+
+            var industry = _context.Industries.Add(new Industry
+                                        {
+                                            Name = name
+                                        });
+            try
+            {
+                _context.SaveChanges();
+            }
+            catch(Exception ex)
+            {
+                return Json(new {status = "SPCD: ERROR", error = ex.Message});
+            }
+
+            return Json(new {status = "SPCD: OK", industry});
+        }
+
+        [HttpPost]
+        public JsonResult RemoveIndustry(string id)
+        {
+            if (String.IsNullOrEmpty(id)) return Json(new { status = "SPCD: PARAM-ERROR" });
+
+            var gid = Guid.Parse(id);
+
+            var industryToRemove = _context.Industries.SingleOrDefault(ind => ind.Id == gid);
+
+            if(industryToRemove == null)
+            {
+                return Json(new { status = "SPCD: NO-IND-FOUND" });
+            }
+
+            _context.Industries.Remove(industryToRemove);
+
+            try
+            {
+                _context.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                return Json(new { status = "SPCD: ERROR", error = ex.Message });
+            }
+
+            return Json(new { status = "SPCD: OK"});
+        }
+
+        [HttpPost]
+        public JsonResult UpdateIndustry(string id, string newName)
+        {
+            if (String.IsNullOrEmpty(id) || String.IsNullOrEmpty(newName)) return Json(new { status = "SPCD: PARAM-ERROR" });
+
+            var gid = Guid.Parse(id);
+
+            var industryToUpdate = _context.Industries.SingleOrDefault(ind => ind.Id == gid);
+
+            if (industryToUpdate == null)
+            {
+                return Json(new { status = "SPCD: NO-IND-FOUND" });
+            }
+
+            industryToUpdate.Name = newName;
+
+            try
+            {
+                _context.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                return Json(new { status = "SPCD: ERROR", error = ex.Message });
+            }
+
+            return Json(new { status = "SPCD: OK", industry = industryToUpdate });
+        }
+
+        #endregion
+
+        #region Customers
+
+        [HttpPost]
+        public JsonResult AddCustomer(string name, string industryId, string size, string ravenue, string webUrl)
+        {
+            if (String.IsNullOrEmpty(name) || 
+                String.IsNullOrEmpty(industryId) || 
+                String.IsNullOrEmpty(size) || 
+                String.IsNullOrEmpty(ravenue) || 
+                String.IsNullOrEmpty(webUrl)) return Json(new { status = "SPCD: PARAM-ERROR" });
+
+            var inId = Guid.Parse(industryId);
+
+            var industry = _context.Industries.SingleOrDefault(ind => ind.Id == inId);
+
+            if (industry == null) return Json(new { status = "SPCD: NO-IND-FOUND" });
+
+            var customer =_context.Customers.Add(new Customer
+                                       {
+                                           CustomerName = name,
+                                           CustomerCompanySize = size,
+                                           Id = inId,
+                                           Industry = industry,
+                                           NetRevenue = ravenue,
+                                           WebSiteUrl = webUrl
+                                       }
+                );
+
+            try
+            {
+                _context.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                return Json(new { status = "SPCD: ERROR", error = ex.Message });
+            }
+
+            return Json(new { status = "SPCD: OK", customer });
+        }
+
+        [HttpPost]
+        public JsonResult RemoveCustomer(string id)
+        {
+            if (String.IsNullOrEmpty(id)) return Json(new { status = "SPCD: PARAM-ERROR" });
+
+            var gid = Guid.Parse(id);
+
+            var customerToRemove = _context.Customers.SingleOrDefault(ct => ct.Id == gid);
+
+            if (customerToRemove == null)
+            {
+                return Json(new { status = "SPCD: NO-CUST-FOUND" });
+            }
+
+            _context.Customers.Remove(customerToRemove);
+
+            try
+            {
+                _context.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                return Json(new { status = "SPCD: ERROR", error = ex.Message });
+            }
+
+            return Json(new { status = "SPCD: OK" });
+        }
+
+        [HttpPost]
+        public JsonResult UpdateCustomer(string id, string name, string industryId, string size, string ravenue, string webUrl)
+        {
+            if (String.IsNullOrEmpty(id) || 
+                String.IsNullOrEmpty(name) || 
+                String.IsNullOrEmpty(industryId) || 
+                String.IsNullOrEmpty(size) || 
+                String.IsNullOrEmpty(ravenue) || 
+                String.IsNullOrEmpty(webUrl)) return Json(new { status = "SPCD: PARAM-ERROR" });
+
+            var inId = Guid.Parse(industryId);
+
+            var industryToUpdate = _context.Industries.SingleOrDefault(ind => ind.Id == inId);
+
+            if (industryToUpdate == null)
+            {
+                return Json(new { status = "SPCD: NO-IND-FOUND" });
+            }
+
+            var ctId = Guid.Parse(id);
+
+            var customerToUpdate = _context.Customers.SingleOrDefault(ct => ct.Id == ctId);
+
+            if (customerToUpdate == null)
+            {
+                return Json(new { status = "SPCD: NO-CUST-FOUND" });
+            }
+
+            customerToUpdate.CustomerName = name;
+            customerToUpdate.CustomerCompanySize = size;
+            customerToUpdate.Industry = industryToUpdate;
+            customerToUpdate.NetRevenue = ravenue;
+            customerToUpdate.WebSiteUrl = webUrl;
+
+            try
+            {
+                _context.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                return Json(new { status = "SPCD: ERROR", error = ex.Message });
+            }
+
+            return Json(new { status = "SPCD: OK", customer = customerToUpdate });
+        }
+
+        #endregion
+
+        #region Projects
+
+        [HttpPost]
+        public JsonResult AddProject(string type, string name, string description, string customerId, string[] technologiesUsed, string dateStarted, string dateFinished, string estimate, string usersCount, string roi, string[] specialFeatures, string isCloudConnected, string markup, string webUrl, string[] platformsSupported)
+        {
+            if (String.IsNullOrEmpty(name) ||
+                String.IsNullOrEmpty(description) ||
+                String.IsNullOrEmpty(customerId) ||
+                !technologiesUsed.Any() ||
+                String.IsNullOrEmpty(dateStarted) ||
+                String.IsNullOrEmpty(dateFinished) ||
+                String.IsNullOrEmpty(estimate) ||
+                String.IsNullOrEmpty(usersCount) ||
+                String.IsNullOrEmpty(roi) ||
+                String.IsNullOrEmpty(isCloudConnected) ||
+                String.IsNullOrEmpty(markup) ||
+                String.IsNullOrEmpty(type) ||
+                String.IsNullOrEmpty(webUrl)) return Json(new { status = "SPCD: PARAM-ERROR" });
+
+            var cusId = Guid.Parse(customerId);
+
+            var customer = _context.Customers.SingleOrDefault(cs => cs.Id == cusId);
+
+            if (customer == null) return Json(new { status = "SPCD: NO-CUST-FOUND" });
+
+            SoftwareProject projectToAdd;
+
+            switch (type)
+            {
+                case "Web":
+                    projectToAdd = new WebDevelopmentProject
+                                       {
+                                           Name = name,
+                                           CurrentUsersCount = int.Parse(usersCount),
+                                           Customer = customer,
+                                           DateFinished = DateTime.Parse(dateFinished),
+                                           DateStarted = DateTime.Parse(dateStarted),
+                                           Description = description,
+                                           IsCloudConnected = bool.Parse(isCloudConnected),
+                                           ProjectDescriptionMarkup = markup,
+                                           ProjectEstimate = TimeSpan.Parse(estimate),
+                                           ROIpercentage = int.Parse(roi),
+                                           WebSiteUrl = webUrl,
+                                           SpecialFeatures = specialFeatures.ToList(),
+                                           TechnologiesUsed = technologiesUsed.ToList()
+                                       };
+                    break;
+                case "Mobile":
+                    projectToAdd = new MobileDevelopmentProject
+                    {
+                        Name = name,
+                        CurrentUsersCount = int.Parse(usersCount),
+                        Customer = customer,
+                        DateFinished = DateTime.Parse(dateFinished),
+                        DateStarted = DateTime.Parse(dateStarted),
+                        Description = description,
+                        IsCloudConnected = bool.Parse(isCloudConnected),
+                        ProjectDescriptionMarkup = markup,
+                        ProjectEstimate = TimeSpan.Parse(estimate),
+                        ROIpercentage = int.Parse(roi),
+                        WebSiteUrl = webUrl,
+                        SpecialFeatures = specialFeatures.ToList(),
+                        TechnologiesUsed = technologiesUsed.ToList(),
+                        PlatformsSupported = platformsSupported.ToList()
+                    };
+                    break;
+                case "Distributed":
+                    projectToAdd = new DistributedDevelopmentProject
+                    {
+                        Name = name,
+                        CurrentUsersCount = int.Parse(usersCount),
+                        Customer = customer,
+                        DateFinished = DateTime.Parse(dateFinished),
+                        DateStarted = DateTime.Parse(dateStarted),
+                        Description = description,
+                        IsCloudConnected = bool.Parse(isCloudConnected),
+                        ProjectDescriptionMarkup = markup,
+                        ProjectEstimate = TimeSpan.Parse(estimate),
+                        ROIpercentage = int.Parse(roi),
+                        WebSiteUrl = webUrl,
+                        SpecialFeatures = specialFeatures.ToList(),
+                        TechnologiesUsed = technologiesUsed.ToList()
+                    };
+                    break;
+                default:
+                    return Json(new { status = "SPCD: UNKNOWN-TYPE" });
+            }
+
+            _context.SoftwareProjects.Add(projectToAdd);
+
+            try
+            {
+                _context.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                return Json(new { status = "SPCD: ERROR", error = ex.Message });
+            }
+
+            return Json(new { status = "SPCD: OK", project = projectToAdd });
+        }
+
+        [HttpPost]
+        public JsonResult RemoveProject(string id)
+        {
+            if (String.IsNullOrEmpty(id)) return Json(new { status = "SPCD: PARAM-ERROR" });
+
+            var gid = Guid.Parse(id);
+
+            var projectToRemove = _context.SoftwareProjects.SingleOrDefault(pr => pr.Id == gid);
+
+            if (projectToRemove == null)
+            {
+                return Json(new { status = "SPCD: NO-CUST-FOUND" });
+            }
+
+            _context.SoftwareProjects.Remove(projectToRemove);
+
+            try
+            {
+                _context.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                return Json(new { status = "SPCD: ERROR", error = ex.Message });
+            }
+
+            return Json(new { status = "SPCD: OK" });
+        }
+
+        [HttpPost]
+        public JsonResult UpdateProject(string id, string type, string name, string description, string customerId, string[] technologiesUsed, string dateStarted, string dateFinished, string estimate, string usersCount, string roi, string[] specialFeatures, string isCloudConnected, string markup, string webUrl, string[] platformsSupported)
+        {
+            if (String.IsNullOrEmpty(id) ||
+                String.IsNullOrEmpty(description) ||
+                String.IsNullOrEmpty(customerId) ||
+                !technologiesUsed.Any() ||
+                String.IsNullOrEmpty(dateStarted) ||
+                String.IsNullOrEmpty(dateFinished) ||
+                String.IsNullOrEmpty(estimate) ||
+                String.IsNullOrEmpty(usersCount) ||
+                String.IsNullOrEmpty(roi) ||
+                String.IsNullOrEmpty(isCloudConnected) ||
+                String.IsNullOrEmpty(markup) ||
+                String.IsNullOrEmpty(type) ||
+                String.IsNullOrEmpty(webUrl)) return Json(new { status = "SPCD: PARAM-ERROR" });
+
+            var cusId = Guid.Parse(customerId);
+
+            var customer = _context.Customers.SingleOrDefault(cs => cs.Id == cusId);
+
+            if (customer == null) return Json(new { status = "SPCD: NO-CUST-FOUND" });
+
+            var prId = Guid.Parse(id);
+
+            var projectToUpdate = _context.SoftwareProjects.SingleOrDefault(pr => pr.Id == prId);
+
+            if (projectToUpdate == null) return Json(new { status = "SPCD: NO-PR-FOUND" });
+
+            projectToUpdate.Name = name;
+            projectToUpdate.CurrentUsersCount = int.Parse(usersCount);
+            projectToUpdate.Customer = customer;
+            projectToUpdate.DateFinished = DateTime.Parse(dateFinished);
+            projectToUpdate.DateStarted = DateTime.Parse(dateStarted);
+            projectToUpdate.Description = description;
+            projectToUpdate.IsCloudConnected = bool.Parse(isCloudConnected);
+            projectToUpdate.ProjectDescriptionMarkup = markup;
+            projectToUpdate.ProjectEstimate = TimeSpan.Parse(estimate);
+            projectToUpdate.ROIpercentage = int.Parse(roi);
+            projectToUpdate.WebSiteUrl = webUrl;
+            projectToUpdate.SpecialFeatures = specialFeatures.ToList();
+            projectToUpdate.TechnologiesUsed = technologiesUsed.ToList();
+            projectToUpdate.CurrentUsersCount = int.Parse(usersCount);
+
+            if(type == "Mobile")
+            {
+                var mobileDevelopmentProject = projectToUpdate as MobileDevelopmentProject;
+                if (mobileDevelopmentProject != null)
+                    mobileDevelopmentProject.PlatformsSupported = platformsSupported.ToList();
+            }
+
+            try
+            {
+                _context.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                return Json(new { status = "SPCD: ERROR", error = ex.Message });
+            }
+
+            return Json(new { status = "SPCD: OK", project = projectToUpdate });
+        }
+
+        #endregion
 
         #endregion
 

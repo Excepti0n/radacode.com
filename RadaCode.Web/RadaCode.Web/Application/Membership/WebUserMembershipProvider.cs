@@ -74,6 +74,17 @@ namespace RadaCode.Web.Application.Membership
             return true;
         }
 
+        public void UpdateUserDisplayName(string userName, string newDisplayName)
+        {
+            var user = _userRepository.GetUser(userName);
+
+            if (user == null) throw new Exception("No user with such UserName is found");
+
+            user.DisplayName = newDisplayName;
+
+            _userRepository.SaveChanges();
+        }
+
         public override bool ChangePassword(string username, string oldPassword, string newPassword)
         {
             if (string.IsNullOrEmpty(username))
@@ -252,7 +263,7 @@ namespace RadaCode.Web.Application.Membership
                 MembershipUsers.Add(new RadaCodeWebMembershipUser(System.Web.Security.Membership.Provider.Name, user.UserName, user.Id,
                                           user.Email, null, null, true, user.IsLockedOut, user.CreateDate.Value,
                                           user.LastLoginDate.Value, user.LastActivityDate.Value,
-                                          user.LastPasswordChangedDate.Value, user.LastLockoutDate.Value));
+                                          user.LastPasswordChangedDate.Value, user.LastLockoutDate.Value, user.DisplayName));
             }
 
             return MembershipUsers;

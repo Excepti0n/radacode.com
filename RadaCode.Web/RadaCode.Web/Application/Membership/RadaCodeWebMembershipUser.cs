@@ -8,7 +8,11 @@ namespace RadaCode.Web.Application.Membership
 {
     public class RadaCodeWebMembershipUser: MembershipUser
     {
+        private string _displayName;
+
         public List<string> Roles { get; set; }
+        public string DisplayName { get { return _displayName; } }
+
 
         public RadaCodeWebMembershipUser(string providername,
                                   string username,
@@ -22,7 +26,8 @@ namespace RadaCode.Web.Application.Membership
                                   DateTime lastLoginDate,
                                   DateTime lastActivityDate,
                                   DateTime lastPasswordChangedDate,
-                                  DateTime lastLockedOutDate) :
+                                  DateTime lastLockedOutDate,
+                                  string displayName) :
                                   base(providername,
                                        username,
                                        providerUserKey,
@@ -35,6 +40,14 @@ namespace RadaCode.Web.Application.Membership
                                        lastLoginDate,
                                        lastActivityDate,
                                        lastPasswordChangedDate,
-                                       lastLockedOutDate) {}
+                                       lastLockedOutDate)
+        {
+            _displayName = displayName;
+        }
+
+        public void ChangeDisplayName(string newDisplayName)
+        {
+            _displayName = newDisplayName;
+        }
     }
 }

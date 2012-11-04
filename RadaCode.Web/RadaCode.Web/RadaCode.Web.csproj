@@ -1148,6 +1148,7 @@
     <Content Include="Areas\SuperUser\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\SuperUser\Views\Web.config" />
     <Content Include="Areas\SuperUser\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\SuperUser\Views\RadaCodeWebManagement\_Projects.cshtml" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Scripts\history.js\amplify.store.js" />

@@ -1,5 +1,5 @@
 ﻿@{
-    ViewBag.Title = "Путатопульт";
+    ViewBag.Title = "Панель администрирования radacode.com";
 
     //jQuery
     Html.RequiresJs("http://ajax.microsoft.com/ajax/jQuery.Validate/1.6/jQuery.Validate.min.js", 9);
@@ -36,12 +36,12 @@
 }
 
 @Html.Hidden("FileHandlerUrl", "/Areas/SuperUser/FileHandler/Handler.ashx")
-<h1 style="text-align: center">Управление radacode.com</h1>
+<h1 style="text-align: center">Панель администрирования radacode.com</h1>
 <div id="management-area">
     <div id="control-area">
         <ul>
-		    <li><a href="#projects-control">Проекты РадаКод</a></li>
-		    <li><a href="#users-control">Управление пользователями</a></li>
+		    <li><a href="#projects-control">Проекты</a></li>
+		    <li><a href="#users-control">Пользователи</a></li>
 	    </ul>
         <div id="projects-control">
             @Html.Action("GetProjectsControl", "RadaCodeWebManagement")

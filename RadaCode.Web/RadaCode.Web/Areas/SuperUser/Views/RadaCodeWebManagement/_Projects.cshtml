@@ -1,0 +1,18 @@
+﻿@using System.Web.Script.Serialization
+@model RadaCode.Web.Areas.SuperUser.Models.ProjectsManagementModel
+
+@{
+    Html.RequiresJs("user-view-management.js", "ViewScripts", 10);
+    //Html.RequiresJs("deputies-management.js", "ViewScripts", 11);
+	var initValue = @Html.Raw(new JavaScriptSerializer().Serialize(Model));
+}
+
+@Html.Hidden("AddIndustryUrl", Url.Action("AddIndustry", "RadaCodeWebManagement"))
+@Html.Hidden("RemoveIndustryUrl", Url.Action("RemoveIndustry", "RadaCodeWebManagement"))
+@Html.Hidden("UpdateIndustryUrl", Url.Action("UpdateIndustry", "RadaCodeWebManagement"))
+@Html.Hidden("AddClientUrl", Url.Action("AddClient", "RadaCodeWebManagement"))
+@Html.Hidden("RemoveClientUrl", Url.Action("RemoveClient", "RadaCodeWebManagement"))
+@Html.Hidden("UpdateClientUrl", Url.Action("UpdateClient", "RadaCodeWebManagement"))
+@Html.Hidden("AddProjectUrl", Url.Action("AddProject", "RadaCodeWebManagement"))
+@Html.Hidden("RemoveProjectUrl", Url.Action("RemoveProject", "RadaCodeWebManagement"))
+@Html.Hidden("UpdateProjectUrl", Url.Action("UpdateProject", "RadaCodeWebManagement"))

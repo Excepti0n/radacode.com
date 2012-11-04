@@ -44,16 +44,21 @@ namespace RadaCode.Web.Areas.SuperUser.Models
     {
     }
 
-    public class MobileProjectMode: ProjectModel
+    public class MobileProjectModel: ProjectModel
     {
         public List<string> PlatformsSupported { get; set; }
+    }
+
+    public class DistributedProjectModel: ProjectModel
+    {
     }
 
     public class ProjectsManagementModel
     {
         public List<IndustryModel> Industries { get; set; }
-        public List<ClientModel> ClientModels { get; set; }
+        public List<ClientModel> Clients { get; set; }
         public List<WebProjectModel> WebProjects { get; set; }
-        public List<MobileProjectModel> MobileProjects { get; set; } 
+        public List<MobileProjectModel> MobileProjects { get; set; }
+        public List<DistributedProjectModel> CloudProjects { get; set; } 
     }
 }

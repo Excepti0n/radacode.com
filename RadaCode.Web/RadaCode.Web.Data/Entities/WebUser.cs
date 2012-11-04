@@ -14,6 +14,8 @@ namespace RadaCode.Web.Data.Entities
         [Required]
         public virtual string UserName { get; set; }
 
+        public string DisplayName { get; set; }
+
         [Required, DataType(DataType.Password)]
         public virtual string Password { get; set; }
 
