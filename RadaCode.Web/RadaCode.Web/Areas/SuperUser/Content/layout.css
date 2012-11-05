@@ -300,8 +300,8 @@ input.party-name {
     content: "Управление особыми правами доступа";
 }
 
-#party-edit-block-wrapper.outlined::after {
-    content: "Управление данными партии";
+#projects-list-wrapper.outlined::after {
+    content: "Проекты";
 }
 
 #clients-list-wrapper.outlined::after {

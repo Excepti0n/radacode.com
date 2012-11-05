@@ -579,7 +579,6 @@ namespace RadaCode.Web.Areas.SuperUser.Controllers
                                        {
                                            CustomerName = name,
                                            CustomerCompanySize = size,
-                                           Id = inId,
                                            Industry = industry,
                                            NetRevenue = ravenue,
                                            WebSiteUrl = webUrl
@@ -595,7 +594,18 @@ namespace RadaCode.Web.Areas.SuperUser.Controllers
                 return Json(new { status = "SPCD: ERROR", error = ex.Message });
             }
 
-            return Json(new { status = "SPCD: OK", customer });
+            var custModel = new ClientModel
+                                {
+                                    CustomerCompanySize = customer.CustomerCompanySize,
+                                    Id = customer.Id,
+                                    IndustryId = customer.Industry.Id,
+                                    IndustryName = customer.Industry.Name,
+                                    Name = customer.CustomerName,
+                                    NetRevenue = customer.NetRevenue,
+                                    WebSiteUrl = customer.WebSiteUrl
+                                };
+
+            return Json(new { status = "SPCD: OK", customer = custModel });
         }
 
         [HttpPost]
