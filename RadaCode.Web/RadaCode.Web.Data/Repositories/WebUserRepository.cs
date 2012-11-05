@@ -102,7 +102,7 @@ namespace RadaCode.Web.Data.Repositories
 
         public IList<WebUserRole> GetRolesForUser(WebUser user)
         {
-            return GetRolesForUser(user.Id);
+            return GetRolesForUser(user.UserName);
         }
 
         private void AddUser(WebUser user)

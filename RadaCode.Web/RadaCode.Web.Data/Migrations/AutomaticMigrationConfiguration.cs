@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Data.SqlTypes;
 using RadaCode.Web.Data.Entities;
 using RadaCode.Web.Data.Utils;
 
@@ -21,13 +22,21 @@ namespace RadaCode.Web.Data.Migrations
         {
             new List<WebUserRole>
             {
-                new WebUserRole() { RoleName = "Admin"
-                         },
-                new WebUserRole() { RoleName = "ProjectsManager"}
+                new WebUserRole() 
+                    { 
+                        Id = Guid.Parse("9727d3e4-0269-46e1-ad7c-bfbdc9c074bc"),
+                        RoleName = "Admin"
+                    },
+                new WebUserRole()
+                    {
+                        Id = Guid.Parse("b22380eb-1c28-4945-b12d-38c55099036a"),
+                        RoleName = "ProjectsManager"
+                    }
             }.ForEach(r => context.WebUserRoles.AddOrUpdate(r));
 
             var mp = new WebUser()
                 {
+                    Id = Guid.Parse("479460f6-06c1-43fb-96c3-6ff161255c04"),
                     CreateDate = DateTime.Now,
                     UserName = "MaxPavlov",
                     Password = Crypto.HashPassword("jackPecker"),

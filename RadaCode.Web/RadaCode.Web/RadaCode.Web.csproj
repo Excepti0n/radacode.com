@@ -997,8 +997,7 @@
     <Content Include="Areas\SuperUser\Content\jquery.tagsinput.css" />
     <Content Include="Areas\SuperUser\Content\jquery.tagsinput.min.js" />
     <Content Include="Areas\SuperUser\Content\layout.css" />
-    <Content Include="Areas\SuperUser\Content\ViewScripts\deputies-management.js" />
-    <Content Include="Areas\SuperUser\Content\ViewScripts\parties-management.js" />
+    <Content Include="Areas\SuperUser\Content\ViewScripts\projects-view-management.js" />
     <Content Include="Areas\SuperUser\Content\ViewScripts\user-view-management.js" />
     <Content Include="Content\global\fonts\OpenSans\OpenSans-Light-webfont.svg" />
     <Content Include="Content\global\fonts\OpenSans\OpenSans-Regular-webfont.svg" />

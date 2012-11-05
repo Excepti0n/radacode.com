@@ -219,10 +219,10 @@ namespace RadaCode.Web.Application.Membership
                     user.LastActivityDate = DateTime.UtcNow;
                     _userRepository.SaveChanges();
                 }
-                return new MembershipUser(System.Web.Security.Membership.Provider.Name, user.UserName, user.Id,
+                return new RadaCodeWebMembershipUser(System.Web.Security.Membership.Provider.Name, user.UserName, user.Id,
                                           user.Email, null, null, true, user.IsLockedOut, user.CreateDate.Value,
                                           user.LastLoginDate.Value, user.LastActivityDate.Value,
-                                          user.LastPasswordChangedDate.Value, user.LastLockoutDate.Value);
+                                          user.LastPasswordChangedDate.Value, user.LastLockoutDate.Value, user.DisplayName);
             }
         }
 
@@ -245,10 +245,10 @@ namespace RadaCode.Web.Application.Membership
                     user.LastActivityDate = DateTime.UtcNow;
                     _userRepository.SaveChanges();
                 }
-                return new MembershipUser(System.Web.Security.Membership.Provider.Name, user.UserName, user.Id,
+                return new RadaCodeWebMembershipUser(System.Web.Security.Membership.Provider.Name, user.UserName, user.Id,
                                           user.Email, null, null, true, user.IsLockedOut, user.CreateDate.Value,
                                           user.LastLoginDate.Value, user.LastActivityDate.Value,
-                                          user.LastPasswordChangedDate.Value, user.LastLockoutDate.Value);
+                                          user.LastPasswordChangedDate.Value, user.LastLockoutDate.Value, user.DisplayName);
             }
         }
 

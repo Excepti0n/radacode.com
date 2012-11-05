@@ -1,4 +1,5 @@
 ﻿using System.Web.Mvc;
+using System.Web.Routing;
 
 namespace RadaCode.Web.Areas.SuperUser
 {
@@ -14,11 +15,26 @@ namespace RadaCode.Web.Areas.SuperUser
 
         public override void RegisterArea(AreaRegistrationContext context)
         {
-            context.MapRoute(
-                "SuperUser_default",
-                "SuperUser/{controller}/{action}/{id}",
-                new { controller = "PutatyManagement", action = "Index", id = UrlParameter.Optional }
-            );
+            var dataTokens = new RouteValueDictionary();
+            var ns = new string[] { "RadaCode.Web.Areas.SuperUser.Controllers" };
+
+            dataTokens["Namespaces"] = ns;
+            dataTokens["Area"] = this.AreaName;
+
+            var areaRoute = new Route(
+                                    "SuperUser/{controller}/{action}/{id}",                                                           // Route URL
+                                    new RouteValueDictionary{
+                                            { "area" , this.AreaName}, 
+                                            { "controller" , "RadaCodeWebManagement"}, 
+                                            { "action" , "Index"}, 
+                                            { "id" , UrlParameter.Optional }
+                                        },
+                                    null,
+                                    dataTokens,
+                                    new MvcRouteHandler()                                              
+                                    );
+
+            context.Routes.Insert(2, areaRoute);
         }
     }
 }

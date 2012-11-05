@@ -2,17 +2,20 @@
 @model RadaCode.Web.Areas.SuperUser.Models.ProjectsManagementModel
 
 @{
-    Html.RequiresJs("user-view-management.js", "ViewScripts", 10);
-    //Html.RequiresJs("deputies-management.js", "ViewScripts", 11);
+    Html.RequiresJs("projects-view-management.js", "ViewScripts", 10);
 	var initValue = @Html.Raw(new JavaScriptSerializer().Serialize(Model));
 }
 
 @Html.Hidden("AddIndustryUrl", Url.Action("AddIndustry", "RadaCodeWebManagement"))
 @Html.Hidden("RemoveIndustryUrl", Url.Action("RemoveIndustry", "RadaCodeWebManagement"))
 @Html.Hidden("UpdateIndustryUrl", Url.Action("UpdateIndustry", "RadaCodeWebManagement"))
-@Html.Hidden("AddClientUrl", Url.Action("AddClient", "RadaCodeWebManagement"))
-@Html.Hidden("RemoveClientUrl", Url.Action("RemoveClient", "RadaCodeWebManagement"))
-@Html.Hidden("UpdateClientUrl", Url.Action("UpdateClient", "RadaCodeWebManagement"))
+@Html.Hidden("AddCustomerUrl", Url.Action("AddCustomer", "RadaCodeWebManagement"))
+@Html.Hidden("RemoveCustomerUrl", Url.Action("RemoveCustomer", "RadaCodeWebManagement"))
+@Html.Hidden("UpdateCustomerUrl", Url.Action("UpdateCustomer", "RadaCodeWebManagement"))
 @Html.Hidden("AddProjectUrl", Url.Action("AddProject", "RadaCodeWebManagement"))
 @Html.Hidden("RemoveProjectUrl", Url.Action("RemoveProject", "RadaCodeWebManagement"))
 @Html.Hidden("UpdateProjectUrl", Url.Action("UpdateProject", "RadaCodeWebManagement"))
+
+<div id="projects-management-view">
+    @Html.Hidden("initial-projects-data", (HtmlString)initValue)
+</div>
