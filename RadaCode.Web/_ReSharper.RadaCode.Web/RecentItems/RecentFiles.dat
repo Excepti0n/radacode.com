@@ -1,16 +1,10 @@
 ﻿<RecentFiles>
   <RecentFiles>
-    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Areas/d:SuperUser/d:Views/d:Authorization/f:Authenticate.cshtml" caret="1434" fromTop="11" />
-    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Areas/d:SuperUser/d:Content/d:ViewScripts/f:user-view-management.js" caret="14678" fromTop="6" />
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Areas/d:SuperUser/f:SuperUserAreaRegistration.cs" caret="1091" fromTop="28" />
     <File id="D2E694FC-88A0-46C9-9ADA-930B53CCB47A/d:Entities/f:WebUser.cs" caret="1253" fromTop="29" />
-    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Areas/d:SuperUser/d:Content/f:layout.css" caret="79" fromTop="6" />
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Areas/d:Expansion/f:ExpansionAreaRegistration.cs" caret="540" fromTop="18" />
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/f:Global.asax.cs" caret="581" fromTop="19" />
-    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Areas/d:SuperUser/d:Content/d:ViewScripts/f:projects-view-management.js" caret="1453" fromTop="24" />
-    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Areas/d:SuperUser/d:Views/d:RadaCodeWebManagement/f:_Projects.cshtml" caret="184" fromTop="4" />
     <File id="D2E694FC-88A0-46C9-9ADA-930B53CCB47A/d:EF/f:RadaCodeWebStoreContextInitializer.cs" caret="0" fromTop="0" />
-    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Areas/d:SuperUser/d:Views/d:RadaCodeWebManagement/f:_Users.cshtml" caret="1471" fromTop="22" />
     <File id="D2E694FC-88A0-46C9-9ADA-930B53CCB47A/d:EF/f:RadaCodeWebStoreContext.cs" caret="0" fromTop="0" />
     <File id="D2E694FC-88A0-46C9-9ADA-930B53CCB47A/f:WebDataDependenciesModule.cs" caret="0" fromTop="0" />
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Areas/d:SuperUser/d:Controllers/f:AuthorizationController.cs" caret="0" fromTop="0" />
@@ -19,7 +13,6 @@
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Application/d:ActionFilters/f:GlobalSecurityActionFilter.cs" caret="0" fromTop="0" />
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Application/d:ActionFilters/f:PermissionsBasedAuthorizationFilter.cs" caret="0" fromTop="0" />
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Application/d:Composition/f:WebCompositionModule.cs" caret="0" fromTop="0" />
-    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Areas/d:SuperUser/d:Controllers/f:RadaCodeWebManagementController.cs" caret="0" fromTop="0" />
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Application/d:Membership/f:WebUserMembershipProvider.cs" caret="0" fromTop="0" />
     <File id="D2E694FC-88A0-46C9-9ADA-930B53CCB47A/d:Repositories/f:IWebUserRepository.cs" caret="0" fromTop="0" />
     <File id="D2E694FC-88A0-46C9-9ADA-930B53CCB47A/d:Migrations/f:AutomaticMigrationConfiguration.cs" caret="2526" fromTop="17" />
@@ -27,9 +20,16 @@
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Application/d:Membership/f:RadaCodeWebMembershipUser.cs" caret="0" fromTop="0" />
     <File id="65490A0F-0FED-4E33-85A3-7113456DB32A/f:WebUserAccountCreationTests.cs" caret="382" fromTop="8" />
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Application/d:Membership/f:WebUserRoleProvider.cs" caret="982" fromTop="15" />
-    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Areas/d:SuperUser/d:Content/f:control-init-logic.js" caret="0" fromTop="0" />
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Scripts/f:jquery.validate-vsdoc.js" caret="0" fromTop="0" />
-    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Areas/d:SuperUser/d:Views/d:Shared/f:_Layout.cshtml" caret="597" fromTop="7" />
+    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Areas/d:SuperUser/d:Views/d:Shared/f:_Layout.cshtml" caret="2698" fromTop="64" />
+    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Areas/d:SuperUser/d:Content/f:control-init-logic.js" caret="779" fromTop="26" />
+    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Areas/d:SuperUser/d:Content/d:ViewScripts/f:user-view-management.js" caret="1324" fromTop="30" />
+    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Areas/d:SuperUser/d:Content/f:layout.css" caret="5011" fromTop="26" />
+    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Areas/d:SuperUser/d:Content/d:ViewScripts/f:projects-view-management.js" caret="578" fromTop="0" />
+    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Areas/d:SuperUser/d:Models/f:ProjectsManagementModel.cs" caret="621" fromTop="20" />
+    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Areas/d:SuperUser/d:Controllers/f:RadaCodeWebManagementController.cs" caret="13260" fromTop="0" />
+    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Areas/d:SuperUser/d:Views/d:RadaCodeWebManagement/f:_Users.cshtml" caret="7697" fromTop="31" />
+    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Areas/d:SuperUser/d:Views/d:RadaCodeWebManagement/f:_Projects.cshtml" caret="7091" fromTop="27" />
   </RecentFiles>
   <RecentEdits>
     <File id="8D2C41C2-1E19-44E2-A384-55895B2181FE/f:ActivityBrocker.cs" caret="105" fromTop="4" />
@@ -47,12 +47,7 @@
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Areas/d:SuperUser/d:Models/f:ProjectsManagementModel.cs" caret="1922" fromTop="38" />
     <File id="D2E694FC-88A0-46C9-9ADA-930B53CCB47A/d:Entities/f:SoftwareProject.cs" caret="1140" fromTop="29" />
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Areas/d:SuperUser/d:Views/d:RadaCodeWebManagement/f:Index.cshtml" caret="1940" fromTop="38" />
-    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Areas/d:SuperUser/d:Controllers/f:RadaCodeWebManagementController.cs" caret="33903" fromTop="24" />
-    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Areas/d:SuperUser/d:Content/d:ViewScripts/f:projects-view-management.js" caret="1914" fromTop="36" />
-    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Areas/d:SuperUser/d:Views/d:RadaCodeWebManagement/f:_Projects.cshtml" caret="184" fromTop="4" />
-    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Areas/d:SuperUser/d:Content/f:control-init-logic.js" caret="607" fromTop="18" />
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Areas/d:SuperUser/f:SuperUserAreaRegistration.cs" caret="1530" fromTop="36" />
-    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Areas/d:SuperUser/d:Content/f:layout.css" caret="79" fromTop="6" />
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Areas/d:SuperUser/d:Views/d:Authorization/f:Authenticate.cshtml" caret="1434" fromTop="11" />
     <File id="D2E694FC-88A0-46C9-9ADA-930B53CCB47A/d:Repositories/f:IWebUserRepository.cs" caret="1047" fromTop="34" />
     <File id="D2E694FC-88A0-46C9-9ADA-930B53CCB47A/d:Entities/f:WebUser.cs" caret="1253" fromTop="29" />
@@ -61,6 +56,11 @@
     <File id="D2E694FC-88A0-46C9-9ADA-930B53CCB47A/d:Migrations/f:AutomaticMigrationConfiguration.cs" caret="2526" fromTop="17" />
     <File id="D2E694FC-88A0-46C9-9ADA-930B53CCB47A/d:Repositories/f:WebUserRepository.cs" caret="417" fromTop="15" />
     <File id="65490A0F-0FED-4E33-85A3-7113456DB32A/f:WebUserAccountCreationTests.cs" caret="382" fromTop="8" />
-    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Areas/d:SuperUser/d:Views/d:Shared/f:_Layout.cshtml" caret="597" fromTop="7" />
+    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Areas/d:SuperUser/d:Views/d:Shared/f:_Layout.cshtml" caret="2698" fromTop="19" />
+    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Areas/d:SuperUser/d:Content/f:control-init-logic.js" caret="779" fromTop="26" />
+    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Areas/d:SuperUser/d:Controllers/f:RadaCodeWebManagementController.cs" caret="13167" fromTop="21" />
+    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Areas/d:SuperUser/d:Content/d:ViewScripts/f:projects-view-management.js" caret="578" fromTop="10" />
+    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Areas/d:SuperUser/d:Content/f:layout.css" caret="4822" fromTop="17" />
+    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Areas/d:SuperUser/d:Views/d:RadaCodeWebManagement/f:_Projects.cshtml" caret="7091" fromTop="27" />
   </RecentEdits>
 </RecentFiles>

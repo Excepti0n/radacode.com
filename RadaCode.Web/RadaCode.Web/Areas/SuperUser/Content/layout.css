@@ -1,9 +1,9 @@
 ﻿body {
-	margin-top: 15px;
 	padding:0px;
 }
 
 #top-controls {
+    padding-top: 15px;
     width: 320px;
 	margin-left: auto;
 	margin-right: auto;
@@ -290,6 +290,12 @@ input.party-name {
     border-radius: 4px 0 4px 0;
 }
 
+.in-pre {
+    margin-bottom: 5px;
+    font-size: 0;
+    white-space: nowrap;
+}
+
 #permissions-block-wrapper.outlined::after {
     content: "Управление особыми правами доступа";
 }
@@ -298,18 +304,14 @@ input.party-name {
     content: "Управление данными партии";
 }
 
-#parties-list-wrapper.outlined::after {
-    content: "Текущие партии";
+#clients-list-wrapper.outlined::after {
+    content: "Клиенты";
 }
 
-#roles-list-wrapper.outlined::after {
-    content: "Роли пользователей";
+#industries-list-wrapper.outlined::after {
+    content: "Обслуживаемые индустрии";
 }
 
 #user-list-wrapper.outlined::after {
     content: "Пользователи выбранной роли";
-}
-
-#add-user-button {
-    margin-top: 15px;
 }

@@ -18,4 +18,125 @@
 
 <div id="projects-management-view">
     @Html.Hidden("initial-projects-data", (HtmlString)initValue)
+    
+    <div class="outlined" id="industries-list-wrapper">
+        <table class="table">
+            <thead>
+                <tr>
+                    <td>Название индустрии</td>
+                </tr>
+            </thead>
+            <tbody data-bind="template: { name: 'industry-template', foreach: Industries }">
+            </tbody>
+        </table>
+        <div class="add-industry-dialog" data-bind="dialog: addIndustryDialogOptions, dialogVisible: isAddIndustryDialogVisible" style="display: none">
+            <form class="form-horizontal">
+                <div class="control-group">
+                    <label class="control-label" for="inputName">Название</label>
+                    <div class="controls">
+                        <input type="text" id="inputName" placeholder="Название" data-bind="value: NewIndustry.Name">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <pre class="prettyprint add-industries-block">
+        <div class="in-pre">
+            <button class="btn btn-success add-industry" type="button" data-bind="click: ShowAddIndustryDialog">
+                <i class="icon-user icon-white"></i>
+                <span>Добавить Индустрию</span>
+            </button>
+        </div>
+    </pre>
+    
+    <div class="outlined" id="clients-list-wrapper">
+        <table class="table">
+            <thead>
+                <tr>
+                    <td>Название клиента</td>
+                    <td>Индустрия</td>
+                    <td>Размер компании</td>
+                    <td>Прибыль</td>
+                    <td>Веб сайт</td>
+                </tr>
+            </thead>
+            <tbody data-bind="template: { name: 'client-template', foreach: Clients }">
+            </tbody>
+        </table>
+        <div class="add-client-dialog" data-bind="dialog: addClientDialogOptions, dialogVisible: isAddClientDialogVisible" style="display: none">
+            <form class="form-horizontal">
+                <div class="control-group">
+                    <label class="control-label" for="inputClientName">Название клиента</label>
+                    <div class="controls">
+                        <input type="text" id="inputClientName" placeholder="Название компании-клиента" data-bind="value: NewClient.Name">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <pre class="prettyprint add-permission-block">
+        <div class="in-pre">
+            <button class="btn btn-success add-client" type="button" data-bind="click: ShowAddClientDialog">
+                <i class="icon-user icon-white"></i>
+                <span>Добавить клиента</span>
+            </button>
+        </div>
+    </pre>
+
 </div>
+
+<script type="text/html" id="industry-template">
+    <tr>
+        <td>
+            <div class="input-append industry-name">
+                <input class="span2" size="16" type="text" data-bind="value: Name"/>
+                <button class="btn btn-warning" type="button" data-bind="click: SaveUpdatedIndustry, attr: { disabled: !(NameChanged()) }, visible: NameChanged"><i class="icon-ok-sign icon-white"></i></button>
+            </div>
+        </td>
+        <td>
+            <button class="btn btn-danger" data-bind="click: Remove, clickBubble: false">
+                <i class="icon-remove icon-white"></i>
+            </button>
+        </td>
+    </tr>
+</script>
+
+<script type="text/html" id="client-template">
+    <tr>
+        <td>
+            <div class="input-append client-name">
+                <input class="span2" size="16" type="text" data-bind="value: Name"/>
+                <button class="btn btn-warning" type="button" data-bind="click: SaveUpdatedClient, attr: { disabled: !(NameChanged()) }, visible: NameChanged"><i class="icon-ok-sign icon-white"></i></button>
+            </div>
+        </td>
+        <td>
+            <div class="input-append client-industry">
+                <select class="chzn-select" style="width: 255px" data-bind="options: ParentIndustries, selectedOptions: Industry, chosen: { PlaceholderText: 'Выберите индустрию', AddPlaceholder: true, ChosenOptions: {allow_single_deselect: true} }"></select> 
+                <button class="btn btn-warning" type="button" data-bind="click: SaveUpdatedClient, attr: { disabled: !(IndustryChanged()) }, visible: IndustryChanged"><i class="icon-ok-sign icon-white"></i></button>
+            </div>
+        </td>
+        <td>
+            <div class="input-append client-size">
+                <input class="span2" size="16" type="text" data-bind="value: Size"/>
+                <button class="btn btn-warning" type="button" data-bind="click: SaveUpdatedClient, attr: { disabled: !(SizeChanged()) }, visible: SizeChanged"><i class="icon-ok-sign icon-white"></i></button>
+            </div>
+        </td>
+        <td>
+            <div class="input-append client-ravenue">
+                <input class="span2" size="16" type="text" data-bind="value: Ravenue"/>
+                <button class="btn btn-warning" type="button" data-bind="click: SaveUpdatedClient, attr: { disabled: !(RavenueChanged()) }, visible: RavenueChanged"><i class="icon-ok-sign icon-white"></i></button>
+            </div>
+        </td>
+        <td>
+            <div class="input-append client-site">
+                <input class="span2" size="16" type="text" data-bind="value: Site"/>
+                <button class="btn btn-warning" type="button" data-bind="click: SaveUpdatedClient, attr: { disabled: !(SiteChanged()) }, visible: SiteChanged"><i class="icon-ok-sign icon-white"></i></button>
+            </div>
+        </td>
+        <td>
+            <button class="btn btn-danger" data-bind="click: Remove, clickBubble: false">
+                <i class="icon-remove icon-white"></i>
+            </button>
+        </td>
+    </tr>
+</script>

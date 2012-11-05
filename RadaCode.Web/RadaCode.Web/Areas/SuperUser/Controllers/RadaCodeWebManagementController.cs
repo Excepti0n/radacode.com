@@ -373,7 +373,14 @@ namespace RadaCode.Web.Areas.SuperUser.Controllers
 
         public ActionResult GetProjectsControl()
         {
-            var projectsModel = new ProjectsManagementModel();
+            var projectsModel = new ProjectsManagementModel
+                {
+                    Clients = new List<ClientModel>(),
+                    CloudProjects = new List<DistributedProjectModel>(),
+                    Industries = new List<IndustryModel>(),
+                    MobileProjects = new List<MobileProjectModel>(),
+                    WebProjects = new List<WebProjectModel>()
+                };
 
             foreach (var industry in _context.Industries.ToList())
             {

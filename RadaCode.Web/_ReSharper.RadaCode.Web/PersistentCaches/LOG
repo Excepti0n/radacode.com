@@ -1,5 +1,5 @@
-2012/11/05-15:38:56.479 1ddc Recovering log #3
-2012/11/05-15:38:56.881 1ddc Level-0 table #5: started
-2012/11/05-15:38:57.163 1ddc Level-0 table #5: 1364831 bytes OK
-2012/11/05-15:38:57.311 1ddc Delete type=0 #3
-2012/11/05-15:38:57.312 1ddc Delete type=3 #2
+2012/11/05-18:26:02.677 1954 Recovering log #6
+2012/11/05-18:26:02.677 1954 Level-0 table #8: started
+2012/11/05-18:26:02.811 1954 Level-0 table #8: 27290 bytes OK
+2012/11/05-18:26:02.962 1954 Delete type=0 #6
+2012/11/05-18:26:02.962 1954 Delete type=3 #4
