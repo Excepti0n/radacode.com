@@ -11,10 +11,9 @@ namespace RadaCode.Web.Data.Repositories
     {
         private RadaCodeWebStoreContext _db;
 
-        public WebUserRepository(RadaCodeWebStoreContext context)
+        public WebUserRepository()
         {
-            _db = context;
-            _db.WebUsers.ToList();
+            _db = new RadaCodeWebStoreContext();
         }
 
         public IQueryable<WebUser> GetAllUsers()

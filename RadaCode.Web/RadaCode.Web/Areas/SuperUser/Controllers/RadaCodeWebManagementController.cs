@@ -12,7 +12,6 @@ using RadaCode.Web.Areas.SuperUser.Models;
 using RadaCode.Web.Core.Setttings;
 using RadaCode.Web.Data.EF;
 using RadaCode.Web.Data.Entities;
-using putaty.web.Application.Membership;
 using putaty.web.Areas.SuperUser.Models;
 
 namespace RadaCode.Web.Areas.SuperUser.Controllers

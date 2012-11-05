@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace putaty.web.Application.Membership
+﻿namespace RadaCode.Web.Application.Membership
 {
     public class UrlAuthorizeAttribute : System.Web.Mvc.AuthorizeAttribute
     {

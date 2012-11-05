@@ -20,19 +20,24 @@ namespace RadaCode.Web.Data.Migrations
 
         protected override void Seed(RadaCode.Web.Data.EF.RadaCodeWebStoreContext context)
         {
-            new List<WebUserRole>
+            var roles = new List<WebUserRole>
+                {
+                    new WebUserRole()
+                        {
+                            Id = Guid.Parse("9727d3e4-0269-46e1-ad7c-bfbdc9c074bc"),
+                            RoleName = "Admin"
+                        },
+                    new WebUserRole()
+                        {
+                            Id = Guid.Parse("b22380eb-1c28-4945-b12d-38c55099036a"),
+                            RoleName = "ProjectsManager"
+                        }
+                };
+
+            foreach (var webUserRole in roles.Where(webUserRole => !context.WebUserRoles.Any(rl => rl.RoleName == webUserRole.RoleName)))
             {
-                new WebUserRole() 
-                    { 
-                        Id = Guid.Parse("9727d3e4-0269-46e1-ad7c-bfbdc9c074bc"),
-                        RoleName = "Admin"
-                    },
-                new WebUserRole()
-                    {
-                        Id = Guid.Parse("b22380eb-1c28-4945-b12d-38c55099036a"),
-                        RoleName = "ProjectsManager"
-                    }
-            }.ForEach(r => context.WebUserRoles.AddOrUpdate(r));
+                context.WebUserRoles.Add(webUserRole);
+            }
 
             var mp = new WebUser()
                 {
@@ -40,10 +45,19 @@ namespace RadaCode.Web.Data.Migrations
                     CreateDate = DateTime.Now,
                     UserName = "MaxPavlov",
                     Password = Crypto.HashPassword("jackPecker"),
-                    Roles = context.WebUserRoles.Local.Where(rl => rl.RoleName == "Admin").ToList()
+                    Roles = context.WebUserRoles.Local.Where(rl => rl.RoleName == "Admin").ToList(),
+                    IsLockedOut = false,
+                    LastActivityDate = SqlDateTime.MinValue.Value,
+                    LastLoginDate = SqlDateTime.MinValue.Value,
+                    LastLockoutDate = SqlDateTime.MinValue.Value,
+                    LastPasswordChangedDate = SqlDateTime.MinValue.Value,
+                    LastPasswordFailureDate = SqlDateTime.MinValue.Value,
+                    PasswordVerificationTokenExpirationDate = SqlDateTime.MinValue.Value
                 };
 
-            context.WebUsers.AddOrUpdate(mp);
+            if (!context.WebUsers.Any(usr => usr.UserName == mp.UserName)) context.WebUsers.Add(mp);
+
+            base.Seed(context);
 
             //  This method will be called after migrating to the latest version.
 

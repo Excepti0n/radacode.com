@@ -2,4 +2,5 @@
   <Module PersistentId="D2E694FC-88A0-46C9-9ADA-930B53CCB47A" ModuleId="RadaCode.Web.Data" />
   <Module PersistentId="72221C3F-9742-4C90-A12C-F97F8493AF0B" ModuleId="RadaCode.Web" />
   <Module PersistentId="8D2C41C2-1E19-44E2-A384-55895B2181FE" ModuleId="RadaCode.Web.Core" />
+  <Module PersistentId="65490A0F-0FED-4E33-85A3-7113456DB32A" ModuleId="RadaCode.Data.Tests" />
 </Modules>
