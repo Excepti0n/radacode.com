@@ -44,6 +44,74 @@
             $(element).trigger("liszt:updated");
         }
     };
+    
+    ko.bindingHandlers.datepicker = {
+        init: function (element, valueAccessor, allBindingsAccessor) {
+            //initialize datepicker with some optional options
+            var options = allBindingsAccessor().datepickerOptions || {};
+            $(element).datepicker(options);
+
+            //handle the field changing
+            ko.utils.registerEventHandler(element, "change", function () {
+                var observable = valueAccessor();
+                observable($(element).datepicker("getDate"));
+            });
+
+            //handle disposal (if KO removes by the template binding)
+            ko.utils.domNodeDisposal.addDisposeCallback(element, function () {
+                $(element).datepicker("destroy");
+            });
+
+        },
+        update: function (element, valueAccessor) {
+            var value = ko.utils.unwrapObservable(valueAccessor()),
+                current = $(element).datepicker("getDate");
+
+            if (value - current !== 0) {
+                $(element).datepicker("setDate", value);
+            }
+        }
+    };
+    
+    ko.bindingHandlers.jQRangePicker = {
+        init: function (element, valueAccessor, allBindingsAccessor) {
+            var options = ko.utils.unwrapObservable(valueAccessor()) || {};
+            //do in a setTimeout, so the applyBindings doesn't bind twice from element being copied and moved to bottom
+            setTimeout(function () {
+
+                $(element).rangeSlider(options);
+                $(element).bind("valuesChanged", function (event, data) {
+                    var value = allBindingsAccessor().value;
+                    value(data.values.min + '::' + data.values.max);
+                });
+                
+                if(options.prohibitLeftChange) {
+                    $(element).bind("valuesChanging", function (event, data) {
+                        if (options.leftFix != data.values.min) {
+                            $(element).rangeSlider("min", options.leftFix);
+                        }
+                    });
+                }
+            }, 0);
+        }
+    };
+    
+    ko.bindingHandlers.tagsinput = {
+        init: function (element, valueAccessor, allBindingsAccessor) {
+            var options = ko.utils.unwrapObservable(valueAccessor()) || {};
+            //do in a setTimeout, so the applyBindings doesn't bind twice from element being copied and moved to bottom
+            setTimeout(function () {
+                options.onChange = function (obj, tagslist) {
+                    var value = allBindingsAccessor().value;
+                    var arrayOfTags = obj.val().split(',');
+                    value(arrayOfTags);
+                };
+
+                $(element).tagsInput(options);
+            }, 0);
+
+        }
+    };
 
     ko.bindingHandlers.dialog = {
         init: function(element, valueAccessor, allBindingsAccessor) {

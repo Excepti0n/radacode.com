@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -379,7 +380,8 @@ namespace RadaCode.Web.Areas.SuperUser.Controllers
                     CloudProjects = new List<DistributedProjectModel>(),
                     Industries = new List<IndustryModel>(),
                     MobileProjects = new List<MobileProjectModel>(),
-                    WebProjects = new List<WebProjectModel>()
+                    WebProjects = new List<WebProjectModel>(),
+                    Projects = new List<ProjectModel>()
                 };
 
             foreach (var industry in _context.Industries.ToList())
@@ -472,6 +474,35 @@ namespace RadaCode.Web.Areas.SuperUser.Controllers
                         WebSiteUrl = sp.WebSiteUrl
                     });
                 }
+            }
+
+            projectsModel.Types = new List<string>();
+            
+            var assembly = Assembly.GetExecutingAssembly();
+            var target = typeof(ProjectModel);
+            var types = assembly.GetTypes()
+                                .Where(target.IsAssignableFrom);
+
+            foreach (Type type in types)
+            {
+                if (type.IsAbstract) continue;
+                var modelTypeInstance = (ProjectModel) Activator.CreateInstance(type);
+                projectsModel.Types.Add(modelTypeInstance.Type);
+            }
+
+            foreach (var webProjectModel in projectsModel.WebProjects)
+            {
+                projectsModel.Projects.Add(webProjectModel);
+            }
+
+            foreach (var mobileProjectModel in projectsModel.MobileProjects)
+            {
+                projectsModel.Projects.Add(mobileProjectModel);
+            }
+
+            foreach (var distributedProjectModel in projectsModel.CloudProjects)
+            {
+                projectsModel.Projects.Add(distributedProjectModel);
             }
 
             return PartialView("_Projects", projectsModel);
@@ -687,11 +718,12 @@ namespace RadaCode.Web.Areas.SuperUser.Controllers
         #region Projects
 
         [HttpPost]
+        [ValidateInput(false)] 
         public JsonResult AddProject(string type, string name, string description, string customerId, string[] technologiesUsed, string dateStarted, string dateFinished, string estimate, string usersCount, string roi, string[] specialFeatures, string isCloudConnected, string markup, string webUrl, string[] platformsSupported)
         {
             if (String.IsNullOrEmpty(name) ||
                 String.IsNullOrEmpty(description) ||
-                String.IsNullOrEmpty(customerId) ||
+                String.IsNullOrEmpty(customerId) /*||
                 !technologiesUsed.Any() ||
                 String.IsNullOrEmpty(dateStarted) ||
                 String.IsNullOrEmpty(dateFinished) ||
@@ -701,7 +733,10 @@ namespace RadaCode.Web.Areas.SuperUser.Controllers
                 String.IsNullOrEmpty(isCloudConnected) ||
                 String.IsNullOrEmpty(markup) ||
                 String.IsNullOrEmpty(type) ||
-                String.IsNullOrEmpty(webUrl)) return Json(new { status = "SPCD: PARAM-ERROR" });
+                String.IsNullOrEmpty(webUrl)
+                */) return Json(new { status = "SPCD: PARAM-ERROR" });
+
+            var parsableEstimate = 7*int.Parse(estimate);
 
             var cusId = Guid.Parse(customerId);
 
@@ -724,7 +759,7 @@ namespace RadaCode.Web.Areas.SuperUser.Controllers
                                            Description = description,
                                            IsCloudConnected = bool.Parse(isCloudConnected),
                                            ProjectDescriptionMarkup = markup,
-                                           ProjectEstimate = TimeSpan.Parse(estimate),
+                                           ProjectEstimate = TimeSpan.Parse(parsableEstimate.ToString()),
                                            ROIpercentage = int.Parse(roi),
                                            WebSiteUrl = webUrl,
                                            SpecialFeatures = specialFeatures.ToList(),
@@ -742,7 +777,7 @@ namespace RadaCode.Web.Areas.SuperUser.Controllers
                         Description = description,
                         IsCloudConnected = bool.Parse(isCloudConnected),
                         ProjectDescriptionMarkup = markup,
-                        ProjectEstimate = TimeSpan.Parse(estimate),
+                        ProjectEstimate = TimeSpan.Parse(parsableEstimate.ToString()),
                         ROIpercentage = int.Parse(roi),
                         WebSiteUrl = webUrl,
                         SpecialFeatures = specialFeatures.ToList(),
@@ -761,7 +796,7 @@ namespace RadaCode.Web.Areas.SuperUser.Controllers
                         Description = description,
                         IsCloudConnected = bool.Parse(isCloudConnected),
                         ProjectDescriptionMarkup = markup,
-                        ProjectEstimate = TimeSpan.Parse(estimate),
+                        ProjectEstimate = TimeSpan.Parse(parsableEstimate.ToString()),
                         ROIpercentage = int.Parse(roi),
                         WebSiteUrl = webUrl,
                         SpecialFeatures = specialFeatures.ToList(),
@@ -815,11 +850,12 @@ namespace RadaCode.Web.Areas.SuperUser.Controllers
         }
 
         [HttpPost]
+        [ValidateInput(false)] 
         public JsonResult UpdateProject(string id, string type, string name, string description, string customerId, string[] technologiesUsed, string dateStarted, string dateFinished, string estimate, string usersCount, string roi, string[] specialFeatures, string isCloudConnected, string markup, string webUrl, string[] platformsSupported)
         {
             if (String.IsNullOrEmpty(id) ||
                 String.IsNullOrEmpty(description) ||
-                String.IsNullOrEmpty(customerId) ||
+                String.IsNullOrEmpty(customerId) /*||
                 !technologiesUsed.Any() ||
                 String.IsNullOrEmpty(dateStarted) ||
                 String.IsNullOrEmpty(dateFinished) ||
@@ -829,7 +865,7 @@ namespace RadaCode.Web.Areas.SuperUser.Controllers
                 String.IsNullOrEmpty(isCloudConnected) ||
                 String.IsNullOrEmpty(markup) ||
                 String.IsNullOrEmpty(type) ||
-                String.IsNullOrEmpty(webUrl)) return Json(new { status = "SPCD: PARAM-ERROR" });
+                String.IsNullOrEmpty(webUrl)*/) return Json(new { status = "SPCD: PARAM-ERROR" });
 
             var cusId = Guid.Parse(customerId);
 

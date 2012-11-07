@@ -132,6 +132,193 @@ function ClientModel(data, parent) {
 
 function ProjectModel(data, parent) {
     var self = this;
+    
+    self.Id = data.Id;
+    self.Name = ko.observable(data.Name).extend({ required: true });;
+    self.NameChanged = ko.observable(false);
+    self.Name.subscribe(function () {
+        self.NameChanged(true);
+    });
+
+    self.ParentClients = ko.computed(function () {
+        return parent.Client();
+    });
+    
+    self.ParentProjectTypes = ko.computed(function () {
+        return parent.ProjectTypes();
+    });
+
+    self.ClientId = ko.observable(data.ClientId).extend({ required: true });;
+    self.ClientIdChanged = ko.observable(false);
+    self.ClientId.subscribe(function () {
+        self.ClientIdChanged(true);
+    });
+    
+    self.CurrentUsersCount = ko.observable(data.CurrentUsersCount);
+    self.CurrentUsersCountChanged = ko.observable(false);
+    self.CurrentUsersCount.subscribe(function () {
+        self.CurrentUsersCountChanged(true);
+    });
+    
+    self.DateStarted = ko.observable(data.DateStarted);
+    self.DateStartedChanged = ko.observable(false);
+    self.DateStarted.subscribe(function () {
+        self.DateStartedChanged(true);
+    });
+
+    self.DateFinished = ko.observable(data.DateFinished);
+    self.DateFinishedChanged = ko.observable(false);
+    self.DateFinished.subscribe(function () {
+        self.DateFinishedChanged(true);
+    });
+    
+    self.Description = ko.observable(data.Description).extend({ required: true });;
+    self.DescriptionChanged = ko.observable(false);
+    self.Description.subscribe(function () {
+        self.DescriptionChanged(true);
+    });
+    
+    self.IsCloudConnected = ko.observable(data.IsCloudConnected).extend({ required: true });;
+    self.IsCloudConnectedChanged = ko.observable(false);
+    self.IsCloudConnected.subscribe(function () {
+        self.IsCloudConnectedChanged(true);
+    });
+    
+    self.ProjectActualCompletionSpan = ko.observable(data.ProjectActualCompletionSpan);
+    self.ProjectActualCompletionSpanChanged = ko.observable(false);
+    self.ProjectActualCompletionSpan.subscribe(function () {
+        self.ProjectActualCompletionSpanChanged(true);
+    });
+    
+    self.ProjectEstimate = ko.observable(data.ProjectEstimate);
+    self.ProjectEstimateChanged = ko.observable(false);
+    self.ProjectEstimate.subscribe(function () {
+        self.ProjectEstimateChanged(true);
+    });
+    
+    self.ProjectDescriptionMarkup = ko.observable(data.ProjectDescriptionMarkup).extend({ required: true });;
+    self.ProjectDescriptionMarkupChanged = ko.observable(false);
+    self.ProjectDescriptionMarkup.subscribe(function () {
+        self.ProjectDescriptionMarkupChanged(true);
+    });
+    
+    self.ROIpercentage = ko.observable(data.ROIpercentage);
+    self.ROIpercentageChanged = ko.observable(false);
+    self.ROIpercentage.subscribe(function () {
+        self.ROIpercentageChanged(true);
+    });
+    
+    self.SpecialFeatures = ko.observableArray(data.SpecialFeatures);
+    self.SpecialFeaturesChanged = ko.observable(false);
+    self.SpecialFeatures.subscribe(function () {
+        self.SpecialFeaturesChanged(true);
+    });
+    
+    self.TechnologiesUsed = ko.observableArray(data.TechnologiesUsed);
+    self.TechnologiesUsedChanged = ko.observable(false);
+    self.TechnologiesUsed.subscribe(function () {
+        self.TechnologiesUsedChanged(true);
+    });
+    
+    self.WebSiteUrl = ko.observable(data.WebSiteUrl);
+    self.WebSiteUrlChanged = ko.observable(false);
+    self.WebSiteUrl.subscribe(function () {
+        self.WebSiteUrlChanged(true);
+    });
+    
+    self.PlatformsSupported = ko.observableArray(data.PlatformsSupported);
+    self.PlatformsSupportedChanged = ko.observable(false);
+    self.PlatformsSupported.subscribe(function () {
+        self.PlatformsSupportedChanged(true);
+    });
+    
+    self.Type = ko.observable(data.Type);
+    self.TypeChanged = ko.observable(false);
+    self.Type.subscribe(function () {
+        self.TypeChanged(true);
+    });
+    
+    self.ProjectModelErrors = ko.validation.group(self);
+
+    self.isEditProjectDialogVisible = ko.observable(false);
+
+    self.editProjectDialogOptions = {
+        autoOpen: false,
+        modal: true,
+        height: 1400,
+        width: 1100,
+        title: 'Редактирование проекта: ' + self.Name(),
+        open: function () {
+            $('.chzn-select').chosen();
+            $('.jqSlider').rangeSlider("resize");
+        },
+        buttons: {
+            'Сохранить изменения в проекте': function (e) {
+                if (!self.ProjectModelErrors().length == 0) {
+                    self.errors.showAllMessages();
+                    return;
+                }
+                self.SaveUpdatedProject();
+            },
+            'Отмена': function () { self.isEditProjectDialogVisible(false); }
+        }
+    };
+
+    self.OpenDetailsDialog = function () {
+        self.isEditProjectDialogVisible(true);
+    };
+    
+    self.SaveUpdatedProject = function () {
+        var updateProjectUrl = $('#UpdateProjectUrl').val();
+        $.ajax({
+            type: 'POST',
+            url: updateProjectUrl,
+            data: {
+                id: self.Id,
+                type: self.Type(),
+                name: self.Name(),
+                description: self.Description(),
+                customerId: self.CustomerId(),
+                technologiesUsed: JSON.stringify(self.TechnologiesUsed()),
+                dateStarted: self.DateStarted(),
+                dateFinished: self.DateFinished(),
+                estimate: self.Estimate(),
+                usersCount: self.UsersCount(),
+                roi: self.Roi(),
+                specialFeatures: JSON.stringify(self.SpecialFeatures()),
+                isCloudConnected: self.IsCloudConnected(),
+                markup: self.Markup(),
+                webUrl: self.WebUrl(),
+                platformsSupported: JSON.stringify(self.PlatformsSupported())
+            },
+            success: function (res) {
+                if (res.status === "SPCD: OK") {
+                    self.isEditProjectDialogVisible(false);
+                } else {
+                    alert("There was an error updating a project record: " + res.status);
+                }
+            }
+        });
+    };
+
+    self.Remove = function () {
+        var removeProjectUrl = $('#RemoveProjectUrl').val();
+        $.ajax({
+            type: 'POST',
+            url: removeProjectUrl,
+            data: {
+                id: self.Id
+            },
+            success: function (res) {
+                if (res.status === "SPCD: OK") {
+                    parent.RemoveProject(self);
+                } else {
+                    alert("There was an error removing a project - " + res);
+                }
+            }
+        });
+    };
+    
 }
 
 function ProjectsViewModel(data) {
@@ -260,6 +447,117 @@ function ProjectsViewModel(data) {
 
     self.ShowAddClientDialog = function () {
         self.isAddClientDialogVisible(true);
+    };
+    
+    self.ProjectTypes = ko.observableArray([]);
+    var projectTypeModelsArray = jQuery.map(data.Types, function (val, i) {
+        self.ProjectTypes.push(val);
+    });
+
+    self.Projects = ko.observableArray([]);
+    var projectModelsArray = jQuery.map(data.Projects, function (val, i) {
+        self.Projects.push(new ProjectModel(val, self));
+    });
+
+    self.RemoveProject = function (projectVM) {
+        self.Projects.remove(projectVM);
+    };
+    
+
+    self.isAddProjectDialogVisible = ko.observable(false);
+    self.NewProject = {};
+    self.NewProject.Type = ko.observable('').extend({ required: true });
+    self.NewProject.Name = ko.observable('').extend({ required: true });
+    self.NewProject.Description = ko.observable('').extend({ required: true });
+    self.NewProject.CustomerId = ko.observable('').extend({ required: true });
+    self.NewProject.TechnologiesUsed = ko.observableArray([]);
+    self.NewProject.DateStarted = ko.observable('');
+    self.NewProject.DateFinished = ko.observable('');
+    self.NewProject.Estimate = ko.observable('');
+    self.NewProject.UsersCount = ko.observable('');
+    self.NewProject.Roi = ko.observable('');
+    self.NewProject.SpecialFeatures = ko.observableArray([]);
+    self.NewProject.IsCloudConnected = ko.observable('').extend({ required: true });
+    self.NewProject.Markup = ko.observable('').extend({ required: true });
+    self.NewProject.WebUrl = ko.observable('');
+    self.NewProject.PlatformsSupported = ko.observableArray([]);
+
+    self.NewProject.LabelFormatter = function(value) {
+        if (value == 0) return '';
+        return parseInt(value) + ' (недель)';
+    };
+
+    self.NewProjectErrors = ko.validation.group(self.NewProject);
+
+    self.addProjectDialogOptions = {
+        autoOpen: false,
+        modal: true,
+        height: 1400,
+        width: 1100,
+        title: 'Добавление нового проекта',
+        open: function () {
+            $('.chzn-select').chosen();
+            $('.jqSlider').rangeSlider("resize");
+        },
+        buttons: {
+            'Добавить проект': function (e) {
+                if (!self.NewProjectErrors().length == 0) {
+                    self.NewProject.errors.showAllMessages();
+                    return;
+                }
+                var addProjectUrl = $('#AddProjectUrl').val();
+                $.ajax({
+                    type: 'POST',
+                    url: addProjectUrl,
+                    data: {
+                        type: self.NewProject.Type(),
+                        name: self.NewProject.Name(),
+                        description: self.NewProject.Description(),
+                        customerId: self.NewProject.CustomerId(),
+                        technologiesUsed: JSON.stringify(self.NewProject.TechnologiesUsed()),
+                        dateStarted: self.NewProject.DateStarted(),
+                        dateFinished: self.NewProject.DateFinished(),
+                        estimate: self.NewProject.Estimate(),
+                        usersCount: self.NewProject.UsersCount(),
+                        roi: self.NewProject.Roi(),
+                        specialFeatures: JSON.stringify(self.NewProject.SpecialFeatures()),
+                        isCloudConnected: self.NewProject.IsCloudConnected(),
+                        markup: self.NewProject.Markup(),
+                        webUrl: self.NewProject.WebUrl(),
+                        platformsSupported: JSON.stringify(self.NewProject.PlatformsSupported())
+                    },
+                    dataType: "json",
+                    success: function (res) {
+                        if (res.status === "SPCD: OK") {
+                            self.Projects.push(new ProjectModel(res.project, self));
+                            self.isAddProjectDialogVisible(false);
+                            self.NewProject.Type('');
+                            self.NewProject.Name('');
+                            self.NewProject.Description('');
+                            self.NewProject.CustomerId('');
+                            self.NewProject.TechnologiesUsed([]);
+                            self.NewProject.DateStarted('');
+                            self.NewProject.DateFinished('');
+                            self.NewProject.Estimate('');
+                            self.NewProject.UsersCount('');
+                            self.NewProject.Roi('');
+                            self.NewProject.SpecialFeatures([]);
+                            self.NewProject.IsCloudConnected('');
+                            self.NewProject.Markup('');
+                            self.NewProject.WebUrl('');
+                            self.NewProject.PlatformsSupported([]);
+                        } else {
+                            alert("There was an error adding a project: " + res.status);
+                        }
+                    }
+                });
+            },
+            'Отмена': function () { self.isAddProjectDialogVisible(false); }
+        }
+    };
+
+    self.ShowAddProjectDialog = function () {
+        self.isAddProjectDialogVisible(true);
     };
 }
 

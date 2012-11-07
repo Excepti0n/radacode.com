@@ -38,19 +38,36 @@ namespace RadaCode.Web.Areas.SuperUser.Models
         public virtual List<string> SpecialFeatures { get; set; }
         public bool IsCloudConnected { get; set; }
         public string ProjectDescriptionMarkup { get; set; }
+        public virtual string Type
+        {
+            get { return "ROOT"; }
+        }
     }
 
     public class WebProjectModel: ProjectModel
     {
+        public override string Type
+        {
+            get { return "Web"; }
+        }
     }
 
     public class MobileProjectModel: ProjectModel
     {
         public List<string> PlatformsSupported { get; set; }
+
+        public override string Type
+        {
+            get { return "Mobile"; }
+        }
     }
 
     public class DistributedProjectModel: ProjectModel
     {
+        public override string Type
+        {
+            get { return "Distributed"; }
+        }
     }
 
     public class ProjectsManagementModel
@@ -59,6 +76,8 @@ namespace RadaCode.Web.Areas.SuperUser.Models
         public List<ClientModel> Clients { get; set; }
         public List<WebProjectModel> WebProjects { get; set; }
         public List<MobileProjectModel> MobileProjects { get; set; }
-        public List<DistributedProjectModel> CloudProjects { get; set; } 
+        public List<DistributedProjectModel> CloudProjects { get; set; }
+        public List<ProjectModel> Projects { get; set; }
+        public List<string> Types { get; set; } 
     }
 }

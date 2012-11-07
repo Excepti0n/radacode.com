@@ -135,9 +135,9 @@
 	display: none;
 }
 
-.ui-dialog .ui-dialog-content {
+/*.ui-dialog .ui-dialog-content {
 	text-align: center;
-}
+}*/
 
 .deputy-block {
     width: 380px;
@@ -314,4 +314,41 @@ input.party-name {
 
 #user-list-wrapper.outlined::after {
     content: "Пользователи выбранной роли";
+}
+
+.add-project-dialog .form-horizontal .controls {
+margin-left: 200px;
+}
+
+.edit-project-dialog .form-horizontal .controls {
+margin-left: 200px;
+}
+
+.add-project-dialog .form-horizontal .control-label {
+    width: 180px;
+}
+
+.edit-project-dialog .form-horizontal .control-label {
+    width: 180px;
+}
+
+.add-project-dialog .ui-dialog .ui-dialog-content {
+ text-align: left;
+}
+
+.edit-project-dialog .ui-dialog .ui-dialog-content {
+ text-align: left;
+}
+
+
+.add-project-dialog .ui-rangeSlider-leftLabel {
+    display: none !important;
+}
+
+.edit-project-dialog .ui-rangeSlider-leftLabel {
+    display: none !important;
+}
+
+.add-project-dialog input[type="text"] {
+    min-width: 800px;
 }

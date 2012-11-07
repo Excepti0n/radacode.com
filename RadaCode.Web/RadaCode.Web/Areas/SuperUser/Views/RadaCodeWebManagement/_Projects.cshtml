@@ -72,7 +72,7 @@
                     </div>
                 </div>
                 <div class="control-group">
-                    <label class="control-label" for="selectRoles">Индустрия</label>
+                    <label class="control-label" for="selectIndustries">Индустрия</label>
                     <div class="controls">
                         <select data-bind="options: Industries, optionsText: 'Name', optionsValue: 'Id', value: NewClient.IndustryId, chosen: { PlaceholderText: 'Выберите индустрию', AddPlaceholder: true, ChosenOptions: {allow_single_deselect: true} }" id="selectRoles"></select>
                     </div>
@@ -98,7 +98,7 @@
             </form>
         </div>
     </div>
-    <pre class="prettyprint add-permission-block">
+    <pre class="prettyprint add-client-block">
         <div class="in-pre">
             <button class="btn btn-success add-client" type="button" data-bind="click: ShowAddClientDialog">
                 <i class="icon-user icon-white"></i>
@@ -134,40 +134,101 @@
         </table>
         <div class="add-project-dialog" data-bind="dialog: addProjectDialogOptions, dialogVisible: isAddProjectDialogVisible" style="display: none">
             <form class="form-horizontal">
+                
                 <div class="control-group">
-                    <label class="control-label" for="inputClientName">Название клиента</label>
+                    <label class="control-label" for="inputProjectName">Название проекта</label>
                     <div class="controls">
-                        <input type="text" id="inputClientName" placeholder="Название компании-клиента" data-bind="value: NewClient.Name">
+                        <input type="text" id="inputProjectName" placeholder="Название проекта" data-bind="value: NewProject.Name">
                     </div>
                 </div>
                 <div class="control-group">
-                    <label class="control-label" for="selectRoles">Индустрия</label>
+                    <label class="control-label" for="selectType">Тип проекта</label>
                     <div class="controls">
-                        <select data-bind="options: Industries, optionsText: 'Name', optionsValue: 'Id', value: NewClient.IndustryId, chosen: { PlaceholderText: 'Выберите индустрию', AddPlaceholder: true, ChosenOptions: {allow_single_deselect: true} }" id="selectRoles"></select>
+                        <select data-bind="options: ProjectTypes, value: NewProject.Type, chosen: { PlaceholderText: 'Выберите тип', AddPlaceholder: true, ChosenOptions: {allow_single_deselect: true} }" id="selectType"></select>
                     </div>
                 </div>
                 <div class="control-group">
-                    <label class="control-label" for="inputSize">Размер компании</label>
+                    <label class="control-label" for="inputDescr">Краткое описание</label>
                     <div class="controls">
-                        <input type="text" id="inputSize" placeholder="Размер" data-bind="value: NewClient.Size">
+                        <input type="text" id="inputDescr" placeholder="Краткое описание" data-bind="value: NewProject.Description">
                     </div>
                 </div>
                 <div class="control-group">
-                    <label class="control-label" for="inputRavenue">Прибыль</label>
+                    <label class="control-label" for="selectClient">Клиент</label>
                     <div class="controls">
-                        <input type="text" id="inputRavenue" placeholder="Годовая прибыль" data-bind="value: NewClient.Ravenue">
+                        <select data-bind="options: Clients, optionsText: 'Name', optionsValue: 'Id', value: NewProject.CustomerId, chosen: { PlaceholderText: 'Выберите клиента', AddPlaceholder: true, ChosenOptions: {allow_single_deselect: true} }" id="selectClient"></select>
                     </div>
                 </div>
                 <div class="control-group">
-                    <label class="control-label" for="inputWebSite">Веб сайт</label>
+                    <label class="control-label" for="inputTechnologies">Используемые технологии</label>
                     <div class="controls">
-                        <input type="text" id="inputWebSite" placeholder="Адрес веб сайта" data-bind="value: NewClient.WebUrl">
+                        <input type="text" id="inputTechnologies" placeholder="Технологии" data-bind="tagsinput: {}, value: NewProject.TechnologiesUsed">
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="inputDateStarted">Дата начала проекта</label>
+                    <div class="controls">
+                        <input type="text" id="inputDateStarted" placeholder="Дата начала проекта" data-bind="datepicker: NewProject.DateStarted">
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="inputDateFinished">Дата завершения проекта</label>
+                    <div class="controls">
+                        <input type="text" id="inputDateFinished" placeholder="Дата завершения проекта" data-bind="datepicker: NewProject.DateFinished">
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="inputEstimate">Оценочная продолжительность проекта</label>
+                    <div class="controls">
+                        <div id="inputEstimate" class="jqSlider" data-bind="jQRangePicker: {prohibitLeftChange: true, leftFix: 0, arrows: false, formatter: NewProject.LabelFormatter, defaultValues: { min: 0, max: 15 } }, value: NewProject.Estimate"></div>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="inputUsersCount">Текущее количество пользователей</label>
+                    <div class="controls">
+                        <input type="text" id="inputUsersCount" placeholder="Количество пользователей" data-bind="value: NewProject.UsersCount">
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="inputRoi">Процент возврата инвестиций</label>
+                    <div class="controls">
+                        <input type="text" id="inputRoi" placeholder="Процент возврата инвестиций" data-bind="value: NewProject.Roi">
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="inputFeatures">Особые функции</label>
+                    <div class="controls">
+                        <input type="text" id="inputFeatures" placeholder="Функции" data-bind="tagsinput: {}, value: NewProject.SpecialFeatures">
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="inputCloud">Иммет ли подключение к облаку</label>
+                    <div class="controls">
+                        <input type="checkbox" id="inputCloud" data-bind="checked: NewProject.IsCloudConnected">
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="inputMarkup">Разметка презентационного блока в портфолио</label>
+                    <div class="controls">
+                        <textarea id="inputMarkup" data-bind="ckeditor: NewProject.Markup"></textarea>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="inputWebUrl">Адрес сайта</label>
+                    <div class="controls">
+                        <input type="text" id="inputWebUrl" placeholder="Адрес сайта" data-bind="value: NewProject.WebUrl">
+                    </div>
+                </div>
+                <div class="control-group" data-bind="visible: (NewProject.Type() == 'Mobile')">
+                    <label class="control-label" for="inputPlatforms">Поддерживаемые платформы</label>
+                    <div class="controls">
+                        <input type="text" id="inputPlatforms" placeholder="Поддерживаемые платформы" data-bind="tagsinput: {}, value: NewProject.PlatformsSupported">
                     </div>
                 </div>
             </form>
         </div>
     </div>
-    <pre class="prettyprint add-permission-block">
+    <pre class="prettyprint add-project-block">
         <div class="in-pre">
             <button class="btn btn-success add-client" type="button" data-bind="click: ShowAddProjectDialog">
                 <i class="icon-user icon-white"></i>
@@ -237,39 +298,115 @@
 <script type="text/html" id="project-template">
     <tr>
         <td>
-            <div class="input-append client-name">
+            <div class="input-append project-name">
                 <input class="span2" size="16" type="text" data-bind="value: Name"/>
-                <button class="btn btn-warning" type="button" data-bind="click: SaveUpdatedClient, attr: { disabled: !(NameChanged()) }, visible: NameChanged"><i class="icon-ok-sign icon-white"></i></button>
+                <button class="btn btn-warning" type="button" data-bind="click: SaveUpdatedProject, attr: { disabled: !(NameChanged()) }, visible: NameChanged"><i class="icon-ok-sign icon-white"></i></button>
             </div>
         </td>
         <td>
-            <div class="input-append client-industry">
-                <select class="chzn-select" style="width: 255px" data-bind="options: ParentIndustries, optionsText: 'Name', optionsValue: 'Id', value: IndustryId, chosen: { PlaceholderText: 'Выберите индустрию', AddPlaceholder: true, ChosenOptions: {allow_single_deselect: true} }"></select> 
-                <button class="btn btn-warning" type="button" data-bind="click: SaveUpdatedClient, attr: { disabled: !(IndustryIdChanged()) }, visible: IndustryIdChanged"><i class="icon-ok-sign icon-white"></i></button>
+            <div class="input-append project-description">
+                <input class="span2" size="16" type="text" data-bind="value: Description"/>
+                <button class="btn btn-warning" type="button" data-bind="click: SaveUpdatedProject, attr: { disabled: !(DescriptionChanged()) }, visible: DescriptionChanged"><i class="icon-ok-sign icon-white"></i></button>
             </div>
         </td>
         <td>
-            <div class="input-append client-size">
-                <input class="span2" size="16" type="text" data-bind="value: Size"/>
-                <button class="btn btn-warning" type="button" data-bind="click: SaveUpdatedClient, attr: { disabled: !(SizeChanged()) }, visible: SizeChanged"><i class="icon-ok-sign icon-white"></i></button>
+            <div class="input project-open-details">
+                <button class="btn btn-warning" type="button" data-bind="click: OpenDetailsDialog"><i class="icon-ok-sign icon-white"></i></button>
             </div>
         </td>
-        <td>
-            <div class="input-append client-ravenue">
-                <input class="span2" size="16" type="text" data-bind="value: Ravenue"/>
-                <button class="btn btn-warning" type="button" data-bind="click: SaveUpdatedClient, attr: { disabled: !(RavenueChanged()) }, visible: RavenueChanged"><i class="icon-ok-sign icon-white"></i></button>
-            </div>
-        </td>
-        <td>
-            <div class="input-append client-site">
-                <input class="span2" size="16" type="text" data-bind="value: WebUrl"/>
-                <button class="btn btn-warning" type="button" data-bind="click: SaveUpdatedClient, attr: { disabled: !(WebUrlChanged()) }, visible: WebUrlChanged"><i class="icon-ok-sign icon-white"></i></button>
-            </div>
-        </td>
-        <td>
-            <button class="btn btn-danger" data-bind="click: Remove, clickBubble: false">
-                <i class="icon-remove icon-white"></i>
-            </button>
-        </td>
+        <div class="edit-project-dialog" data-bind="dialog: addProjectDialogOptions, dialogVisible: isAddProjectDialogVisible" style="display: none">
+            <form class="form-horizontal">
+                <div class="control-group">
+                    <label class="control-label" for="inputProjectName">Название проекта</label>
+                    <div class="controls">
+                        <input type="text" id="inputProjectName" placeholder="Название проекта" data-bind="value: Name">
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="selectType">Тип проекта</label>
+                    <div class="controls">
+                        <select data-bind="options: ParentProjectTypes, value: Type, chosen: { PlaceholderText: 'Выберите тип', AddPlaceholder: true, ChosenOptions: {allow_single_deselect: true} }" id="selectType"></select>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="inputDescr">Краткое описание</label>
+                    <div class="controls">
+                        <input type="text" id="inputDescr" placeholder="Размер" data-bind="value: Description">
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="selectClient">Клиент</label>
+                    <div class="controls">
+                        <select data-bind="options: ParentClients, optionsText: 'Name', optionsValue: 'Id', value: ClientId, chosen: { PlaceholderText: 'Выберите клиента', AddPlaceholder: true, ChosenOptions: {allow_single_deselect: true} }" id="selectClient"></select>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="inputTechnologies">Используемые технологии</label>
+                    <div class="controls">
+                        <input type="text" id="inputTechnologies" placeholder="Технологии" data-bind="tagsinput: {}, value: TechnologiesUsed">
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="inputDateStarted">Дата начала проекта</label>
+                    <div class="controls">
+                        <input type="text" id="inputDateStarted" placeholder="Дата начала проекта" data-bind="datepicker: DateStarted">
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="inputDateFinished">Дата завершения проекта</label>
+                    <div class="controls">
+                        <input type="text" id="inputDateFinished" placeholder="Дата завершения проекта" data-bind="datepicker: DateFinished">
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="inputEstimate">Оценочная продолжительность проекта</label>
+                    <div class="controls">
+                        <div id="inputEstimate" data-bind="jQRangePicker: {formatter: LabelFormatter, defaultValues: {min: 0, max: 15}}, value: Estimate"></div>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="inputUsersCount">Текущее количество пользователей</label>
+                    <div class="controls">
+                        <input type="text" id="inputUsersCount" placeholder="Количество пользователей" data-bind="value: UsersCount">
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="inputRoi">Процент возврата инвестиций</label>
+                    <div class="controls">
+                        <input type="text" id="inputRoi" placeholder="Процент возврата инвестиций" data-bind="value: Roi">
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="inputFeatures">Особые функции</label>
+                    <div class="controls">
+                        <input type="text" id="inputFeatures" placeholder="Функции" data-bind="tagsinput: {}, value: SpecialFeatures">
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="inputCloud">Иммет ли подключение к облаку</label>
+                    <div class="controls">
+                        <input type="checkbox" id="inputCloud" data-bind="checked: NewProject.IsCloudConnected">
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="inputMarkup">Разметка презентационного блока в портфолио</label>
+                    <div class="controls">
+                        <textarea id="inputMarkup" data-bind="ckeditor: Markup"></textarea>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="inputWebUrl">Адрес сайта</label>
+                    <div class="controls">
+                        <input type="text" id="inputWebUrl" placeholder="Адрес сайта" data-bind="value: WebUrl">
+                    </div>
+                </div>
+                <div class="control-group" data-bind="visible: (Type() == 'Mobile')">
+                    <label class="control-label" for="inputPlatforms">Поддерживаемые платформы</label>
+                    <div class="controls">
+                        <input type="text" id="inputPlatforms" placeholder="Поддерживаемые платформы" data-bind="tagsinput: {}, value: PlatformsSupported">
+                    </div>
+                </div>
+            </form>
+        </div>
     </tr>
 </script>
