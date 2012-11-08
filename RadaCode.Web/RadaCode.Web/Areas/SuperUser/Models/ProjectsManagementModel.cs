@@ -28,10 +28,10 @@ namespace RadaCode.Web.Areas.SuperUser.Models
         public Guid ClientId { get; set; }
         public string ClientName { get; set; }
         public virtual List<string> TechnologiesUsed { get; set; }
-        public DateTime? DateStarted { get; set; }
-        public TimeSpan ProjectEstimate { get; set; }
-        public TimeSpan ProjectActualCompletionSpan { get; set; }
-        public DateTime DateFinished { get; set; }
+        public string DateStarted { get; set; }
+        public string ProjectEstimate { get; set; }
+        public string ProjectActualCompletionSpan { get; set; }
+        public string DateFinished { get; set; }
         public string WebSiteUrl { get; set; }
         public int CurrentUsersCount { get; set; }
         public int ROIpercentage { get; set; }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Reflection;
 using System.Web.Compilation;
@@ -417,13 +418,13 @@ namespace RadaCode.Web.Areas.SuperUser.Controllers
                                                           ClientId = sp.Customer.Id,
                                                           ClientName = sp.Customer.CustomerName,
                                                           CurrentUsersCount = sp.CurrentUsersCount,
-                                                          DateFinished = sp.DateFinished,
-                                                          DateStarted = sp.DateStarted,
+                                                          DateFinished = sp.DateFinished.ToString("yyyy-mm-dd"),
+                                                          DateStarted = sp.DateStarted.Value.ToString("yyyy-mm-dd"),
                                                           Description = sp.Description,
                                                           IsCloudConnected = sp.IsCloudConnected,
                                                           Name = sp.Name,
-                                                          ProjectActualCompletionSpan = sp.ProjectActualCompletionSpan,
-                                                          ProjectEstimate = sp.ProjectEstimate,
+                                                          ProjectActualCompletionSpan = (sp.ProjectActualCompletionSpan.TotalDays / 7).ToString(),
+                                                          ProjectEstimate = (sp.ProjectEstimate.TotalDays / 7).ToString(),
                                                           ProjectDescriptionMarkup = sp.ProjectDescriptionMarkup,
                                                           ROIpercentage = sp.ROIpercentage, 
                                                           SpecialFeatures = sp.SpecialFeatures,
@@ -438,13 +439,13 @@ namespace RadaCode.Web.Areas.SuperUser.Controllers
                         ClientId = sp.Customer.Id,
                         ClientName = sp.Customer.CustomerName,
                         CurrentUsersCount = sp.CurrentUsersCount,
-                        DateFinished = sp.DateFinished,
-                        DateStarted = sp.DateStarted,
+                        DateFinished = sp.DateFinished.ToString("yyyy-mm-dd"),
+                        DateStarted = sp.DateStarted.Value.ToString("yyyy-mm-dd"),
                         Description = sp.Description,
                         IsCloudConnected = sp.IsCloudConnected,
                         Name = sp.Name,
-                        ProjectActualCompletionSpan = sp.ProjectActualCompletionSpan,
-                        ProjectEstimate = sp.ProjectEstimate,
+                        ProjectActualCompletionSpan = (sp.ProjectActualCompletionSpan.TotalDays / 7).ToString(),
+                        ProjectEstimate = (sp.ProjectEstimate.TotalDays / 7).ToString(),
                         ProjectDescriptionMarkup = sp.ProjectDescriptionMarkup,
                         ROIpercentage = sp.ROIpercentage,
                         SpecialFeatures = sp.SpecialFeatures,
@@ -460,13 +461,13 @@ namespace RadaCode.Web.Areas.SuperUser.Controllers
                         ClientId = sp.Customer.Id,
                         ClientName = sp.Customer.CustomerName,
                         CurrentUsersCount = sp.CurrentUsersCount,
-                        DateFinished = sp.DateFinished,
-                        DateStarted = sp.DateStarted,
+                        DateFinished = sp.DateFinished.ToString("yyyy-mm-dd"),
+                        DateStarted = sp.DateStarted.Value.ToString("yyyy-mm-dd"),
                         Description = sp.Description,
                         IsCloudConnected = sp.IsCloudConnected,
                         Name = sp.Name,
-                        ProjectActualCompletionSpan = sp.ProjectActualCompletionSpan,
-                        ProjectEstimate = sp.ProjectEstimate,
+                        ProjectActualCompletionSpan = (sp.ProjectActualCompletionSpan.TotalDays / 7).ToString(),
+                        ProjectEstimate = (sp.ProjectEstimate.TotalDays / 7).ToString(),
                         ProjectDescriptionMarkup = sp.ProjectDescriptionMarkup,
                         ROIpercentage = sp.ROIpercentage,
                         SpecialFeatures = sp.SpecialFeatures,
@@ -719,7 +720,7 @@ namespace RadaCode.Web.Areas.SuperUser.Controllers
 
         [HttpPost]
         [ValidateInput(false)] 
-        public JsonResult AddProject(string type, string name, string description, string customerId, string[] technologiesUsed, string dateStarted, string dateFinished, string estimate, string usersCount, string roi, string[] specialFeatures, string isCloudConnected, string markup, string webUrl, string[] platformsSupported)
+        public JsonResult AddProject(string type, string name, string description, string customerId, string technologiesUsed, string dateStarted, string dateFinished, string estimate, string usersCount, string roi, string specialFeatures, string isCloudConnected, string markup, string webUrl, string platformsSupported)
         {
             if (String.IsNullOrEmpty(name) ||
                 String.IsNullOrEmpty(description) ||
@@ -738,6 +739,16 @@ namespace RadaCode.Web.Areas.SuperUser.Controllers
 
             var parsableEstimate = 7*int.Parse(estimate);
 
+            if (String.IsNullOrEmpty(roi))
+            {
+                roi = "0";
+            }
+
+            if (String.IsNullOrEmpty(usersCount))
+            {
+                usersCount = "0";
+            }
+
             var cusId = Guid.Parse(customerId);
 
             var customer = _context.Customers.SingleOrDefault(cs => cs.Id == cusId);
@@ -754,16 +765,24 @@ namespace RadaCode.Web.Areas.SuperUser.Controllers
                                            Name = name,
                                            CurrentUsersCount = int.Parse(usersCount),
                                            Customer = customer,
-                                           DateFinished = DateTime.Parse(dateFinished),
-                                           DateStarted = DateTime.Parse(dateStarted),
+                                           DateFinished = DateTime.ParseExact(
+                                                           dateFinished,
+                                                           "yyyy-MM-dd",
+                                                           CultureInfo.InvariantCulture,
+                                                           DateTimeStyles.None),
+                                           DateStarted = DateTime.ParseExact(
+                                                           dateStarted,
+                                                           "yyyy-MM-dd",
+                                                           CultureInfo.InvariantCulture,
+                                                           DateTimeStyles.None),
                                            Description = description,
                                            IsCloudConnected = bool.Parse(isCloudConnected),
                                            ProjectDescriptionMarkup = markup,
                                            ProjectEstimate = TimeSpan.Parse(parsableEstimate.ToString()),
                                            ROIpercentage = int.Parse(roi),
                                            WebSiteUrl = webUrl,
-                                           SpecialFeatures = specialFeatures.ToList(),
-                                           TechnologiesUsed = technologiesUsed.ToList()
+                                           SpecialFeatures = JsonConvert.DeserializeObject<List<string>>(specialFeatures),
+                                           TechnologiesUsed = JsonConvert.DeserializeObject<List<string>>(technologiesUsed)
                                        };
                     break;
                 case "Mobile":
@@ -772,17 +791,25 @@ namespace RadaCode.Web.Areas.SuperUser.Controllers
                         Name = name,
                         CurrentUsersCount = int.Parse(usersCount),
                         Customer = customer,
-                        DateFinished = DateTime.Parse(dateFinished),
-                        DateStarted = DateTime.Parse(dateStarted),
+                        DateFinished = DateTime.ParseExact(
+                                        dateFinished,
+                                        "yyyy-MM-dd",
+                                        CultureInfo.InvariantCulture,
+                                        DateTimeStyles.None),
+                        DateStarted = DateTime.ParseExact(
+                                        dateStarted,
+                                        "yyyy-MM-dd",
+                                        CultureInfo.InvariantCulture,
+                                        DateTimeStyles.None),
                         Description = description,
                         IsCloudConnected = bool.Parse(isCloudConnected),
                         ProjectDescriptionMarkup = markup,
                         ProjectEstimate = TimeSpan.Parse(parsableEstimate.ToString()),
                         ROIpercentage = int.Parse(roi),
                         WebSiteUrl = webUrl,
-                        SpecialFeatures = specialFeatures.ToList(),
-                        TechnologiesUsed = technologiesUsed.ToList(),
-                        PlatformsSupported = platformsSupported.ToList()
+                        SpecialFeatures = JsonConvert.DeserializeObject<List<string>>(specialFeatures),
+                        TechnologiesUsed = JsonConvert.DeserializeObject<List<string>>(technologiesUsed),
+                        PlatformsSupported = JsonConvert.DeserializeObject<List<string>>(platformsSupported)
                     };
                     break;
                 case "Distributed":
@@ -791,16 +818,24 @@ namespace RadaCode.Web.Areas.SuperUser.Controllers
                         Name = name,
                         CurrentUsersCount = int.Parse(usersCount),
                         Customer = customer,
-                        DateFinished = DateTime.Parse(dateFinished),
-                        DateStarted = DateTime.Parse(dateStarted),
+                        DateFinished = DateTime.ParseExact(
+                                        dateFinished,
+                                        "yyyy-MM-dd",
+                                        CultureInfo.InvariantCulture,
+                                        DateTimeStyles.None),
+                        DateStarted = DateTime.ParseExact(
+                                        dateStarted,
+                                        "yyyy-MM-dd",
+                                        CultureInfo.InvariantCulture,
+                                        DateTimeStyles.None),
                         Description = description,
                         IsCloudConnected = bool.Parse(isCloudConnected),
                         ProjectDescriptionMarkup = markup,
                         ProjectEstimate = TimeSpan.Parse(parsableEstimate.ToString()),
                         ROIpercentage = int.Parse(roi),
                         WebSiteUrl = webUrl,
-                        SpecialFeatures = specialFeatures.ToList(),
-                        TechnologiesUsed = technologiesUsed.ToList()
+                        SpecialFeatures = JsonConvert.DeserializeObject<List<string>>(specialFeatures),
+                        TechnologiesUsed = JsonConvert.DeserializeObject<List<string>>(technologiesUsed)
                     };
                     break;
                 default:
@@ -851,7 +886,7 @@ namespace RadaCode.Web.Areas.SuperUser.Controllers
 
         [HttpPost]
         [ValidateInput(false)] 
-        public JsonResult UpdateProject(string id, string type, string name, string description, string customerId, string[] technologiesUsed, string dateStarted, string dateFinished, string estimate, string usersCount, string roi, string[] specialFeatures, string isCloudConnected, string markup, string webUrl, string[] platformsSupported)
+        public JsonResult UpdateProject(string id, string type, string name, string description, string customerId, string technologiesUsed, string dateStarted, string dateFinished, string estimate, string usersCount, string roi, string specialFeatures, string isCloudConnected, string markup, string webUrl, string platformsSupported)
         {
             if (String.IsNullOrEmpty(id) ||
                 String.IsNullOrEmpty(description) ||
@@ -869,6 +904,18 @@ namespace RadaCode.Web.Areas.SuperUser.Controllers
 
             var cusId = Guid.Parse(customerId);
 
+            if (String.IsNullOrEmpty(roi))
+            {
+                roi = "0";
+            }
+
+            if (String.IsNullOrEmpty(usersCount))
+            {
+                usersCount = "0";
+            }
+
+            var parsableEstimate = 7 * int.Parse(estimate);
+
             var customer = _context.Customers.SingleOrDefault(cs => cs.Id == cusId);
 
             if (customer == null) return Json(new { status = "SPCD: NO-CUST-FOUND" });
@@ -882,23 +929,23 @@ namespace RadaCode.Web.Areas.SuperUser.Controllers
             projectToUpdate.Name = name;
             projectToUpdate.CurrentUsersCount = int.Parse(usersCount);
             projectToUpdate.Customer = customer;
-            projectToUpdate.DateFinished = DateTime.Parse(dateFinished);
-            projectToUpdate.DateStarted = DateTime.Parse(dateStarted);
+            projectToUpdate.DateFinished = DateTime.ParseExact(dateFinished, "yyyy-MM-dd", CultureInfo.InvariantCulture);
+            projectToUpdate.DateStarted = DateTime.ParseExact(dateStarted, "yyyy-MM-dd", CultureInfo.InvariantCulture);
             projectToUpdate.Description = description;
             projectToUpdate.IsCloudConnected = bool.Parse(isCloudConnected);
             projectToUpdate.ProjectDescriptionMarkup = markup;
-            projectToUpdate.ProjectEstimate = TimeSpan.Parse(estimate);
+            projectToUpdate.ProjectEstimate = TimeSpan.Parse(parsableEstimate.ToString());
             projectToUpdate.ROIpercentage = int.Parse(roi);
             projectToUpdate.WebSiteUrl = webUrl;
-            projectToUpdate.SpecialFeatures = specialFeatures.ToList();
-            projectToUpdate.TechnologiesUsed = technologiesUsed.ToList();
+            projectToUpdate.SpecialFeatures = JsonConvert.DeserializeObject<List<string>>(specialFeatures);
+            projectToUpdate.TechnologiesUsed = JsonConvert.DeserializeObject<List<string>>(technologiesUsed);
             projectToUpdate.CurrentUsersCount = int.Parse(usersCount);
 
             if(type == "Mobile")
             {
                 var mobileDevelopmentProject = projectToUpdate as MobileDevelopmentProject;
                 if (mobileDevelopmentProject != null)
-                    mobileDevelopmentProject.PlatformsSupported = platformsSupported.ToList();
+                    mobileDevelopmentProject.PlatformsSupported = JsonConvert.DeserializeObject<List<string>>(platformsSupported);
             }
 
             try

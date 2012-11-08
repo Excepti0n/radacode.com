@@ -54,7 +54,9 @@
             //handle the field changing
             ko.utils.registerEventHandler(element, "change", function () {
                 var observable = valueAccessor();
-                observable($(element).datepicker("getDate"));
+                var selectedDate = $(element).datepicker("getDate");
+                var formattedResult = $.datepicker.formatDate(options.dateFormat, $(this).datepicker("getDate"));
+                observable(formattedResult);
             });
 
             //handle disposal (if KO removes by the template binding)
@@ -82,7 +84,7 @@
                 $(element).rangeSlider(options);
                 $(element).bind("valuesChanged", function (event, data) {
                     var value = allBindingsAccessor().value;
-                    value(data.values.min + '::' + data.values.max);
+                    value(options.resultInterpreter(data.values));
                 });
                 
                 if(options.prohibitLeftChange) {
@@ -108,6 +110,11 @@
                 };
 
                 $(element).tagsInput(options);
+
+                if (options.defaultTags && options.defaultTags()) {
+                    $(element).importTags(options.defaultTags().join(","));
+                }
+                
             }, 0);
 
         }

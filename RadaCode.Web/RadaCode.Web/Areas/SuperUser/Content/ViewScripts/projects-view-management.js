@@ -133,6 +133,14 @@ function ClientModel(data, parent) {
 function ProjectModel(data, parent) {
     var self = this;
     
+    self.LabelFormatter = function (value) {
+        return parent.LabelFormatter(value);
+    };
+
+    self.WeeksInterpreter = function (values) {
+        return parent.WeeksInterpreter(values);
+    };
+
     self.Id = data.Id;
     self.Name = ko.observable(data.Name).extend({ required: true });;
     self.NameChanged = ko.observable(false);
@@ -141,7 +149,7 @@ function ProjectModel(data, parent) {
     });
 
     self.ParentClients = ko.computed(function () {
-        return parent.Client();
+        return parent.Clients();
     });
     
     self.ParentProjectTypes = ko.computed(function () {
@@ -278,17 +286,17 @@ function ProjectModel(data, parent) {
                 type: self.Type(),
                 name: self.Name(),
                 description: self.Description(),
-                customerId: self.CustomerId(),
+                customerId: self.ClientId(),
                 technologiesUsed: JSON.stringify(self.TechnologiesUsed()),
                 dateStarted: self.DateStarted(),
                 dateFinished: self.DateFinished(),
-                estimate: self.Estimate(),
-                usersCount: self.UsersCount(),
-                roi: self.Roi(),
+                estimate: self.ProjectEstimate(),
+                usersCount: self.CurrentUsersCount(),
+                roi: self.ROIpercentage(),
                 specialFeatures: JSON.stringify(self.SpecialFeatures()),
                 isCloudConnected: self.IsCloudConnected(),
-                markup: self.Markup(),
-                webUrl: self.WebUrl(),
+                markup: self.ProjectDescriptionMarkup(),
+                webUrl: self.WebSiteUrl(),
                 platformsSupported: JSON.stringify(self.PlatformsSupported())
             },
             success: function (res) {
@@ -482,12 +490,15 @@ function ProjectsViewModel(data) {
     self.NewProject.WebUrl = ko.observable('');
     self.NewProject.PlatformsSupported = ko.observableArray([]);
 
-    self.NewProject.LabelFormatter = function(value) {
+    self.LabelFormatter = function(value) {
         if (value == 0) return '';
         return parseInt(value) + ' (недель)';
     };
 
     self.NewProjectErrors = ko.validation.group(self.NewProject);
+    self.WeeksInterpreter = function(values) {
+        return parseInt(values.max - values.min);
+    };
 
     self.addProjectDialogOptions = {
         autoOpen: false,
