@@ -27,7 +27,7 @@ namespace RadaCode.Web.Areas.SuperUser.Models
         public string Description { get; set; }
         public Guid ClientId { get; set; }
         public string ClientName { get; set; }
-        public virtual List<string> TechnologiesUsed { get; set; }
+        public virtual IList<string> TechnologiesUsed { get; set; }
         public string DateStarted { get; set; }
         public string ProjectEstimate { get; set; }
         public string ProjectActualCompletionSpan { get; set; }
@@ -35,7 +35,7 @@ namespace RadaCode.Web.Areas.SuperUser.Models
         public string WebSiteUrl { get; set; }
         public int CurrentUsersCount { get; set; }
         public int ROIpercentage { get; set; }
-        public virtual List<string> SpecialFeatures { get; set; }
+        public virtual IList<string> SpecialFeatures { get; set; }
         public bool IsCloudConnected { get; set; }
         public string ProjectDescriptionMarkup { get; set; }
         public virtual string Type
@@ -54,7 +54,7 @@ namespace RadaCode.Web.Areas.SuperUser.Models
 
     public class MobileProjectModel: ProjectModel
     {
-        public List<string> PlatformsSupported { get; set; }
+        public IList<string> PlatformsSupported { get; set; }
 
         public override string Type
         {
@@ -78,6 +78,6 @@ namespace RadaCode.Web.Areas.SuperUser.Models
         public List<MobileProjectModel> MobileProjects { get; set; }
         public List<DistributedProjectModel> CloudProjects { get; set; }
         public List<ProjectModel> Projects { get; set; }
-        public List<string> Types { get; set; } 
+        public IList<string> Types { get; set; } 
     }
 }

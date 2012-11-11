@@ -83,6 +83,7 @@
 
                 $(element).rangeSlider(options);
                 $(element).bind("valuesChanged", function (event, data) {
+                    if (isNaN(data.values.max) || isNaN(data.values.min)) return;
                     var value = allBindingsAccessor().value;
                     value(options.resultInterpreter(data.values));
                 });

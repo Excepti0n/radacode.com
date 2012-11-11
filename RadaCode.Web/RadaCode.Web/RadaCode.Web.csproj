@@ -994,7 +994,6 @@
     <Content Include="Areas\SuperUser\Content\jQRangePicker\jQRangeSliderHandle.js" />
     <Content Include="Areas\SuperUser\Content\jQRangePicker\jQRangeSliderLabel.js" />
     <Content Include="Areas\SuperUser\Content\jQRangePicker\jQRangeSliderMouseTouch.js" />
-    <Content Include="Areas\SuperUser\Controllers\content-browser-logic.js" />
     <Content Include="Areas\SuperUser\Content\control-init-logic.js" />
     <Content Include="Areas\SuperUser\Content\FileUpload\canvas-to-blob.min.js" />
     <Content Include="Areas\SuperUser\Content\FileUpload\jquery.fileupload-ip.js" />
@@ -1170,9 +1169,6 @@
     <Content Include="Areas\SuperUser\FileHandler\Handler.ashx" />
     <Content Include="Areas\SuperUser\Views\Authorization\Authenticate.cshtml" />
     <Content Include="Areas\SuperUser\Views\RadaCodeWebManagement\Index.cshtml" />
-    <Content Include="Areas\SuperUser\Views\RadaCodeWebManagement\_Deputies.cshtml" />
-    <Content Include="Areas\SuperUser\Views\RadaCodeWebManagement\_Parties.cshtml" />
-    <Content Include="Areas\SuperUser\Views\RadaCodeWebManagement\_PartyEditView.cshtml" />
     <Content Include="Areas\SuperUser\Views\RadaCodeWebManagement\_Users.cshtml" />
     <Content Include="Areas\SuperUser\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\SuperUser\Views\Web.config" />

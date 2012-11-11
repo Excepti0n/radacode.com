@@ -418,8 +418,8 @@ namespace RadaCode.Web.Areas.SuperUser.Controllers
                                                           ClientId = sp.Customer.Id,
                                                           ClientName = sp.Customer.CustomerName,
                                                           CurrentUsersCount = sp.CurrentUsersCount,
-                                                          DateFinished = sp.DateFinished.ToString("yyyy-mm-dd"),
-                                                          DateStarted = sp.DateStarted.Value.ToString("yyyy-mm-dd"),
+                                                          DateFinished = sp.DateFinished.ToString("yyyy-MM-dd"),
+                                                          DateStarted = sp.DateStarted.Value.ToString("yyyy-MM-dd"),
                                                           Description = sp.Description,
                                                           IsCloudConnected = sp.IsCloudConnected,
                                                           Name = sp.Name,
@@ -439,8 +439,8 @@ namespace RadaCode.Web.Areas.SuperUser.Controllers
                         ClientId = sp.Customer.Id,
                         ClientName = sp.Customer.CustomerName,
                         CurrentUsersCount = sp.CurrentUsersCount,
-                        DateFinished = sp.DateFinished.ToString("yyyy-mm-dd"),
-                        DateStarted = sp.DateStarted.Value.ToString("yyyy-mm-dd"),
+                        DateFinished = sp.DateFinished.ToString("yyyy-MM-dd"),
+                        DateStarted = sp.DateStarted.Value.ToString("yyyy-MM-dd"),
                         Description = sp.Description,
                         IsCloudConnected = sp.IsCloudConnected,
                         Name = sp.Name,
@@ -461,8 +461,8 @@ namespace RadaCode.Web.Areas.SuperUser.Controllers
                         ClientId = sp.Customer.Id,
                         ClientName = sp.Customer.CustomerName,
                         CurrentUsersCount = sp.CurrentUsersCount,
-                        DateFinished = sp.DateFinished.ToString("yyyy-mm-dd"),
-                        DateStarted = sp.DateStarted.Value.ToString("yyyy-mm-dd"),
+                        DateFinished = sp.DateFinished.ToString("yyyy-MM-dd"),
+                        DateStarted = sp.DateStarted.Value.ToString("yyyy-MM-dd"),
                         Description = sp.Description,
                         IsCloudConnected = sp.IsCloudConnected,
                         Name = sp.Name,
@@ -756,6 +756,7 @@ namespace RadaCode.Web.Areas.SuperUser.Controllers
             if (customer == null) return Json(new { status = "SPCD: NO-CUST-FOUND" });
 
             SoftwareProject projectToAdd;
+            ProjectModel addedProject;
 
             switch (type)
             {
@@ -784,6 +785,25 @@ namespace RadaCode.Web.Areas.SuperUser.Controllers
                                            SpecialFeatures = JsonConvert.DeserializeObject<List<string>>(specialFeatures),
                                            TechnologiesUsed = JsonConvert.DeserializeObject<List<string>>(technologiesUsed)
                                        };
+                    addedProject = new WebProjectModel
+                        {
+                            Id = projectToAdd.Id,
+                            ClientId = projectToAdd.Customer.Id,
+                            ClientName = projectToAdd.Customer.CustomerName,
+                            CurrentUsersCount = projectToAdd.CurrentUsersCount,
+                            DateFinished = projectToAdd.DateFinished.ToString("yyyy-MM-dd"),
+                            DateStarted = projectToAdd.DateStarted.Value.ToString("yyyy-MM-dd"),
+                            Description = projectToAdd.Description,
+                            IsCloudConnected = projectToAdd.IsCloudConnected,
+                            Name = projectToAdd.Name,
+                            ProjectActualCompletionSpan = (projectToAdd.ProjectActualCompletionSpan.TotalDays / 7).ToString(),
+                            ProjectEstimate = (projectToAdd.ProjectEstimate.TotalDays / 7).ToString(),
+                            ProjectDescriptionMarkup = projectToAdd.ProjectDescriptionMarkup,
+                            ROIpercentage = projectToAdd.ROIpercentage,
+                            SpecialFeatures = projectToAdd.SpecialFeatures,
+                            TechnologiesUsed = projectToAdd.TechnologiesUsed,
+                            WebSiteUrl = projectToAdd.WebSiteUrl
+                        };
                     break;
                 case "Mobile":
                     projectToAdd = new MobileDevelopmentProject
@@ -811,6 +831,26 @@ namespace RadaCode.Web.Areas.SuperUser.Controllers
                         TechnologiesUsed = JsonConvert.DeserializeObject<List<string>>(technologiesUsed),
                         PlatformsSupported = JsonConvert.DeserializeObject<List<string>>(platformsSupported)
                     };
+                    addedProject = new MobileProjectModel
+                        {
+                            Id = projectToAdd.Id,
+                            ClientId = projectToAdd.Customer.Id,
+                            ClientName = projectToAdd.Customer.CustomerName,
+                            CurrentUsersCount = projectToAdd.CurrentUsersCount,
+                            DateFinished = projectToAdd.DateFinished.ToString("yyyy-MM-dd"),
+                            DateStarted = projectToAdd.DateStarted.Value.ToString("yyyy-MM-dd"),
+                            Description = projectToAdd.Description,
+                            IsCloudConnected = projectToAdd.IsCloudConnected,
+                            Name = projectToAdd.Name,
+                            ProjectActualCompletionSpan = (projectToAdd.ProjectActualCompletionSpan.TotalDays / 7).ToString(),
+                            ProjectEstimate = (projectToAdd.ProjectEstimate.TotalDays / 7).ToString(),
+                            ProjectDescriptionMarkup = projectToAdd.ProjectDescriptionMarkup,
+                            ROIpercentage = projectToAdd.ROIpercentage,
+                            SpecialFeatures = projectToAdd.SpecialFeatures,
+                            TechnologiesUsed = projectToAdd.TechnologiesUsed,
+                            WebSiteUrl = projectToAdd.WebSiteUrl,
+                            PlatformsSupported = (projectToAdd as MobileDevelopmentProject).PlatformsSupported
+                        };
                     break;
                 case "Distributed":
                     projectToAdd = new DistributedDevelopmentProject
@@ -837,6 +877,25 @@ namespace RadaCode.Web.Areas.SuperUser.Controllers
                         SpecialFeatures = JsonConvert.DeserializeObject<List<string>>(specialFeatures),
                         TechnologiesUsed = JsonConvert.DeserializeObject<List<string>>(technologiesUsed)
                     };
+                    addedProject = new DistributedProjectModel
+                        {
+                            Id = projectToAdd.Id,
+                            ClientId = projectToAdd.Customer.Id,
+                            ClientName = projectToAdd.Customer.CustomerName,
+                            CurrentUsersCount = projectToAdd.CurrentUsersCount,
+                            DateFinished = projectToAdd.DateFinished.ToString("yyyy-MM-dd"),
+                            DateStarted = projectToAdd.DateStarted.Value.ToString("yyyy-MM-dd"),
+                            Description = projectToAdd.Description,
+                            IsCloudConnected = projectToAdd.IsCloudConnected,
+                            Name = projectToAdd.Name,
+                            ProjectActualCompletionSpan = (projectToAdd.ProjectActualCompletionSpan.TotalDays / 7).ToString(),
+                            ProjectEstimate = (projectToAdd.ProjectEstimate.TotalDays / 7).ToString(),
+                            ProjectDescriptionMarkup = projectToAdd.ProjectDescriptionMarkup,
+                            ROIpercentage = projectToAdd.ROIpercentage,
+                            SpecialFeatures = projectToAdd.SpecialFeatures,
+                            TechnologiesUsed = projectToAdd.TechnologiesUsed,
+                            WebSiteUrl = projectToAdd.WebSiteUrl
+                        };
                     break;
                 default:
                     return Json(new { status = "SPCD: UNKNOWN-TYPE" });
@@ -853,7 +912,7 @@ namespace RadaCode.Web.Areas.SuperUser.Controllers
                 return Json(new { status = "SPCD: ERROR", error = ex.Message });
             }
 
-            return Json(new { status = "SPCD: OK", project = projectToAdd });
+            return Json(new { status = "SPCD: OK", project = addedProject });
         }
 
         [HttpPost]
