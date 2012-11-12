@@ -10,6 +10,10 @@ namespace RadaCode.Web.Data.Entities
     {
         public string Name { get; set; }
         public string Description { get; set; }
+
+        public string Name_En { get; set; }
+        public string Description_En { get; set; }
+
         public virtual Customer Customer { get; set; }
         public DateTime? DateStarted { get; set; }
         public DateTime DateFinished { get; set; }
@@ -18,6 +22,8 @@ namespace RadaCode.Web.Data.Entities
         public int ROIpercentage { get; set; }
         public bool IsCloudConnected { get; set; }
         public string ProjectDescriptionMarkup { get; set; }
+
+        public string ProjectDescriptionMarkup_En { get; set; }
 
         public virtual IList<string> SpecialFeatures
         {
@@ -45,6 +51,36 @@ namespace RadaCode.Web.Data.Entities
             {
                 if (value != null) _SpecialFeatures = value.Split(new char[] { ';' }, StringSplitOptions.RemoveEmptyEntries).ToList(); else
                     _SpecialFeatures = new List<string>();
+            }
+        }
+
+        public virtual IList<string> SpecialFeatures_En
+        {
+            get
+            {
+
+                return _SpecialFeatures_En;
+
+            }
+            set
+            {
+                _SpecialFeatures_En = value;
+            }
+        }
+
+        private IList<string> _SpecialFeatures_En;
+
+        public string SpecialFeaturesSerialized_En
+        {
+            get
+            {
+                return String.Join(";", _SpecialFeatures_En);
+            }
+            set
+            {
+                if (value != null) _SpecialFeatures_En = value.Split(new char[] { ';' }, StringSplitOptions.RemoveEmptyEntries).ToList();
+                else
+                    _SpecialFeatures_En = new List<string>();
             }
         }
 

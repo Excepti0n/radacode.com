@@ -8,5 +8,6 @@ namespace RadaCode.Web.Data.Entities
     public class Industry: IdableEntity
     {
         public string Name { get; set; }
+        public string Name_En { get; set; }
     }
 }

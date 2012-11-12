@@ -13,5 +13,7 @@ namespace RadaCode.Web.Data.Entities
         public string CustomerCompanySize { get; set; }
         public string NetRevenue { get; set; }
         public string WebSiteUrl { get; set; }
+
+        public string CustomerName_En { get; set; }
     }
 }

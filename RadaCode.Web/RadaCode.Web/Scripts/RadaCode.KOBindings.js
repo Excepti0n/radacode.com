@@ -69,9 +69,9 @@
             var value = ko.utils.unwrapObservable(valueAccessor()),
                 current = $(element).datepicker("getDate");
 
-            if (value - current !== 0) {
+            //if (value - current !== 0) {
                 $(element).datepicker("setDate", value);
-            }
+            //}
         }
     };
     

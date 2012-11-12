@@ -8,6 +8,12 @@
         self.NameChanged(true);
     });
     
+    self.Name_En = ko.observable(data.Name_En);
+    self.Name_EnChanged = ko.observable(false);
+    self.Name_En.subscribe(function () {
+        self.Name_EnChanged(true);
+    });
+    
     self.Remove = function () {
         var removeIndustryUrl = $('#RemoveIndustryUrl').val();
         $.ajax({
@@ -33,11 +39,13 @@
             url: updateIndustryUrl,
             data: {
                 id: self.Id,
-                newName: self.Name()
+                newName: self.Name(),
+                newName_en: self.Name_En()
             },
             success: function(res) {
                 if (res.status === "SPCD: OK") {
                     self.NameChanged(false);
+                    self.Name_EnChanged(false);
                 } else {
                     alert("There was an error updating an industry");
                 }
@@ -54,6 +62,12 @@ function ClientModel(data, parent) {
     self.NameChanged = ko.observable(false);
     self.Name.subscribe(function () {
         self.NameChanged(true);
+    });
+    
+    self.Name_En = ko.observable(data.Name_En);
+    self.Name_EnChanged = ko.observable(false);
+    self.Name_En.subscribe(function () {
+        self.Name_EnChanged(true);
     });
 
     self.ParentIndustries = ko.computed(function () {
@@ -92,6 +106,7 @@ function ClientModel(data, parent) {
             data: {
                 id: self.Id,
                 name: self.Name(),
+                name_en: self.Name_En(),
                 industryId: self.IndustryId(),
                 size: self.Size(),
                 ravenue: self.Ravenue(),
@@ -100,6 +115,7 @@ function ClientModel(data, parent) {
             success: function (res) {
                 if (res.status === "SPCD: OK") {
                     self.NameChanged(false);
+                    self.Name_EnChanged(false);
                     self.IndustryIdChanged(false);
                     self.SizeChanged(false);
                     self.RavenueChanged(false);
@@ -147,6 +163,12 @@ function ProjectModel(data, parent) {
     self.Name.subscribe(function () {
         self.NameChanged(true);
     });
+    
+    self.Name_En = ko.observable(data.Name_En);
+    self.Name_EnChanged = ko.observable(false);
+    self.Name_En.subscribe(function () {
+        self.Name_EnChanged(true);
+    });
 
     self.ParentClients = ko.computed(function () {
         return parent.Clients();
@@ -186,6 +208,12 @@ function ProjectModel(data, parent) {
         self.DescriptionChanged(true);
     });
     
+    self.Description_En = ko.observable(data.Description_En).extend({ required: true });;
+    self.Description_EnChanged = ko.observable(false);
+    self.Description_En.subscribe(function () {
+        self.Description_EnChanged(true);
+    });
+    
     self.IsCloudConnected = ko.observable(data.IsCloudConnected).extend({ required: true });;
     self.IsCloudConnectedChanged = ko.observable(false);
     self.IsCloudConnected.subscribe(function () {
@@ -210,6 +238,12 @@ function ProjectModel(data, parent) {
         self.ProjectDescriptionMarkupChanged(true);
     });
     
+    self.ProjectDescriptionMarkup_En = ko.observable(data.ProjectDescriptionMarkup_En).extend({ required: true });;
+    self.ProjectDescriptionMarkup_EnChanged = ko.observable(false);
+    self.ProjectDescriptionMarkup_En.subscribe(function () {
+        self.ProjectDescriptionMarkup_EnChanged(true);
+    });
+    
     self.ROIpercentage = ko.observable(data.ROIpercentage);
     self.ROIpercentageChanged = ko.observable(false);
     self.ROIpercentage.subscribe(function () {
@@ -220,6 +254,12 @@ function ProjectModel(data, parent) {
     self.SpecialFeaturesChanged = ko.observable(false);
     self.SpecialFeatures.subscribe(function () {
         self.SpecialFeaturesChanged(true);
+    });
+    
+    self.SpecialFeatures_En = ko.observableArray(data.SpecialFeatures_En);
+    self.SpecialFeatures_EnChanged = ko.observable(false);
+    self.SpecialFeatures_En.subscribe(function () {
+        self.SpecialFeatures_EnChanged(true);
     });
     
     self.TechnologiesUsed = ko.observableArray(data.TechnologiesUsed);
@@ -250,6 +290,14 @@ function ProjectModel(data, parent) {
 
     self.isEditProjectDialogVisible = ko.observable(false);
 
+    self.markupEditorId = ko.computed(function() {
+        return 'inputMarkupEditor-' + self.Id;
+    });
+    
+    self.markupEditorId_En = ko.computed(function () {
+        return 'inputMarkupEditor-En-' + self.Id;
+    });
+
     self.editProjectDialogOptions = {
         autoOpen: false,
         modal: true,
@@ -257,7 +305,7 @@ function ProjectModel(data, parent) {
         width: 1100,
         title: 'Редактирование проекта: ' + self.Name(),
         open: function () {
-            $('.chzn-select').chosen();
+            //$('.chzn-select').chosen();
             $('.jqSlider').rangeSlider("resize");
         },
         buttons: {
@@ -285,7 +333,9 @@ function ProjectModel(data, parent) {
                 id: self.Id,
                 type: self.Type(),
                 name: self.Name(),
+                name_en: self.Name_En(),
                 description: self.Description(),
+                description_en: self.Description_En(),
                 customerId: self.ClientId(),
                 technologiesUsed: JSON.stringify(self.TechnologiesUsed()),
                 dateStarted: self.DateStarted(),
@@ -294,14 +344,17 @@ function ProjectModel(data, parent) {
                 usersCount: self.CurrentUsersCount(),
                 roi: self.ROIpercentage(),
                 specialFeatures: JSON.stringify(self.SpecialFeatures()),
+                specialFeatures_en: JSON.stringify(self.SpecialFeatures_En()),
                 isCloudConnected: self.IsCloudConnected(),
                 markup: self.ProjectDescriptionMarkup(),
+                markup_en: self.ProjectDescriptionMarkup_En(),
                 webUrl: self.WebSiteUrl(),
                 platformsSupported: JSON.stringify(self.PlatformsSupported())
             },
             success: function (res) {
                 if (res.status === "SPCD: OK") {
                     self.isEditProjectDialogVisible(false);
+                    self.DescriptionChanged(false);
                 } else {
                     alert("There was an error updating a project record: " + res.status);
                 }
@@ -344,6 +397,7 @@ function ProjectsViewModel(data) {
     self.isAddIndustryDialogVisible = ko.observable(false);
     self.NewIndustry = { };
     self.NewIndustry.Name = ko.observable('').extend({ required: true });
+    self.NewIndustry.Name_En = ko.observable('').extend({ required: true });
     self.NewIndustryErrors = ko.validation.group(self.NewIndustry);
 
     self.addIndustryDialogOptions = {
@@ -366,7 +420,8 @@ function ProjectsViewModel(data) {
                     type: 'POST',
                     url: addIndustryUrl,
                     data: {
-                        name: self.NewIndustry.Name()
+                        name: self.NewIndustry.Name(),
+                        name_en: self.NewIndustry.Name_En()
                     },
                     dataType: "json",
                     success: function (res) {
@@ -374,6 +429,7 @@ function ProjectsViewModel(data) {
                             self.Industries.push(new IndustryModel(res.industry, self));
                             self.isAddIndustryDialogVisible(false);
                             self.NewIndustry.Name('');
+                            self.NewIndustry.Name_En('');
                         } else {
                             alert("There was an error adding the user: " + res.status);
                         }
@@ -400,6 +456,7 @@ function ProjectsViewModel(data) {
     self.isAddClientDialogVisible = ko.observable(false);
     self.NewClient = {};
     self.NewClient.Name = ko.observable('').extend({ required: true });
+    self.NewClient.Name_En = ko.observable('').extend({ required: true });
     self.NewClient.IndustryId = ko.observable('').extend({ required: true });
     self.NewClient.Size = ko.observable('').extend({ required: true });
     self.NewClient.Ravenue = ko.observable('').extend({ required: true });
@@ -428,6 +485,7 @@ function ProjectsViewModel(data) {
                     url: addClientUrl,
                     data: {
                         name: self.NewClient.Name(),
+                        name_en: self.NewClient.Name_En(),
                         industryId: self.NewClient.IndustryId(),
                         size: self.NewClient.Size(),
                         ravenue: self.NewClient.Ravenue(),
@@ -439,6 +497,7 @@ function ProjectsViewModel(data) {
                             self.Clients.push(new ClientModel(res.customer, self));
                             self.isAddClientDialogVisible(false);
                             self.NewClient.Name('');
+                            self.NewClient.Name_En('');
                             self.NewClient.IndustryId('');
                             self.NewClient.Size('');
                             self.NewClient.Ravenue('');
@@ -476,7 +535,9 @@ function ProjectsViewModel(data) {
     self.NewProject = {};
     self.NewProject.Type = ko.observable('').extend({ required: true });
     self.NewProject.Name = ko.observable('').extend({ required: true });
+    self.NewProject.Name_En = ko.observable('').extend({ required: true });
     self.NewProject.Description = ko.observable('').extend({ required: true });
+    self.NewProject.Description_En = ko.observable('').extend({ required: true });
     self.NewProject.CustomerId = ko.observable('').extend({ required: true });
     self.NewProject.TechnologiesUsed = ko.observableArray([]);
     self.NewProject.DateStarted = ko.observable('');
@@ -485,8 +546,10 @@ function ProjectsViewModel(data) {
     self.NewProject.UsersCount = ko.observable('');
     self.NewProject.Roi = ko.observable('');
     self.NewProject.SpecialFeatures = ko.observableArray([]);
+    self.NewProject.SpecialFeatures_En = ko.observableArray([]);
     self.NewProject.IsCloudConnected = ko.observable('').extend({ required: true });
     self.NewProject.Markup = ko.observable('').extend({ required: true });
+    self.NewProject.Markup_En = ko.observable('').extend({ required: true });
     self.NewProject.WebUrl = ko.observable('');
     self.NewProject.PlatformsSupported = ko.observableArray([]);
 
@@ -507,7 +570,7 @@ function ProjectsViewModel(data) {
         width: 1100,
         title: 'Добавление нового проекта',
         open: function () {
-            $('.chzn-select').chosen();
+            //$('.chzn-select').chosen();
             $('.jqSlider').rangeSlider("resize");
         },
         buttons: {
@@ -523,7 +586,9 @@ function ProjectsViewModel(data) {
                     data: {
                         type: self.NewProject.Type(),
                         name: self.NewProject.Name(),
+                        name_en: self.NewProject.Name_En(),
                         description: self.NewProject.Description(),
+                        description_en: self.NewProject.Description_En(),
                         customerId: self.NewProject.CustomerId(),
                         technologiesUsed: JSON.stringify(self.NewProject.TechnologiesUsed()),
                         dateStarted: self.NewProject.DateStarted(),
@@ -532,8 +597,10 @@ function ProjectsViewModel(data) {
                         usersCount: self.NewProject.UsersCount(),
                         roi: self.NewProject.Roi(),
                         specialFeatures: JSON.stringify(self.NewProject.SpecialFeatures()),
+                        specialFeatures_en: JSON.stringify(self.NewProject.SpecialFeatures_En()),
                         isCloudConnected: self.NewProject.IsCloudConnected(),
                         markup: self.NewProject.Markup(),
+                        markup_en: self.NewProject.Markup_En(),
                         webUrl: self.NewProject.WebUrl(),
                         platformsSupported: JSON.stringify(self.NewProject.PlatformsSupported())
                     },
@@ -544,7 +611,9 @@ function ProjectsViewModel(data) {
                             self.isAddProjectDialogVisible(false);
                             self.NewProject.Type('');
                             self.NewProject.Name('');
+                            self.NewProject.Name_En('');
                             self.NewProject.Description('');
+                            self.NewProject.Description_En('');
                             self.NewProject.CustomerId('');
                             self.NewProject.TechnologiesUsed([]);
                             self.NewProject.DateStarted('');
@@ -553,8 +622,10 @@ function ProjectsViewModel(data) {
                             self.NewProject.UsersCount('');
                             self.NewProject.Roi('');
                             self.NewProject.SpecialFeatures([]);
+                            self.NewProject.SpecialFeatures_En([]);
                             self.NewProject.IsCloudConnected('');
                             self.NewProject.Markup('');
+                            self.NewProject.Markup_En('');
                             self.NewProject.WebUrl('');
                             self.NewProject.PlatformsSupported([]);
                         } else {

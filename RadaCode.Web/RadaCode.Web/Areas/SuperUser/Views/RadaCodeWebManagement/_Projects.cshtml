@@ -24,6 +24,7 @@
             <thead>
                 <tr>
                     <td>Название индустрии</td>
+                    <td>Название индустрии (En)</td>
                 </tr>
             </thead>
             <tbody data-bind="template: { name: 'industry-template', foreach: Industries }">
@@ -35,6 +36,13 @@
                     <label class="control-label" for="inputName">Название</label>
                     <div class="controls">
                         <input type="text" id="inputName" placeholder="Название" data-bind="value: NewIndustry.Name">
+                    </div>
+                    
+                </div>
+                <div class="control-group en">
+                    <label class="control-label" for="inputName_En">Название (En)</label>
+                    <div class="controls">
+                        <input type="text" id="inputName_En" placeholder="Название" data-bind="value: NewIndustry.Name_En">
                     </div>
                 </div>
             </form>
@@ -54,6 +62,7 @@
             <thead>
                 <tr>
                     <td>Название клиента</td>
+                    <td>Название клиента (En)</td>
                     <td>Индустрия</td>
                     <td>Размер компании</td>
                     <td>Прибыль</td>
@@ -69,6 +78,12 @@
                     <label class="control-label" for="inputClientName">Название клиента</label>
                     <div class="controls">
                         <input type="text" id="inputClientName" placeholder="Название компании-клиента" data-bind="value: NewClient.Name">
+                    </div>
+                </div>
+                <div class="control-group en">
+                    <label class="control-label" for="inputClientName_En">Название клиента (En)</label>
+                    <div class="controls">
+                        <input type="text" id="inputClientName_En" placeholder="Название компании-клиента" data-bind="value: NewClient.Name_En">
                     </div>
                 </div>
                 <div class="control-group">
@@ -134,17 +149,22 @@
         </table>
         <div class="add-project-dialog" data-bind="dialog: addProjectDialogOptions, dialogVisible: isAddProjectDialogVisible" style="display: none">
             <form class="form-horizontal">
-                
                 <div class="control-group">
                     <label class="control-label" for="inputProjectName">Название проекта</label>
                     <div class="controls">
                         <input type="text" id="inputProjectName" placeholder="Название проекта" data-bind="value: NewProject.Name">
                     </div>
                 </div>
+                <div class="control-group en">
+                    <label class="control-label" for="inputProjectName_En">Название проекта (En)</label>
+                    <div class="controls">
+                        <input type="text" id="inputProjectName_En" placeholder="Название проекта" data-bind="value: NewProject.Name_En">
+                    </div>
+                </div>
                 <div class="control-group">
                     <label class="control-label" for="selectType">Тип проекта</label>
                     <div class="controls">
-                        <select data-bind="options: ProjectTypes, value: NewProject.Type, chosen: { PlaceholderText: 'Выберите тип', AddPlaceholder: true, ChosenOptions: {allow_single_deselect: true} }" id="selectType"></select>
+                        <select class="chzn-select" id="new-project-type-select" data-bind="options: ProjectTypes, value: NewProject.Type, chosen: { PlaceholderText: 'Выберите тип', AddPlaceholder: true, ChosenOptions: {allow_single_deselect: true} }" id="selectType"></select>
                     </div>
                 </div>
                 <div class="control-group">
@@ -153,10 +173,16 @@
                         <input type="text" id="inputDescr" placeholder="Краткое описание" data-bind="value: NewProject.Description">
                     </div>
                 </div>
+                <div class="control-group en">
+                    <label class="control-label" for="inputDescr_En">Краткое описание (En)</label>
+                    <div class="controls">
+                        <input type="text" id="inputDescr_En" placeholder="Краткое описание" data-bind="value: NewProject.Description_En">
+                    </div>
+                </div>
                 <div class="control-group">
                     <label class="control-label" for="selectClient">Клиент</label>
                     <div class="controls">
-                        <select data-bind="options: Clients, optionsText: 'Name', optionsValue: 'Id', value: NewProject.CustomerId, chosen: { PlaceholderText: 'Выберите клиента', AddPlaceholder: true, ChosenOptions: {allow_single_deselect: true} }" id="selectClient"></select>
+                        <select class="chzn-select" id="new-project-client-select" data-bind="options: Clients, optionsText: 'Name', optionsValue: 'Id', value: NewProject.CustomerId, chosen: { PlaceholderText: 'Выберите клиента', AddPlaceholder: true, ChosenOptions: {allow_single_deselect: true} }" id="selectClient"></select>
                     </div>
                 </div>
                 <div class="control-group">
@@ -201,6 +227,12 @@
                         <input type="text" id="inputFeatures" placeholder="Функции" data-bind="tagsinput: {}, value: NewProject.SpecialFeatures">
                     </div>
                 </div>
+                <div class="control-group en">
+                    <label class="control-label" for="inputFeatures_En">Особые функции (En)</label>
+                    <div class="controls">
+                        <input type="text" id="inputFeatures_En" placeholder="Функции" data-bind="tagsinput: {}, value: NewProject.SpecialFeatures_En">
+                    </div>
+                </div>
                 <div class="control-group">
                     <label class="control-label" for="inputCloud">Иммет ли подключение к облаку</label>
                     <div class="controls">
@@ -211,6 +243,12 @@
                     <label class="control-label" for="inputAddMarkup">Разметка презентационного блока в портфолио</label>
                     <div class="controls">
                         <textarea id="inputAddMarkup" data-bind="ckeditor: NewProject.Markup"></textarea>
+                    </div>
+                </div>
+                <div class="control-group en">
+                    <label class="control-label" for="inputAddMarkup_En">Разметка презентационного блока в портфолио (En)</label>
+                    <div class="controls">
+                        <textarea id="inputAddMarkup_En" data-bind="ckeditor: NewProject.Markup_En"></textarea>
                     </div>
                 </div>
                 <div class="control-group">
@@ -248,6 +286,12 @@
             </div>
         </td>
         <td>
+            <div class="input-append industry-name-en">
+                <input class="span2" size="16" type="text" data-bind="value: Name_En"/>
+                <button class="btn btn-warning" type="button" data-bind="click: SaveUpdatedIndustry, attr: { disabled: !(Name_EnChanged()) }, visible: Name_EnChanged"><i class="icon-ok-sign icon-white"></i></button>
+            </div>
+        </td>
+        <td>
             <button class="btn btn-danger" data-bind="click: Remove, clickBubble: false">
                 <i class="icon-remove icon-white"></i>
             </button>
@@ -261,6 +305,12 @@
             <div class="input-append client-name">
                 <input class="span2" size="16" type="text" data-bind="value: Name"/>
                 <button class="btn btn-warning" type="button" data-bind="click: SaveUpdatedClient, attr: { disabled: !(NameChanged()) }, visible: NameChanged"><i class="icon-ok-sign icon-white"></i></button>
+            </div>
+        </td>
+        <td>
+            <div class="input-append client-name-en">
+                <input class="span2" size="16" type="text" data-bind="value: Name_En"/>
+                <button class="btn btn-warning" type="button" data-bind="click: SaveUpdatedClient, attr: { disabled: !(Name_EnChanged()) }, visible: Name_EnChanged"><i class="icon-ok-sign icon-white"></i></button>
             </div>
         </td>
         <td>
@@ -311,7 +361,7 @@
         </td>
         <td>
             <div class="input project-open-details">
-                <button class="btn btn-warning" type="button" data-bind="click: OpenDetailsDialog"><i class="icon-ok-sign icon-white"></i></button>
+                <button class="btn btn-warning" type="button" data-bind="click: OpenDetailsDialog"><i class="icon-tasks icon-white"></i></button>
             </div>
         </td> 
         <td>
@@ -321,6 +371,12 @@
                         <label class="control-label" for="inputProjectName">Название проекта</label>
                         <div class="controls">
                             <input type="text" id="inputProjectName" placeholder="Название проекта" data-bind="value: Name">
+                        </div>
+                    </div>
+                    <div class="control-group en">
+                        <label class="control-label" for="inputProjectName_En">Название проекта (En)</label>
+                        <div class="controls">
+                            <input type="text" id="inputProjectName_En" placeholder="Название проекта" data-bind="value: Name_En">
                         </div>
                     </div>
                     <div class="control-group">
@@ -335,10 +391,16 @@
                             <input type="text" id="inputDescr" placeholder="Размер" data-bind="value: Description">
                         </div>
                     </div>
+                    <div class="control-group en">
+                        <label class="control-label" for="inputDescr_En">Краткое описание (En)</label>
+                        <div class="controls">
+                            <input type="text" id="inputDescr_En" placeholder="Размер" data-bind="value: Description_En">
+                        </div>
+                    </div>
                     <div class="control-group">
                         <label class="control-label" for="selectClient">Клиент</label>
                         <div class="controls">
-                            <select data-bind="options: ParentClients, optionsText: 'Name', optionsValue: 'Id', value: ClientId, chosen: { PlaceholderText: 'Выберите клиента', AddPlaceholder: true, ChosenOptions: {allow_single_deselect: true} }" id="selectClient"></select>
+                            <select class="chzn-select" data-bind="options: ParentClients, optionsText: 'Name', optionsValue: 'Id', value: ClientId, chosen: { PlaceholderText: 'Выберите клиента', AddPlaceholder: true, ChosenOptions: {allow_single_deselect: true} }" id="selectClient"></select>
                         </div>
                     </div>
                     <div class="control-group">
@@ -383,6 +445,12 @@
                             <input type="text" id="inputFeatures" placeholder="Функции" data-bind="tagsinput: {}, value: SpecialFeatures">
                         </div>
                     </div>
+                    <div class="control-group en">
+                        <label class="control-label" for="inputFeatures_En">Особые функции (En)</label>
+                        <div class="controls">
+                            <input type="text" id="inputFeatures_En" placeholder="Функции" data-bind="tagsinput: {}, value: SpecialFeatures_En">
+                        </div>
+                    </div>
                     <div class="control-group">
                         <label class="control-label" for="inputCloud">Иммет ли подключение к облаку</label>
                         <div class="controls">
@@ -390,9 +458,15 @@
                         </div>
                     </div>
                     <div class="control-group">
-                        <label class="control-label" for="inputEditMarkup">Разметка презентационного блока в портфолио</label>
+                        <label class="control-label" data-bind="attr: { for: markupEditorId }">Разметка презентационного блока в портфолио</label>
                         <div class="controls">
-                            <textarea id="inputEditMarkup" data-bind="ckeditor: ProjectDescriptionMarkup"></textarea>
+                            <textarea data-bind="ckeditor: ProjectDescriptionMarkup, attr: { id : markupEditorId }"></textarea>
+                        </div>
+                    </div>
+                    <div class="control-group en">
+                        <label class="control-label" data-bind="attr: { for: markupEditorId_En }">Разметка презентационного блока в портфолио (En)</label>
+                        <div class="controls">
+                            <textarea data-bind="ckeditor: ProjectDescriptionMarkup_En, attr: { id : markupEditorId_En }"></textarea>
                         </div>
                     </div>
                     <div class="control-group">

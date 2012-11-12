@@ -9,13 +9,16 @@ namespace RadaCode.Web.Areas.SuperUser.Models
     public class IndustryModel: IdableEntity 
     {
         public string Name { get; set; }
+        public string Name_En { get; set; }
     }
 
     public class ClientModel: IdableEntity
     {
         public string Name { get; set; }
+        public string Name_En { get; set; }
         public Guid IndustryId { get; set; }
         public string IndustryName { get; set; }
+        public string IndustryName_En { get; set; }
         public string CustomerCompanySize { get; set; }
         public string NetRevenue { get; set; }
         public string WebSiteUrl { get; set; }
@@ -25,8 +28,11 @@ namespace RadaCode.Web.Areas.SuperUser.Models
     {
         public string Name { get; set; }
         public string Description { get; set; }
+        public string Name_En { get; set; }
+        public string Description_En { get; set; }
         public Guid ClientId { get; set; }
         public string ClientName { get; set; }
+        public string ClientName_En { get; set; }
         public virtual IList<string> TechnologiesUsed { get; set; }
         public string DateStarted { get; set; }
         public string ProjectEstimate { get; set; }
@@ -36,8 +42,10 @@ namespace RadaCode.Web.Areas.SuperUser.Models
         public int CurrentUsersCount { get; set; }
         public int ROIpercentage { get; set; }
         public virtual IList<string> SpecialFeatures { get; set; }
+        public virtual IList<string> SpecialFeatures_En { get; set; }
         public bool IsCloudConnected { get; set; }
         public string ProjectDescriptionMarkup { get; set; }
+        public string ProjectDescriptionMarkup_En { get; set; }
         public virtual string Type
         {
             get { return "ROOT"; }
