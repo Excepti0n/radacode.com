@@ -380,9 +380,9 @@
                         </div>
                     </div>
                     <div class="control-group">
-                        <label class="control-label" for="selectType">Тип проекта</label>
+                        <label class="control-label" data-bind="attr: { for: typeEditorId }">Тип проекта</label>
                         <div class="controls">
-                            <select class="chzn-select" data-bind="options: ParentProjectTypes, optionsValue: $data, optionsText: $data,  value: Type, chosen: { PlaceholderText: 'Выберите тип', AddPlaceholder: true, ChosenOptions: {allow_single_deselect: true} }" id="selectType"></select>
+                            <select class="chzn-select" data-bind="attr: { id: typeEditorId }, options: ParentProjectTypes, optionsValue: $data, optionsText: $data,  value: Type, chosen: { PlaceholderText: 'Выберите тип', AddPlaceholder: true, ChosenOptions: {allow_single_deselect: true} }" id="selectType"></select>
                         </div>
                     </div>
                     <div class="control-group">
@@ -398,9 +398,9 @@
                         </div>
                     </div>
                     <div class="control-group">
-                        <label class="control-label" for="selectClient">Клиент</label>
+                        <label class="control-label" data-bind="attr: { for: clientEditorId }">Клиент</label>
                         <div class="controls">
-                            <select class="chzn-select" data-bind="options: ParentClients, optionsText: 'Name', optionsValue: 'Id', value: ClientId, chosen: { PlaceholderText: 'Выберите клиента', AddPlaceholder: true, ChosenOptions: {allow_single_deselect: true} }" id="selectClient"></select>
+                            <select class="chzn-select" data-bind="attr: { id: clientEditorId }, options: ParentClients, optionsText: 'Name', optionsValue: 'Id', value: ClientId, chosen: { PlaceholderText: 'Выберите клиента', AddPlaceholder: true, ChosenOptions: {allow_single_deselect: true} }" id="selectClient"></select>
                         </div>
                     </div>
                     <div class="control-group">
@@ -422,9 +422,9 @@
                         </div>
                     </div>
                     <div class="control-group">
-                        <label class="control-label" for="inputEditEstimate">Оценочная продолжительность проекта</label>
+                        <label class="control-label" data-bind="attr: { for: estimateEditorId }">Оценочная продолжительность проекта</label>
                         <div class="controls">
-                            <div id="inputEditEstimate" class="jqSlider" data-bind="jQRangePicker: {resultInterpreter: WeeksInterpreter, prohibitLeftChange: true, leftFix: 0, arrows: false, formatter: LabelFormatter, defaultValues: { min: 0, max: ProjectEstimate() } }, value: ProjectEstimate"></div>
+                            <div class="jqSlider" data-bind="attr: { id: estimateEditorId }, jQRangePicker: {resultInterpreter: WeeksInterpreter, prohibitLeftChange: true, leftFix: 0, arrows: false, formatter: LabelFormatter, defaultValues: { min: 0, max: ProjectEstimate() } }, value: ProjectEstimate"></div>
                         </div>
                     </div>
                     <div class="control-group">

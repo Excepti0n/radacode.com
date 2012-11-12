@@ -171,7 +171,13 @@ function ProjectModel(data, parent) {
     });
 
     self.ParentClients = ko.computed(function () {
-        return parent.Clients();
+        var resArr = new Array();
+        
+        var projectTypeModelsArray = jQuery.map(parent.Clients(), function (val, i) {
+            resArr.push({ Name: val.Name(), Id: val.Id });
+        });
+
+        return resArr;
     });
     
     self.ParentProjectTypes = ko.computed(function () {
@@ -294,6 +300,18 @@ function ProjectModel(data, parent) {
         return 'inputMarkupEditor-' + self.Id;
     });
     
+    self.estimateEditorId = ko.computed(function () {
+        return 'inputEditEstimate-' + self.Id;
+    });
+    
+    self.clientEditorId = ko.computed(function () {
+        return 'inputEditClient-' + self.Id;
+    });
+    
+    self.typeEditorId = ko.computed(function () {
+        return 'inputEditType-' + self.Id;
+    });
+    
     self.markupEditorId_En = ko.computed(function () {
         return 'inputMarkupEditor-En-' + self.Id;
     });
@@ -306,7 +324,7 @@ function ProjectModel(data, parent) {
         title: 'Редактирование проекта: ' + self.Name(),
         open: function () {
             //$('.chzn-select').chosen();
-            $('.jqSlider').rangeSlider("resize");
+            $('#' + self.estimateEditorId() + '.jqSlider').rangeSlider("resize");
         },
         buttons: {
             'Сохранить изменения в проекте': function (e) {
