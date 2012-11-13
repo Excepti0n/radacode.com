@@ -148,6 +148,7 @@
     <Compile Include="Controllers\AccessController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\NavigationController.cs" />
+    <Compile Include="Controllers\PortfolioController.cs" />
     <Compile Include="Controllers\WebDevelopmentController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -1017,6 +1018,7 @@
     <Content Include="Content\global\fonts\OpenSans\OpenSans-Light-webfont.svg" />
     <Content Include="Content\global\fonts\OpenSans\OpenSans-Regular-webfont.svg" />
     <Content Include="Content\global\fonts\ProtoSans00\protosans00-webfont.svg" />
+    <Content Include="Content\global\menu-bullet-selected.png" />
     <Content Include="Content\global\menu-bullet.png" />
     <Content Include="Content\global\top-logo.png" />
     <Content Include="Content\expansion\index.html" />
@@ -1060,6 +1062,8 @@
     <Content Include="Content\global\logoRadaCode.png" />
     <Content Include="Content\global\logoRadaCodeNoText.png" />
     <Content Include="Content\global\radaGlow.png" />
+    <Content Include="Content\portfolio\portfolio.css" />
+    <Content Include="Content\portfolio\portfolio.js" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -1221,6 +1225,8 @@
     <Content Include="Views\Shared\_Header.cshtml" />
     <Content Include="Views\Navigation\_TopMenu.cshtml" />
     <Content Include="Views\WebDevelopment\Index.cshtml" />
+    <Content Include="Views\Portfolio\Index.cshtml" />
+    <Content Include="Views\Portfolio\_ProjectTypesSelector.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\Expansion\Models\" />

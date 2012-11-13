@@ -1,0 +1,14 @@
+﻿@{
+    ViewBag.Title = "Завершённые проекты РадаКод";
+
+    Html.RequiresCss("portfolio/portfolio.css", "Content", 101);
+    Html.RequiresJs("portfolio/portfolio.js", "Content", 11);
+}
+
+<div id="portfolio-control">
+    <div class="project-type-selector">
+        @Html.RenderPartial("_ProjectTypesSelector")
+    </div>
+    <div class="control-column"></div>
+    <div class="timeline-column"></div>
+</div>

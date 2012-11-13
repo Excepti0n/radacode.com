@@ -1,14 +1,55 @@
 ﻿<ul id="menu">
-    <li>
-        <h2>РАЗРАБОТКА САЙТОВ</h2>
-        <p>Умные сайты - уникальные веб-решения для вашего бизнеса</p>
-    </li>     
-    <li>
-        <h2>РАЗРАБОТКА ПО</h2>
-        <p>Мы разрабатываем мобильные приложения и "облачные" системы на заказ</p>
-    </li>
-    <li>
-        <h2>РЕАЛИЗОВАННЫЕ ПРОЕКТЫ</h2>
-        <p>Хроника успешных проектов</p>
-    </li>
+    @{
+        if (@HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString() == "WebDevelopment")
+        {
+            <li class="selected">
+                <a href="@Url.Action("Index", "WebDevelopment")">
+                    <h2 class="selected">СОЗДАНИЕ САЙТОВ</h2>
+                </a>
+                <p>Умные сайты - уникальные веб-решения для вашего бизнеса</p>
+            </li>
+        } else
+        {
+            <li>
+                <a href="@Url.Action("Index", "WebDevelopment")">
+                    <h2>СОЗДАНИЕ САЙТОВ</h2>
+                </a>
+                <p>Умные сайты - уникальные веб-решения для вашего бизнеса</p>
+            </li>
+        }
+    } 
+    @{
+    if (@HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString() == "SoftwareDevelopment")
+        {
+            <li class="selected">
+                <h2 class="selected">РАЗРАБОТКА ПО</h2>
+                <p>Мы разрабатываем мобильные приложения и "облачные" системы на заказ</p>
+            </li>
+        } else
+        {
+            <li>
+                <h2>РАЗРАБОТКА ПО</h2>
+                <p>Мы разрабатываем мобильные приложения и "облачные" системы на заказ</p>
+            </li>
+        }
+    } 
+    @{
+    if (@HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString() == "Portfolio")
+        {
+            <li class="selected">
+                <a href="@Url.Action("Index", "Portfolio")">
+                    <h2 class="selected">ПОРТФОЛИО</h2>
+                </a>
+                <p>Хроника успешных проектов</p>
+            </li>
+        } else
+        {
+            <li>
+                <a href="@Url.Action("Index", "Portfolio")">
+                    <h2>ПОРТФОЛИО</h2>
+                </a>
+                <p>Хроника успешных проектов</p>
+            </li>
+        }
+    } 
 </ul>

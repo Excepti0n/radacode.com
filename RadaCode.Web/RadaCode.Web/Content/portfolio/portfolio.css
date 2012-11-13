@@ -1,0 +1,14 @@
+﻿div#wrap {
+    background-color: #E7CB22;
+}
+
+div#portfolio-control {
+    float: left;
+    width: 100%;
+}
+
+div.project-type-selector {
+    width: 100%;
+    padding-right: 250px;
+    height: 100px;
+}

@@ -128,6 +128,10 @@ ul#menu li {
     padding-left: 25px;
 }
 
+ul#menu li.selected {
+    background: url('./global/menu-bullet-selected.png') no-repeat;
+}
+
 ul#menu li p {
     max-width: 180px;
     color: #817f84;
@@ -141,6 +145,14 @@ ul#menu li h2 {
     font-size: 15px;
     color: #5e5d5f;
     cursor: pointer;
+}
+
+ul#menu li h2.selected {
+    color: white;
+}
+
+ul#menu li a {
+    text-decoration: none;
 }
 
 /* Footer   
