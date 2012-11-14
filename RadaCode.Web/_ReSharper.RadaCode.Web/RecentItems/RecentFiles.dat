@@ -23,16 +23,15 @@
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Controllers/f:PortfolioController.cs" caret="171" fromTop="8" />
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Views/d:Shared/f:_Header.cshtml" caret="142" fromTop="2" />
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Content/f:global.css" caret="4185" fromTop="33" />
-    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Views/d:Home/f:Index.cshtml" caret="4273" fromTop="42" />
-    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Views/d:Shared/f:_Layout.cshtml" caret="0" fromTop="0" />
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Views/d:WebDevelopment/f:Index.cshtml" caret="0" fromTop="0" />
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Views/d:Navigation/f:_TopMenu.cshtml" caret="1564" fromTop="28" />
-    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Content/d:portfolio/f:portfolio.css" caret="207" fromTop="12" />
-    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Views/d:Portfolio/f:_ProjectTypesSelector.cshtml" caret="0" fromTop="0" />
-    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Views/d:Portfolio/f:Index.cshtml" caret="315" fromTop="9" />
+    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Views/d:Home/f:Index.cshtml" caret="0" fromTop="0" />
+    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Views/d:Shared/f:_Layout.cshtml" caret="1724" fromTop="17" />
+    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Views/d:Portfolio/f:Index.cshtml" caret="280" fromTop="6" />
+    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Views/d:Portfolio/f:_ProjectTypesSelector.cshtml" caret="461" fromTop="13" />
+    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Content/d:portfolio/f:portfolio.css" caret="319" fromTop="20" />
   </RecentFiles>
   <RecentEdits>
-    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Areas/d:SuperUser/f:SuperUserAreaRegistration.cs" caret="1530" fromTop="36" />
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Areas/d:SuperUser/d:Views/d:Authorization/f:Authenticate.cshtml" caret="1434" fromTop="11" />
     <File id="D2E694FC-88A0-46C9-9ADA-930B53CCB47A/d:Repositories/f:IWebUserRepository.cs" caret="1047" fromTop="34" />
     <File id="D2E694FC-88A0-46C9-9ADA-930B53CCB47A/d:Entities/f:WebUser.cs" caret="1253" fromTop="29" />
@@ -60,7 +59,8 @@
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Content/f:global.css" caret="4185" fromTop="33" />
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Views/d:Navigation/f:_TopMenu.cshtml" caret="1564" fromTop="28" />
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Views/d:Home/f:Index.cshtml" caret="4273" fromTop="18" />
-    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Content/d:portfolio/f:portfolio.css" caret="207" fromTop="12" />
-    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Views/d:Portfolio/f:Index.cshtml" caret="313" fromTop="9" />
+    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Views/d:Portfolio/f:Index.cshtml" caret="280" fromTop="6" />
+    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Views/d:Portfolio/f:_ProjectTypesSelector.cshtml" caret="461" fromTop="13" />
+    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Content/d:portfolio/f:portfolio.css" caret="319" fromTop="20" />
   </RecentEdits>
 </RecentFiles>

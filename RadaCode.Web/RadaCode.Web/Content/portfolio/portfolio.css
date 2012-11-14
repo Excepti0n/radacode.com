@@ -12,3 +12,11 @@ div.project-type-selector {
     padding-right: 250px;
     height: 100px;
 }
+
+div.type-select {
+    display: inline-block;
+}
+
+div#mobile-selector.type-select {
+    display: none;
+}

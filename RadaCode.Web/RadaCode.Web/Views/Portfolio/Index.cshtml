@@ -6,9 +6,9 @@
 }
 
 <div id="portfolio-control">
-    <div class="project-type-selector">
-        @Html.RenderPartial("_ProjectTypesSelector")
-    </div>
+    
+    @{ Html.RenderPartial("_ProjectTypesSelector"); }
+
     <div class="control-column"></div>
     <div class="timeline-column"></div>
 </div>
