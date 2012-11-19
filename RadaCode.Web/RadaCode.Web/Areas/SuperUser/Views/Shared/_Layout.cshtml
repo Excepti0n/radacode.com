@@ -53,24 +53,22 @@
 
 </head>
 <body>
-    <div id="top-controls">
-        @{
-            if (User.Identity.IsAuthenticated)
-            {
-                @Html.ActionLink("Завершить сессию", "LogOff", "Authorization")
-                ;
+    <div class="centeringContainer">
+        <div id="top-controls" class="centered">
+            @{
+                if (User.Identity.IsAuthenticated)
+                {
+                    @Html.ActionLink("Завершить сессию", "LogOff", "Authorization")
+                    @Html.Raw(" |")
+                }
             }
-            else
-            {
-                @Html.Raw("Авторизируйся пожалуйста")
-            }
-        }
-        |
-        @Html.ActionLink("На radacode.com", "Index", "Home", new { area = "" }, null)
+        
+            @Html.ActionLink("На radacode.com", "Index", "Home", new { area = "" }, null)
+        </div>
     </div>
 
-	<div id="content">
-		@RenderBody()
-	</div>
+    <div id="content">
+        @RenderBody()
+    </div>
 </body>
 </html>

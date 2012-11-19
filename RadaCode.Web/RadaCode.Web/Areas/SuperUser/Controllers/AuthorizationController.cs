@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using System.Web.Script.Serialization;
 using System.Web.Security;
 using RadaCode.Web.Application.Membership;
+using RadaCode.Web.Areas.SuperUser.Models;
 using RadaCode.Web.Data.Entities;
 using putaty.web.Areas.SuperUser.Models;
 
@@ -63,9 +64,9 @@ namespace RadaCode.Web.Areas.SuperUser.Controllers
 
         public JsonResult WhereToGo()
         {
-            var randomUrl = "http://www.google.com";
-
-            return Json(randomUrl, JsonRequestBehavior.AllowGet);
+            //var randomUrl = "http://www.google.com";
+            //return Json(randomUrl, JsonRequestBehavior.AllowGet);
+            return Json("/", JsonRequestBehavior.AllowGet);
         }
 
     }

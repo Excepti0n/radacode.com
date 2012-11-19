@@ -1,16 +1,16 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace putaty.web.Areas.SuperUser.Models
+namespace RadaCode.Web.Areas.SuperUser.Models
 {
     public class LoginModel
     {
         [Required]
-        [Display(Name = "Юзернейм")]
+        [Display(Name = "Имя")]
         public string Name { get; set; }
 
         [Required]
         [DataType(DataType.Password)]
-        [Display(Name = "Кодовое слово")]
+        [Display(Name = "Пароль")]
         public string Pazz { get; set; }
     }
 }
