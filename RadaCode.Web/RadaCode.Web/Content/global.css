@@ -21,6 +21,17 @@
 }
 
 @font-face {
+    font-family: 'ProtoSans30';
+    src: url('global/fonts/ProtoSans30/protosans30-webfont.eot');
+    src: url('global/fonts/ProtoSans30/protosans30-webfont.eot?#iefix') format('embedded-opentype'),
+         url('global/fonts/ProtoSans30/protosans30-webfont.woff') format('woff'),
+         url('global/fonts/ProtoSans30/protosans30-webfont.ttf') format('truetype'),
+         url('global/fonts/ProtoSans30/protosans30-webfont.svg#proto_sans_30regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
     font-family: 'ProtoSans00';
     src: url('global/fonts/ProtoSans00/protosans00-webfont.eot');
     src: url('global/fonts/ProtoSans00/protosans00-webfont.eot?#iefix') format('embedded-opentype'),

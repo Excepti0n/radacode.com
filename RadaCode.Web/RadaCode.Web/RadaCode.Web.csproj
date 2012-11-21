@@ -154,6 +154,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\LoginModel.cs" />
+    <Compile Include="Models\PortfolioViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -1043,7 +1044,7 @@
     <Content Include="Content\home\device-type.png" />
     <Content Include="Content\home\flower-tile.png" />
     <Content Include="Content\home\fonts\ProtoSans03\protosans03-webfont.svg" />
-    <Content Include="Content\home\fonts\ProtoSans30\protosans30-webfont.svg" />
+    <Content Include="Content\global\fonts\ProtoSans30\protosans30-webfont.svg" />
     <Content Include="Content\home\fonts\ProtoSans40\protosans40-webfont.svg" />
     <Content Include="Content\home\fonts\rel-light-cyr\rex_light-webfont.svg" />
     <Content Include="Content\home\fonts\Scrawl\SCRAWL__.svg" />
@@ -1062,6 +1063,8 @@
     <Content Include="Content\global\logoRadaCode.png" />
     <Content Include="Content\global\logoRadaCodeNoText.png" />
     <Content Include="Content\global\radaGlow.png" />
+    <Content Include="Content\portfolio\img\portfolio-menu-selected-item-marker.png" />
+    <Content Include="Content\portfolio\img\portfolio-menu-webdevelopment-back-ru.png" />
     <Content Include="Content\portfolio\portfolio.css" />
     <Content Include="Content\portfolio\portfolio.js" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
@@ -1157,9 +1160,9 @@
     <Content Include="Content\home\fonts\ProtoSans03\protosans03-webfont.eot" />
     <Content Include="Content\home\fonts\ProtoSans03\protosans03-webfont.ttf" />
     <Content Include="Content\home\fonts\ProtoSans03\protosans03-webfont.woff" />
-    <Content Include="Content\home\fonts\ProtoSans30\protosans30-webfont.eot" />
-    <Content Include="Content\home\fonts\ProtoSans30\protosans30-webfont.ttf" />
-    <Content Include="Content\home\fonts\ProtoSans30\protosans30-webfont.woff" />
+    <Content Include="Content\global\fonts\ProtoSans30\protosans30-webfont.eot" />
+    <Content Include="Content\global\fonts\ProtoSans30\protosans30-webfont.ttf" />
+    <Content Include="Content\global\fonts\ProtoSans30\protosans30-webfont.woff" />
     <Content Include="Content\home\fonts\ProtoSans40\protosans40-webfont.eot" />
     <Content Include="Content\home\fonts\ProtoSans40\protosans40-webfont.ttf" />
     <Content Include="Content\home\fonts\ProtoSans40\protosans40-webfont.woff" />

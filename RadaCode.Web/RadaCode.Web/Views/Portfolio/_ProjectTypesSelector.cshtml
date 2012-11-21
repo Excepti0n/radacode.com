@@ -1,17 +1,18 @@
-﻿<div class="project-type-selector">
-    <div id="websites-selector" class="type-select">
+﻿@model RadaCode.Web.Models.PortfolioViewModel
+<div class="project-type-selector">
+    <div id="websites-selector" class="type-select @{ if (Model.SelectedProjectType == "web") {@Html.Raw("selected")} }">
         <div class="type-select-button">
-            САЙТЫ
+            <span>САЙТЫ</span>
         </div>
     </div>
-    <div id="mobile-selector" class="type-select">
+    <div id="mobile-selector" class="type-select @{ if (Model.SelectedProjectType == "mobile") {@Html.Raw("selected")} }">
         <div class="type-select-button">
-            МОБИЛЬНЫЕ ПРИЛОЖЕНИЯ
+             <span>МОБИЛЬНЫЕ ПРИЛОЖЕНИЯ</span>
         </div>
     </div>
-        <div id="cloud-selector" class="type-select">
+        <div id="cloud-selector" class="type-select @{ if (Model.SelectedProjectType == "cloud") {@Html.Raw("selected")} }">
         <div class="type-select-button">
-            ОБЛАЧНЫЕ СИСТЕМЫ
+             <span>ОБЛАЧНЫЕ СИСТЕМЫ</span>
         </div>
     </div>
 </div>

@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
+using RadaCode.Web.Models;
 
 namespace RadaCode.Web.Controllers
 {
@@ -11,9 +9,20 @@ namespace RadaCode.Web.Controllers
         //
         // GET: /Portfolio/
 
-        public ActionResult Index()
+        public ActionResult Index(string selectedType)
         {
-            return View();
+            var portfolioViewModel = new PortfolioViewModel();
+
+
+            if(!String.IsNullOrEmpty(selectedType))
+            {
+                portfolioViewModel.SelectedProjectType = selectedType;
+            } else
+            {
+                portfolioViewModel.SelectedProjectType = "web";
+            }
+
+            return View(portfolioViewModel);
         }
 
     }
