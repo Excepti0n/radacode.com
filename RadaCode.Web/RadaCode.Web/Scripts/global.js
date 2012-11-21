@@ -1,16 +1,15 @@
-﻿//declare namespace to avoid collisions with extension js in the browser
-var langGlobalNamespace = {};
+﻿var RadaCode = window.RadaCode || {};
 
-langGlobalNamespace.switchLanguage = function(lang) {
+RadaCode.SwitchLanguage = function(lang) {
     $.cookie('language', lang, { expires: 365, path: '/' });
     window.location.reload();
 };
 
 $(function () {
     $("#setRus").click(function () {
-        langGlobalNamespace.switchLanguage('ru');
+        RadaCode.SwitchLanguage.switchLanguage('ru');
     });
     $("#setEng").click(function () {
-        langGlobalNamespace.switchLanguage('en');
+        RadaCode.SwitchLanguage.switchLanguage('en');
     });
 });

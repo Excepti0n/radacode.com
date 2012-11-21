@@ -7,6 +7,13 @@ namespace RadaCode.Web.Models
 {
     public class PortfolioViewModel
     {
-        public string SelectedProjectType { get; set; }
+        public string SelectedProjectTypeId { get; set; }
+        public List<PortfolioSelectorItem> MenuItems { get; set; } 
+    }
+
+    public class PortfolioSelectorItem
+    {
+        public string ItemText { get; set; }
+        public string ItemId { get; set; }
     }
 }

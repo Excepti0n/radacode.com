@@ -1,18 +1,21 @@
-﻿@model RadaCode.Web.Models.PortfolioViewModel
-<div class="project-type-selector">
-    <div id="websites-selector" class="type-select @{ if (Model.SelectedProjectType == "web") {@Html.Raw("selected")} }">
-        <div class="type-select-button">
-            <span>САЙТЫ</span>
-        </div>
-    </div>
+﻿<div class="project-type-selector">
+    
     <div id="mobile-selector" class="type-select @{ if (Model.SelectedProjectType == "mobile") {@Html.Raw("selected")} }">
         <div class="type-select-button">
-             <span>МОБИЛЬНЫЕ ПРИЛОЖЕНИЯ</span>
+            <span>МОБИЛЬНЫЕ ПРИЛОЖЕНИЯ</span>
         </div>
     </div>
-        <div id="cloud-selector" class="type-select @{ if (Model.SelectedProjectType == "cloud") {@Html.Raw("selected")} }">
+    <div id="cloud-selector" class="type-select @{ if (Model.SelectedProjectType == "cloud") {@Html.Raw("selected")} }">
         <div class="type-select-button">
-             <span>ОБЛАЧНЫЕ СИСТЕМЫ</span>
+            <span>ОБЛАЧНЫЕ СИСТЕМЫ</span>
         </div>
     </div>
 </div>
+
+<script type="text/html" id="type-selector-template">
+    <div id="websites-selector" data-bind="attr: { id: menuItemId, class: menuItemClass }">
+        <div class="type-select-button">
+            <span data-bind="text: menuItemText">САЙТЫ</span>
+        </div>
+    </div>
+</script>

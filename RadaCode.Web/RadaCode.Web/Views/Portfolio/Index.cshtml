@@ -1,11 +1,16 @@
-﻿@{
+﻿@model RadaCode.Web.Models.PortfolioViewModel
+
+@using System.Web.Script.Serialization
+@{
     ViewBag.Title = "Завершённые проекты РадаКод";
 
     Html.RequiresCss("portfolio/portfolio.css", "Content", 101);
     Html.RequiresJs("portfolio/portfolio.js", "Content", 11);
+    var initValue = @Html.Raw(new JavaScriptSerializer().Serialize(Model));
 }
 
 <div id="portfolio-control">
+    @Html.Hidden("initial-portfolio-view-model-data", (HtmlString)initValue)
     
     @{ Html.RenderPartial("_ProjectTypesSelector"); }
 
