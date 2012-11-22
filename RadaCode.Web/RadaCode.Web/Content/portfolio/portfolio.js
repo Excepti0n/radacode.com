@@ -43,6 +43,8 @@
     function PortfolioPageViewModel(data) {
         var self = this;
 
+        /* PROJECT ITEMS INITIALIZATION */
+
         self.currentProjects = ko.observableArray([]);
 
         var currentModelsArray = jQuery.map(data.InitialProjects, function (val, i) {
@@ -51,6 +53,8 @@
 
         self.projectModels = [{ type: data.SelectedProjectTypeId, models: currentModelsArray }];
         
+        /* MENU INITIALIZATION */
+
         self.selectedItemId = ko.observable(data.SelectedProjectTypeId);
         self.menuItems = ko.observableArray([]);
 
@@ -61,10 +65,6 @@
         var menuItemModelsArray = jQuery.map(data.MenuItems, function (val, i) {
             self.menuItems.push(new PortfolioProjectTypeMenuItemViewModel(val, self));
         });
-
-        
-        
-        
     }
 
     var init = function() {
