@@ -300,6 +300,26 @@ function ProjectModel(data, parent) {
         return 'inputMarkupEditor-' + self.Id;
     });
     
+    self.usedTechnologiesId = ko.computed(function () {
+        return 'inputTechnologiesEditor-' + self.Id;
+    });
+    
+    self.dateStartedId = ko.computed(function () {
+        return 'inputDateStartedEditor-' + self.Id;
+    });
+    
+    self.dateFinishedId = ko.computed(function () {
+        return 'inputDateFinishedEditor-' + self.Id;
+    });
+    
+    self.featuresEditorId = ko.computed(function () {
+        return 'inputfeaturesEditor-' + self.Id;
+    });
+    
+    self.featuresEditorIdEn = ko.computed(function () {
+        return 'inputfeaturesEditorEn-' + self.Id;
+    });
+    
     self.estimateEditorId = ko.computed(function () {
         return 'inputEditEstimate-' + self.Id;
     });

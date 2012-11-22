@@ -1,66 +1,66 @@
 ﻿<RecentFiles>
   <RecentFiles>
-    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Views/d:Shared/f:_Header.cshtml" caret="142" fromTop="2" />
-    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Views/d:WebDevelopment/f:Index.cshtml" caret="0" fromTop="0" />
-    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Views/d:Home/f:Index.cshtml" caret="0" fromTop="0" />
-    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/f:Web.config" caret="691" fromTop="8" />
-    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Areas/d:SuperUser/d:Controllers/f:AuthorizationController.cs" caret="228" fromTop="0" />
-    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Areas/d:SuperUser/d:Models/f:LoginModel.cs" caret="82" fromTop="2" />
-    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Areas/d:SuperUser/d:Views/d:Authorization/f:Authenticate.cshtml" caret="1047" fromTop="17" />
-    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Areas/d:SuperUser/d:Content/f:layout.css" caret="4751" fromTop="31" />
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Areas/d:SuperUser/d:Views/d:RadaCodeWebManagement/f:_Users.cshtml" caret="253" fromTop="4" />
-    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Areas/d:SuperUser/d:Controllers/f:RadaCodeWebManagementController.cs" caret="4041" fromTop="23" />
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Areas/d:SuperUser/d:Views/d:RadaCodeWebManagement/f:Index.cshtml" caret="3162" fromTop="7" />
-    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Areas/d:SuperUser/d:Views/d:Shared/f:_Layout.cshtml" caret="0" fromTop="0" />
-    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Scripts/f:RadaCode.KOBindings.js" caret="275" fromTop="9" />
-    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Areas/d:SuperUser/d:Content/d:ViewScripts/f:projects-view-management.js" caret="25919" fromTop="31" />
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Controllers/f:AccessController.cs" caret="694" fromTop="22" />
-    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Content/d:home/f:home.css" caret="1750" fromTop="19" />
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Content/f:global.css" caret="1455" fromTop="28" />
-    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Content/d:portfolio/f:portfolio.css" caret="612" fromTop="21" />
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Scripts/f:global.js" caret="41" fromTop="2" />
-    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Views/d:Shared/f:_Layout.cshtml" caret="0" fromTop="0" />
-    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Areas/d:SuperUser/d:Content/d:ViewScripts/f:user-view-management.js" caret="14960" fromTop="25" />
-    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Views/d:Portfolio/f:Index.cshtml" caret="384" fromTop="11" />
-    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Content/d:portfolio/f:portfolio.js" caret="573" fromTop="18" />
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Views/d:Navigation/f:_TopMenu.cshtml" caret="0" fromTop="0" />
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Areas/d:SuperUser/d:Content/f:control-init-logic.js" caret="0" fromTop="0" />
-    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Areas/d:SuperUser/d:Views/d:RadaCodeWebManagement/f:_Projects.cshtml" caret="15933" fromTop="12" />
-    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Views/d:Portfolio/f:_ProjectTypesSelector.cshtml" caret="762" fromTop="17" />
-    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Models/f:PortfolioViewModel.cs" caret="167" fromTop="5" />
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Controllers/f:WebDevelopmentController.cs" caret="0" fromTop="0" />
-    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Controllers/f:PortfolioController.cs" caret="1385" fromTop="41" />
+    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Areas/d:SuperUser/d:Views/d:Shared/f:_Layout.cshtml" caret="1945" fromTop="19" />
+    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Areas/d:SuperUser/d:Content/d:ViewScripts/f:user-view-management.js" caret="12381" fromTop="31" />
+    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Views/d:Shared/f:_Layout.cshtml" caret="0" fromTop="0" />
+    <File id="8D2C41C2-1E19-44E2-A384-55895B2181FE/d:Setttings/f:LocalRadaCodeWebSettings.cs" caret="278" fromTop="9" />
+    <File id="8D2C41C2-1E19-44E2-A384-55895B2181FE/d:Setttings/f:ProductionRadaCodeWebSettings.cs" caret="638" fromTop="19" />
+    <File id="8D2C41C2-1E19-44E2-A384-55895B2181FE/d:Setttings/f:IRadaCodeWebSettings.cs" caret="177" fromTop="5" />
+    <File id="D2E694FC-88A0-46C9-9ADA-930B53CCB47A/d:Entities/f:SoftwareProject.cs" caret="2838" fromTop="0" />
+    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Areas/d:SuperUser/d:Views/d:RadaCodeWebManagement/f:_Projects.cshtml" caret="27285" fromTop="37" />
+    <File id="8D2C41C2-1E19-44E2-A384-55895B2181FE/f:RadaCodeWebCoreModule.cs" caret="0" fromTop="0" />
+    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Areas/d:SuperUser/d:Controllers/f:RadaCodeWebManagementController.cs" caret="32226" fromTop="52" />
+    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Areas/d:SuperUser/d:Models/f:ProjectsManagementModel.cs" caret="558" fromTop="13" />
+    <File id="8D2C41C2-1E19-44E2-A384-55895B2181FE/f:ActivityBrocker.cs" caret="0" fromTop="0" />
+    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Content/d:portfolio/f:portfolio.css" caret="306" fromTop="12" />
+    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Models/f:PortfolioViewModel.cs" caret="299" fromTop="8" />
+    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Areas/d:SuperUser/d:Content/d:ViewScripts/f:projects-view-management.js" caret="0" fromTop="0" />
+    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Scripts/f:RadaCode.KOBindings.js" caret="0" fromTop="0" />
+    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Content/d:portfolio/f:portfolio.js" caret="1613" fromTop="22" />
+    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Views/d:Portfolio/f:_ProjectsStack.cshtml" caret="212" fromTop="3" />
+    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Views/d:Portfolio/f:_ProjectTypesSelector.cshtml" caret="124" fromTop="3" />
+    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Controllers/f:PortfolioController.cs" caret="2864" fromTop="72" />
+    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Content/d:home/f:home.css" caret="7646" fromTop="10" />
+    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Views/d:Portfolio/f:Index.cshtml" caret="879" fromTop="25" />
   </RecentFiles>
   <RecentEdits>
-    <File id="65490A0F-0FED-4E33-85A3-7113456DB32A/f:WebUserAccountCreationTests.cs" caret="382" fromTop="8" />
-    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Areas/d:SuperUser/d:Content/f:control-init-logic.js" caret="779" fromTop="26" />
-    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Areas/d:SuperUser/d:Content/d:jQRangePicker/f:jQRangeSlider.js" caret="1724" fromTop="20" />
-    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Areas/d:SuperUser/d:Content/d:ckeditor/d:_source/d:plugins/d:uicolor/d:yui/f:yui.js" caret="28509" fromTop="11" />
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Areas/d:SuperUser/d:Views/d:RadaCodeWebManagement/f:Index.cshtml" caret="2696" fromTop="13" />
     <File id="D2E694FC-88A0-46C9-9ADA-930B53CCB47A/d:Entities/f:Industry.cs" caret="264" fromTop="10" />
     <File id="D2E694FC-88A0-46C9-9ADA-930B53CCB47A/d:Entities/f:Customer.cs" caret="539" fromTop="16" />
-    <File id="D2E694FC-88A0-46C9-9ADA-930B53CCB47A/d:Entities/f:SoftwareProject.cs" caret="2393" fromTop="17" />
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Areas/d:SuperUser/d:Models/f:ProjectsManagementModel.cs" caret="1903" fromTop="19" />
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Areas/d:SuperUser/d:Controllers/f:RadaCodeWebManagementController.cs" caret="47526" fromTop="18" />
-    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Areas/d:SuperUser/d:Content/d:ViewScripts/f:projects-view-management.js" caret="10627" fromTop="25" />
-    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Areas/d:SuperUser/d:Views/d:RadaCodeWebManagement/f:_Projects.cshtml" caret="23719" fromTop="24" />
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Views/d:Navigation/f:_TopMenu.cshtml" caret="1564" fromTop="28" />
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Views/d:Home/f:Index.cshtml" caret="4273" fromTop="18" />
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/f:Web.config" caret="691" fromTop="8" />
-    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Areas/d:SuperUser/d:Views/d:Shared/f:_Layout.cshtml" caret="2699" fromTop="22" />
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Areas/d:SuperUser/d:Controllers/f:AuthorizationController.cs" caret="2297" fromTop="31" />
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Areas/d:SuperUser/d:Views/d:Authorization/f:Authenticate.cshtml" caret="719" fromTop="16" />
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Areas/d:SuperUser/d:Models/f:LoginModel.cs" caret="82" fromTop="2" />
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Areas/d:SuperUser/d:Content/f:layout.css" caret="1356" fromTop="23" />
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Scripts/f:RadaCode.KOBindings.js" caret="275" fromTop="9" />
-    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Content/d:home/f:home.css" caret="1750" fromTop="19" />
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Content/f:global.css" caret="1455" fromTop="28" />
-    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Content/d:portfolio/f:portfolio.css" caret="612" fromTop="21" />
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Scripts/f:global.js" caret="41" fromTop="2" />
-    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Views/d:Portfolio/f:Index.cshtml" caret="434" fromTop="12" />
-    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Content/d:portfolio/f:portfolio.js" caret="573" fromTop="18" />
-    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Views/d:Portfolio/f:_ProjectTypesSelector.cshtml" caret="762" fromTop="17" />
-    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Models/f:PortfolioViewModel.cs" caret="292" fromTop="10" />
-    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Controllers/f:PortfolioController.cs" caret="1160" fromTop="21" />
+    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Areas/d:SuperUser/d:Views/d:Shared/f:_Layout.cshtml" caret="1984" fromTop="31" />
+    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Views/d:Portfolio/f:_ProjectTypesSelector.cshtml" caret="361" fromTop="6" />
+    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Content/d:home/f:home.css" caret="7687" fromTop="10" />
+    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Content/d:portfolio/f:portfolio.css" caret="306" fromTop="12" />
+    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Models/f:PortfolioViewModel.cs" caret="311" fromTop="8" />
+    <File id="8D2C41C2-1E19-44E2-A384-55895B2181FE/d:Setttings/f:IRadaCodeWebSettings.cs" caret="177" fromTop="5" />
+    <File id="8D2C41C2-1E19-44E2-A384-55895B2181FE/d:Setttings/f:ProductionRadaCodeWebSettings.cs" caret="638" fromTop="19" />
+    <File id="8D2C41C2-1E19-44E2-A384-55895B2181FE/d:Setttings/f:LocalRadaCodeWebSettings.cs" caret="278" fromTop="9" />
+    <File id="D2E694FC-88A0-46C9-9ADA-930B53CCB47A/d:Entities/f:SoftwareProject.cs" caret="2838" fromTop="26" />
+    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Areas/d:SuperUser/d:Content/d:ViewScripts/f:projects-view-management.js" caret="10919" fromTop="29" />
+    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Areas/d:SuperUser/d:Views/d:RadaCodeWebManagement/f:_Projects.cshtml" caret="25939" fromTop="17" />
+    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Controllers/f:PortfolioController.cs" caret="2864" fromTop="18" />
+    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Content/d:portfolio/f:portfolio.js" caret="1613" fromTop="22" />
+    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Views/d:Portfolio/f:_ProjectsStack.cshtml" caret="212" fromTop="3" />
+    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Views/d:Portfolio/f:Index.cshtml" caret="879" fromTop="25" />
   </RecentEdits>
 </RecentFiles>

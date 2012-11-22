@@ -37,7 +37,6 @@
                     <div class="controls">
                         <input type="text" id="inputName" placeholder="Название" data-bind="value: NewIndustry.Name">
                     </div>
-                    
                 </div>
                 <div class="control-group en">
                     <label class="control-label" for="inputName_En">Название (En)</label>
@@ -406,25 +405,25 @@
                     <div class="control-group">
                         <label class="control-label" for="inputTechnologies">Используемые технологии</label>
                         <div class="controls">
-                            <input type="text" id="inputTechnologies" placeholder="Технологии" data-bind="tagsinput: { defaultTags: TechnologiesUsed }, value: TechnologiesUsed">
+                            <input type="text" placeholder="Технологии" data-bind="attr: { id: usedTechnologiesId }, tagsinput: { defaultTags: TechnologiesUsed }, value: TechnologiesUsed">
                         </div>
                     </div>
                     <div class="control-group">
                         <label class="control-label" for="inputDateStarted">Дата начала проекта</label>
                         <div class="controls">
-                            <input type="text" id="inputDateStarted" placeholder="Дата начала проекта" data-bind="datepicker: DateStarted, datepickerOptions: { dateFormat: 'yy-mm-dd', defaultDate: DateStarted() }">
+                            <input type="text" placeholder="Дата начала проекта" data-bind="attr: { id: dateStartedId }, datepicker: DateStarted, datepickerOptions: { dateFormat: 'yy-mm-dd', defaultDate: DateStarted() }">
                         </div>
                     </div>
                     <div class="control-group">
                         <label class="control-label" for="inputDateFinished">Дата завершения проекта</label>
                         <div class="controls">
-                            <input type="text" id="inputDateFinished" placeholder="Дата завершения проекта" data-bind="datepicker: DateFinished, datepickerOptions: { dateFormat: 'yy-mm-dd', defaultDate: DateFinished() }">
+                            <input type="text" placeholder="Дата завершения проекта" data-bind="attr: { id: dateFinishedId }, datepicker: DateFinished, datepickerOptions: { dateFormat: 'yy-mm-dd', defaultDate: DateFinished() }">
                         </div>
                     </div>
                     <div class="control-group">
                         <label class="control-label" data-bind="attr: { for: estimateEditorId }">Оценочная продолжительность проекта</label>
                         <div class="controls">
-                            <div class="jqSlider" data-bind="attr: { id: estimateEditorId }, jQRangePicker: {resultInterpreter: WeeksInterpreter, prohibitLeftChange: true, leftFix: 0, arrows: false, formatter: LabelFormatter, defaultValues: { min: 0, max: ProjectEstimate() } }, value: ProjectEstimate"></div>
+                            <div class="jqSlider" data-bind="attr: { id: estimateEditorId }, jQRangePicker: {resultInterpreter: WeeksInterpreter, prohibitLeftChange: true, leftFix: 0, arrows: false, formatter: LabelFormatter, defaultValues: { min: 0, max: parseInt(ProjectEstimate()) + 1 } }, value: ProjectEstimate"></div>
                         </div>
                     </div>
                     <div class="control-group">
@@ -442,13 +441,13 @@
                     <div class="control-group">
                         <label class="control-label" for="inputFeatures">Особые функции</label>
                         <div class="controls">
-                            <input type="text" id="inputFeatures" placeholder="Функции" data-bind="tagsinput: {}, value: SpecialFeatures">
+                            <input type="text" placeholder="Функции" data-bind="attr: { id: featuresEditorId }, tagsinput: {}, value: SpecialFeatures">
                         </div>
                     </div>
                     <div class="control-group en">
                         <label class="control-label" for="inputFeatures_En">Особые функции (En)</label>
                         <div class="controls">
-                            <input type="text" id="inputFeatures_En" placeholder="Функции" data-bind="tagsinput: {}, value: SpecialFeatures_En">
+                            <input type="text" placeholder="Функции" data-bind="attr: { id: featuresEditorIdEn }, tagsinput: {}, value: SpecialFeatures_En">
                         </div>
                     </div>
                     <div class="control-group">

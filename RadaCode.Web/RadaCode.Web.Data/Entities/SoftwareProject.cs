@@ -3,16 +3,29 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
+using System.Threading;
 
 namespace RadaCode.Web.Data.Entities
 {
     public class SoftwareProject: IdableEntity
     {
         public string Name { get; set; }
-        public string Description { get; set; }
-
         public string Name_En { get; set; }
+        
+        [NotMapped]
+        public string Name_Usr
+        {
+            get { return Thread.CurrentThread.CurrentCulture.TwoLetterISOLanguageName == "en" ? Name_En : Name; }
+        }
+
+        public string Description { get; set; }
         public string Description_En { get; set; }
+
+        [NotMapped]
+        public string Description_Usr
+        {
+            get { return Thread.CurrentThread.CurrentCulture.TwoLetterISOLanguageName == "en" ? Description_En : Description; }
+        }
 
         public virtual Customer Customer { get; set; }
         public DateTime? DateStarted { get; set; }
@@ -21,9 +34,15 @@ namespace RadaCode.Web.Data.Entities
         public int CurrentUsersCount { get; set; }
         public int ROIpercentage { get; set; }
         public bool IsCloudConnected { get; set; }
-        public string ProjectDescriptionMarkup { get; set; }
 
+        public string ProjectDescriptionMarkup { get; set; }
         public string ProjectDescriptionMarkup_En { get; set; }
+
+        [NotMapped]
+        public string ProjectDescriptionMarkup_Usr
+        {
+            get { return Thread.CurrentThread.CurrentCulture.TwoLetterISOLanguageName == "en" ? ProjectDescriptionMarkup_En : ProjectDescriptionMarkup; }
+        }
 
         public virtual IList<string> SpecialFeatures
         {
@@ -66,6 +85,12 @@ namespace RadaCode.Web.Data.Entities
             {
                 _SpecialFeatures_En = value;
             }
+        }
+
+        [NotMapped]
+        public IList<string> SpecialFeatures_Usr
+        {
+            get { return Thread.CurrentThread.CurrentCulture.TwoLetterISOLanguageName == "en" ? SpecialFeatures_En : SpecialFeatures; }
         }
 
         private IList<string> _SpecialFeatures_En;

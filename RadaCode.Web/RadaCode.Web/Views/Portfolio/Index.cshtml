@@ -5,7 +5,12 @@
     ViewBag.Title = "Завершённые проекты РадаКод";
 
     Html.RequiresCss("portfolio/portfolio.css", "Content", 101);
-    Html.RequiresJs("portfolio/portfolio.js", "Content", 11);
+    Html.RequiresJs("portfolio/portfolio.js", "Content", 25);
+
+    Html.RequiresJs("knockout-2.2.0.js", "Scripts", 2);
+    Html.RequiresJs("RadaCode.KOBindings.js", "Scripts", 20);
+    Html.RequiresJs("knockout.validation.js", "Scripts", 3);
+    
     var initValue = @Html.Raw(new JavaScriptSerializer().Serialize(Model));
 }
 
@@ -14,6 +19,9 @@
     
     @{ Html.RenderPartial("_ProjectTypesSelector"); }
 
-    <div class="control-column"></div>
+    <div class="control-column">
+        @{ Html.RenderPartial("_ProjectsStack"); }
+    </div>
     <div class="timeline-column"></div>
+    <div class="clear"></div>
 </div>

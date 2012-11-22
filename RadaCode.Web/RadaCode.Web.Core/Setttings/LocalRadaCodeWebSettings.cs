@@ -6,5 +6,7 @@ namespace RadaCode.Web.Core.Setttings
         {
             get { return "localhost"; }
         }
+
+        public int InitialPortfolioProjectsCount { get { return 10; } }
     }
 }

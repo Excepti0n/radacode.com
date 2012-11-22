@@ -1042,7 +1042,7 @@
     <Content Include="Content\home\banner-mobile-windows-logo.png" />
     <Content Include="Content\home\device-set.png" />
     <Content Include="Content\home\device-type.png" />
-    <Content Include="Content\home\flower-tile.png" />
+    <Content Include="Content\global\img\flower-tile.png" />
     <Content Include="Content\home\fonts\ProtoSans03\protosans03-webfont.svg" />
     <Content Include="Content\global\fonts\ProtoSans30\protosans30-webfont.svg" />
     <Content Include="Content\home\fonts\ProtoSans40\protosans40-webfont.svg" />
@@ -1204,7 +1204,8 @@
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="Scripts\knockout-2.2.0rc.js" />
+    <Content Include="Scripts\knockout-2.2.0.debug.js" />
+    <Content Include="Scripts\knockout-2.2.0.js" />
     <Content Include="Scripts\knockout.validation.js" />
     <Content Include="Scripts\libs\dd_belatedpng.js" />
     <Content Include="Scripts\libs\jquery-1.8.2.min.js" />
@@ -1230,6 +1231,7 @@
     <Content Include="Views\WebDevelopment\Index.cshtml" />
     <Content Include="Views\Portfolio\Index.cshtml" />
     <Content Include="Views\Portfolio\_ProjectTypesSelector.cshtml" />
+    <Content Include="Views\Portfolio\_ProjectsStack.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\Expansion\Models\" />

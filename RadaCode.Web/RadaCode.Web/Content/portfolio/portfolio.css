@@ -16,6 +16,7 @@ div.project-type-selector {
     padding-right: 250px;
     height: 100px;
     text-align: center;
+    border-bottom: 2px solid #DADADA;
 }
 
 div.type-select {
@@ -43,8 +44,24 @@ div.type-select > .type-select-button > span {
     font-family: 'ProtoSans30';
     font-size: 14px;
     margin-right: 15px;
+    cursor: pointer;
+}
+
+div.type-select.selected > .type-select-button > span {
+    cursor: default;
 }
 
 div#mobile-selector.type-select {
     display: none;
+}
+
+div.control-column {
+    float: left;
+}
+
+div.timeline-column {
+    float: right;
+    background-color: #F5F5F3;
+    background-image: url('../global/img/flower-tile.png');
+    width: 250px;
 }
