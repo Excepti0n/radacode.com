@@ -83,6 +83,7 @@ header
     margin-left: auto;
     margin-right: auto;
     max-width: 1215px;
+    min-width: 1100px;
 }
 
 #logo {
@@ -91,6 +92,7 @@ header
     width: 268px;
     height: 134px;
     margin-top: 35px;
+    margin-left: 15px;
 }
 
 #logo a {
@@ -139,6 +141,10 @@ ul#menu li {
     padding-left: 25px;
 }
 
+ul#menu li:first-child {
+    margin-left: 20px;
+}
+
 ul#menu li.selected {
     background: url('./global/menu-bullet-selected.png') no-repeat;
 }
@@ -159,6 +165,10 @@ ul#menu li h2 {
 }
 
 ul#menu li h2.selected {
+    color: white;
+}
+
+ul#menu li h2:hover {
     color: white;
 }
 

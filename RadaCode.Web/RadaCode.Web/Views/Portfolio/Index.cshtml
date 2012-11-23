@@ -18,10 +18,13 @@
     @Html.Hidden("initial-portfolio-view-model-data", (HtmlString)initValue)
     
     @{ Html.RenderPartial("_ProjectTypesSelector"); }
-
-    <div class="control-column">
-        @{ Html.RenderPartial("_ProjectsStack"); }
+    
+    <div class="colmask">
+        <div class="colleft">
+            <div class="control-column">
+                @{ Html.RenderPartial("_ProjectsStack"); }
+            </div>
+            <div class="timeline-column"></div>
+        </div>
     </div>
-    <div class="timeline-column"></div>
-    <div class="clear"></div>
 </div>
