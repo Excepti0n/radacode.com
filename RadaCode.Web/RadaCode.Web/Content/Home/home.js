@@ -137,7 +137,7 @@ function InitRotator() {
     };
     
     slide_next_func = function () {
-        //if (item === 1) return;
+        if (item === 1) return;
 
         nextItem = (item === 1) ? 0 : item + 1; //(item === n) - here, n is a zero-based count of current banner items
 

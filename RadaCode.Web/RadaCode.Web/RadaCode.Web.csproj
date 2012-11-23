@@ -1059,6 +1059,11 @@
     <Content Include="Content\global\fonts\OpenSans\OpenSans-Light-webfont.svg" />
     <Content Include="Content\global\fonts\OpenSans\OpenSans-Regular-webfont.svg" />
     <Content Include="Content\global\fonts\ProtoSans00\protosans00-webfont.svg" />
+    <Content Include="Content\global\header.js" />
+    <Content Include="Content\global\img\logo-en-selected.png" />
+    <Content Include="Content\global\img\logo-en.png" />
+    <Content Include="Content\global\img\logo-ru-selected.png" />
+    <Content Include="Content\global\img\logo-ru.png" />
     <Content Include="Content\global\menu-bullet-selected.png" />
     <Content Include="Content\global\menu-bullet.png" />
     <Content Include="Content\global\top-logo.png" />

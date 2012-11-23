@@ -72,7 +72,7 @@
 }
 
 #main > div {
-    top: -230px;
+    top: -205px;
     position: relative;
 }
 
@@ -81,6 +81,7 @@
 }
 
 #dynamic-banner {
+    padding-top: 25px;
     height: 610px;
     background-color: #e7cb22;
     background-repeat: repeat-x;
