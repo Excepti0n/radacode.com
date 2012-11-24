@@ -72,7 +72,7 @@ html {
 
 body 
 {    
-	background-color: #FFFFFF;
+    background-color: #E7CB22;
 }
 
 header 
@@ -86,6 +86,7 @@ header
     margin-right: auto;
     max-width: 1205px;
     padding: 0 12px;
+    padding-top: 20px;
 }
 
 #logo {
@@ -286,12 +287,40 @@ footer .top-liner {
 
 /* iPad */
 
-@media screen and (max-width: 768px) {
-	header { padding-top: 20px; }
-	header div h1 { float: none; margin: 0 auto 20px; width: 187px; }
-	header div nav { width: 100%; }
-	header div nav > a { width: 20%; margin-bottom: 20px; }
-	footer { padding: 5px 0 10px; }
-	footer .grid_12 > div { float: none; overflow: hidden; }
-	footer .grid_12 > div h1 { margin: 0 auto; float: none; }
-	footer .grid_12 > div div { float: none; text-align: center; }
+@media screen and (max-width: 768px)
+{
+    .header-container
+    {
+        padding-top: 0px;
+    }
+
+    header
+    {
+        padding-top: 20px;
+        background-color: #E7CB22;
+    }
+
+    header #logo
+    {
+        float: none;
+        margin: 0 auto 20px;
+        width: 187px;
+        margin-bottom: 0px;
+    }
+    
+    header menu
+    {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    header ul#menu {
+        margin-bottom: 0px;
+    }
+
+    header ul#menu li
+    {
+        width: 32%;
+        margin-bottom: 20px;
+    }
+}
