@@ -1,8 +1,25 @@
 ﻿(function ($) {
 
     InitRotator();
+    mobile_menu();
 
 })(jQuery);
+
+function mobile_menu() {
+    var $nav = $('menu');
+
+    $('#mobile_menu_link').click(function () {
+        $nav.toggleClass('open');
+
+        if ($nav.hasClass('open')) {
+            $(this).html('<span class="ss-icon">&#x2421;</span>Close');
+        } else {
+            $(this).html('<span class="ss-icon">&#x002B;</span>Menu');
+        }
+
+        return false;
+    });
+}
 
 function InitRotator() {
     var item = 0,
@@ -36,7 +53,7 @@ function InitRotator() {
             var $this = $(this);
             if ($this.data('right')) {
                 $this.css({ right: $this.data('right') });
-            } else {
+            } else {mobile_menu_link
                 $this.css({ left: $window.width() + 'px' });
             }
         });
@@ -126,18 +143,17 @@ function InitRotator() {
                     }, delay += delay2);
                 } else {
                     var left = ($this.data('left' + prefix)) ? $this.data('left' + prefix) : $this.data('left');
+                    
                     setTimeout(function () {
                         $this.animate({ top: top, left: left });
                     }, delay += delay2);
                 }
-
-            
         });
         //$('.rotator_bg.spot_' + nextItem).fadeIn(250);
     };
     
     slide_next_func = function () {
-        if (item === 1) return;
+        if (item === 0) return;
 
         nextItem = (item === 1) ? 0 : item + 1; //(item === n) - here, n is a zero-based count of current banner items
 

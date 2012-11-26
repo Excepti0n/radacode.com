@@ -335,4 +335,23 @@ vertical-align: bottom;
     }
 
 }
+
+@media screen and (max-width: 480px)
+{
+    #dynamic-banner > .banner-data-container > .description.item_0 {
+        padding-top: 29px;
+    }
+
+    #dynamic-banner > .banner-data-container > .description h1 {
+        font-size: 41px;
+    }
+
+    .iphone-large {
+        left: 0%;
+    }
+
+    .pad-invisible {
+        display: none;
+    }
+}
     
