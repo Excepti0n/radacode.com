@@ -5,21 +5,7 @@
 
 })(jQuery);
 
-function mobile_menu() {
-    var $nav = $('menu');
 
-    $('#mobile_menu_link').click(function () {
-        $nav.toggleClass('open');
-
-        if ($nav.hasClass('open')) {
-            $(this).html('<span class="ss-icon">&#x2421;</span>Close');
-        } else {
-            $(this).html('<span class="ss-icon">&#x002B;</span>Menu');
-        }
-
-        return false;
-    });
-}
 
 function InitRotator() {
     var item = 0,
@@ -153,7 +139,7 @@ function InitRotator() {
     };
     
     slide_next_func = function () {
-        if (item === 0) return;
+        if (item === 1) return;
 
         nextItem = (item === 1) ? 0 : item + 1; //(item === n) - here, n is a zero-based count of current banner items
 

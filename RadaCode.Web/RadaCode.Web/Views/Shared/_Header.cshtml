@@ -1,4 +1,6 @@
 ﻿<header>
+    @Html.Hidden("menu-string", "МЕНЮ")
+    @Html.Hidden("close-string", "СВЕРНУТЬ")
     <div class="header-container">
         <div id="logo">
             @{ if (@HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString() == "Home")
@@ -17,7 +19,7 @@
         </div>
         <span id="mobile_menu_link">
             <span class="ss-icon">+</span>
-            Меню
+            МЕНЮ
         </span>	
         <menu>
             @{Html.RenderAction("RenderTopMenu", "Navigation");}

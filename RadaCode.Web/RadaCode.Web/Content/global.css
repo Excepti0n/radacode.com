@@ -103,8 +103,11 @@ header
     display: none;
     font-weight: 700;
     text-transform: uppercase;
-    font-size: 14px;
+    font-size: 17px;
+    margin-top: 42px;
     padding: 0 10px;
+    color: white;
+    cursor: pointer;
 }
 
 #mobile_menu_link span {
@@ -218,67 +221,6 @@ ul#menu li a {
 /* Footer   
 ----------------------------------------------------------*/
 
-footer {
-    margin-top: 40px;
-}
-
-footer .top-liner {
-    width: 95%;
-    margin-left: 40px;
-    border-top: solid 4px #2E89CF;
-}
-
-.top-liner .address-block {
-    width: 220px;
-    height: 65px;
-    text-align: center;
-    position: absolute;
-    margin-top: -15px;
-    background-color: #E0E4E7;
-    left: 0;
-    right: 0;
-    margin-right: auto;
-    margin-left: auto;
-}
-
-.top-liner .address-block span {
-    display: block;
-}
-
-.radacode-ref {
-    width: 362px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 50px;
-    margin-bottom: 20px;
-    padding-left: 30px;
-}
-
-.radacode-ref .rdc-logo {
-    display: inline-block;
-    width: 152px;
-    height: 53px;
-    background: url('./img/LogoRight.png') no-repeat;
-    vertical-align: top;
-    margin-right: 17px;
-}
-
-.radacode-ref .rdc-ref-text {
-    display: inline-block;
-    width: 180px;
-    vertical-align: top;
-    margin-top: 17px;
-    margin-left: 7px;
-}
-
-.radacode-ref .rdc-ref-text span {
-    vertical-align: middle;
-}
-
-#mobile_menu_link {
-    color: white;
-    cursor: pointer;
-}
 
 @media screen and (max-width: 1313px) {
 	.rotator_control { display: none !important; height: 0; width: 0; overflow: hidden; }
@@ -341,7 +283,12 @@ footer .top-liner {
 @media screen and (max-width: 480px) {
     header { padding-top: 12px; }
 	header div #logo { float: left; margin: 0 0 12px; width: 50%; }
-	header div menu { width: auto; float: none; clear: both; margin: 0 -12px; overflow: hidden; height: 0; -webkit-transition: all .2s ease-out; -moz-transition: all 0.2s ease-out; -ms-transition: all 0.2s ease-out; -o-transition: all 0.2s ease-out; transition: all 0.2s ease-out; }
-	header div menu.open { height: 135px; }
+	header div menu { width: auto; float: none; clear: both; margin: 0 -12px;margin-left: 0px;overflow: hidden; height: 0; -webkit-transition: all .2s ease-out; -moz-transition: all 0.2s ease-out; -ms-transition: all 0.2s ease-out; -o-transition: all 0.2s ease-out; transition: all 0.2s ease-out; }
+	header div menu.open { height: 150px; }
 	/*header div ul#menu li { width: 50%; margin: 0; padding: 0 12px; line-height: 44px; border: 0; border-top: solid 1px #535353; }*/   
+    header ul#menu li
+    {
+        width: 31%;
+        margin-bottom: 20px;
+    }
 }

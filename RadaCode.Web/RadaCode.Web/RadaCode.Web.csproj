@@ -1083,6 +1083,7 @@
     <Content Include="Content\home\banner-mobile-android-logo.png" />
     <Content Include="Content\home\banner-mobile-apple-logo.png" />
     <Content Include="Content\home\banner-mobile-arrow.png" />
+    <Content Include="Content\home\banner-mobile-box-s.png" />
     <Content Include="Content\home\banner-mobile-box.png" />
     <Content Include="Content\home\banner-mobile-windows-logo.png" />
     <Content Include="Content\home\device-set.png" />
@@ -1279,6 +1280,7 @@
     <Content Include="Views\Portfolio\Index.cshtml" />
     <Content Include="Views\Portfolio\_ProjectTypesSelector.cshtml" />
     <Content Include="Views\Portfolio\_ProjectsStack.cshtml" />
+    <Content Include="Views\Shared\_Header.en.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\Expansion\Models\" />

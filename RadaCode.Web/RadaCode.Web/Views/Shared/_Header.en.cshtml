@@ -1,0 +1,34 @@
+﻿<header>
+    @Html.Hidden("menu-string", "MENU")
+    @Html.Hidden("close-string", "CLOSE")
+    <div class="header-container">
+        <div id="logo">
+            @{ if (@HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString() == "Home")
+               {
+                   <div>
+                       <img src="@Url.Content("/Content/global/img/logo-ru.png")"/>
+                   </div>
+               
+               } else
+               {
+                   <a href="@Url.Action("Index", "Home")">
+                       <img src="@Url.Content("/Content/global/img/logo-ru.png")"/>
+                   </a>
+               } 
+            }
+        </div>
+        <span id="mobile_menu_link">
+            <span class="ss-icon">+</span>
+            MENU
+        </span>	
+        <menu>
+            @{Html.RenderAction("RenderTopMenu", "Navigation");}
+        </menu>
+			
+        @*<div id="langSelect">
+		@{Html.RenderAction("RenderLanguages", "Navigation");}
+		</div>*@
+		
+        <div class="clear"></div>
+    </div>
+</header>

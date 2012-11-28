@@ -220,13 +220,15 @@ vertical-align: bottom;
     height: 100px;
     font-size: 16px;
     font-family: 'ProtoSans30';
+    text-align: center;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
 .news-block .under-construction-warning {
-    width: 600px;
     margin-left: auto;
     margin-right: auto;
-    padding-top: 40px;
+    padding-top: 30px;
 }
 
 #smart-site-info {
@@ -235,6 +237,7 @@ vertical-align: bottom;
     min-height: 350px;
     width: 100%;
     cursor: default;
+    padding-left: 5px;
 }
 
 #smart-site-info #smart-site-centered-block {
@@ -352,6 +355,19 @@ vertical-align: bottom;
 
     .pad-invisible {
         display: none;
+    }
+
+    #dynamic-banner > .banner-data-container > .description.item_1 {
+        width: 250px;
+        padding-left: 28px;
+        padding-top: 31px;
+        background-image: url('banner-mobile-box-s.png');
+        background-position: 23px 18px;
+        background-repeat: no-repeat;
+    }
+
+    #dynamic-banner > .banner-data-container > .description.item_1 h1 {
+        font-size: 28px;
     }
 }
     
