@@ -18,18 +18,18 @@
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Views/d:Portfolio/f:_ProjectTypesSelector.cshtml" caret="0" fromTop="0" />
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Content/d:portfolio/f:portfolio.css" caret="130" fromTop="7" />
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Content/d:portfolio/f:portfolio.js" caret="2454" fromTop="22" />
-    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Controllers/f:PortfolioController.cs" caret="2137" fromTop="20" />
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Scripts/f:global.js" caret="0" fromTop="0" />
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Content/d:global/f:header.js" caret="793" fromTop="20" />
+    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Content/f:global.css" caret="7424" fromTop="26" />
+    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Content/d:home/f:home.js" caret="4490" fromTop="24" />
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Views/d:Shared/f:_Header.cshtml" caret="39" fromTop="1" />
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Views/d:Shared/f:_Layout.cshtml" caret="0" fromTop="0" />
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Views/d:Portfolio/f:Index.cshtml" caret="654" fromTop="17" />
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Views/d:Shared/f:_Header.en.cshtml" caret="90" fromTop="2" />
-    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Content/f:global.css" caret="7424" fromTop="26" />
+    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Content/d:home/f:home.css" caret="10823" fromTop="28" />
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Views/d:Home/f:Index.cshtml" caret="0" fromTop="0" />
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Views/d:Home/f:Index.en.cshtml" caret="3070" fromTop="23" />
-    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Content/d:home/f:home.js" caret="4490" fromTop="24" />
-    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Content/d:home/f:home.css" caret="10823" fromTop="28" />
+    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Controllers/f:PortfolioController.cs" caret="2593" fromTop="29" />
   </RecentFiles>
   <RecentEdits>
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Areas/d:SuperUser/d:Models/f:LoginModel.cs" caret="82" fromTop="2" />
@@ -45,7 +45,6 @@
     <File id="D2E694FC-88A0-46C9-9ADA-930B53CCB47A/d:Entities/f:SoftwareProject.cs" caret="2838" fromTop="26" />
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Areas/d:SuperUser/d:Content/d:ViewScripts/f:projects-view-management.js" caret="10919" fromTop="29" />
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Areas/d:SuperUser/d:Views/d:RadaCodeWebManagement/f:_Projects.cshtml" caret="25939" fromTop="17" />
-    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Controllers/f:PortfolioController.cs" caret="2864" fromTop="18" />
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Views/d:Portfolio/f:_ProjectsStack.cshtml" caret="212" fromTop="3" />
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Content/d:portfolio/f:portfolio.js" caret="2105" fromTop="27" />
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/f:Web.config" caret="683" fromTop="8" />
@@ -62,5 +61,6 @@
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Content/d:home/f:home.js" caret="4490" fromTop="24" />
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Views/d:Home/f:Index.en.cshtml" caret="3070" fromTop="23" />
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Content/d:home/f:home.css" caret="10823" fromTop="28" />
+    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Controllers/f:PortfolioController.cs" caret="2593" fromTop="20" />
   </RecentEdits>
 </RecentFiles>

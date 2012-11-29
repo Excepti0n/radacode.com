@@ -51,9 +51,25 @@ namespace RadaCode.Web.Controllers
                         }
                 };
 
-            portfolioViewModel.InitialProjects = GetProjectModelForType(portfolioViewModel.SelectedProjectTypeId);
+            portfolioViewModel.InitialProjects = GetFakeProjectModels(); //GetProjectModelForType(portfolioViewModel.SelectedProjectTypeId);
 
             return View(portfolioViewModel);
+        }
+
+        //TODO: Write fake projects generator to test async loading of the projects
+        private List<PortfolioProjectItem> GetFakeProjectModels()
+        {
+            var generatedEnumerable = new List<SoftwareProject>();
+
+            var etalonProject = _context.SoftwareProjects.Where(pr => pr is WebDevelopmentProject).Take(1).FirstOrDefault();
+
+            for (int i = 0; i < 10; i++)
+            {
+                etalonProject.Id = Guid.NewGuid();
+                generatedEnumerable.Add(etalonProject);
+            }
+
+            return TransformProjectsIntoModels(generatedEnumerable);
         }
 
         private List<PortfolioProjectItem> GetProjectModelForType(string type)
