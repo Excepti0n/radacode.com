@@ -16,6 +16,8 @@
 
 <div id="portfolio-control">
     @Html.Hidden("initial-portfolio-view-model-data", (HtmlString)initValue)
+    @Html.Hidden("GetNextProjectsUrl", Url.Action("GetNextProjects"))
+    @Html.Hidden("ProjectsPerPage", Model.ProjectsPerPageCount)
 
     @{ Html.RenderPartial("_ProjectTypesSelector"); }
     

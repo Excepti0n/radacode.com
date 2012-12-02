@@ -3,6 +3,6 @@
     public interface IRadaCodeWebSettings
     {
         string CurrentHost { get; }
-        int InitialPortfolioProjectsCount { get; }
+        int PortfolioProjectsCount { get; }
     }
 }

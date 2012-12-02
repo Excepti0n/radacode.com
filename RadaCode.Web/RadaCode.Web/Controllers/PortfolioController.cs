@@ -52,11 +52,36 @@ namespace RadaCode.Web.Controllers
                 };
 
             portfolioViewModel.InitialProjects = GetFakeProjectModels(); //GetProjectModelForType(portfolioViewModel.SelectedProjectTypeId);
+            portfolioViewModel.ProjectsPerPageCount = _settings.PortfolioProjectsCount;
+
+            //portfolioViewModel.TotalProjectsPerType = new Dictionary<string, int>
+            //                                              {
+            //                                                  {"cloud", GetTotalProjectsForType("cloud")},
+            //                                                  {"web", GetTotalProjectsForType("web")},
+            //                                                  {"mobile", GetTotalProjectsForType("mobile")}
+            //                                              };
+
+            portfolioViewModel.TotalProjectsPerType = new Dictionary<string, int>
+                                                          {
+                                                              {"cloud", 25},
+                                                              {"web", 13},
+                                                              {"mobile", 30}
+                                                          };
 
             return View(portfolioViewModel);
         }
 
-        //TODO: Write fake projects generator to test async loading of the projects
+        [HttpGet]
+        public ActionResult GetNextProjects(string page, string type)
+        {
+            List<PortfolioProjectItem> res;
+            int pageInt;
+
+            res = GetFakeProjectModels(); //GetProjectModelForType(type, int.TryParse(page, out pageInt) ? pageInt : 0);
+
+            return Json(res, JsonRequestBehavior.AllowGet);
+        }
+
         private List<PortfolioProjectItem> GetFakeProjectModels()
         {
             var generatedEnumerable = new List<SoftwareProject>();
@@ -72,18 +97,18 @@ namespace RadaCode.Web.Controllers
             return TransformProjectsIntoModels(generatedEnumerable);
         }
 
-        private List<PortfolioProjectItem> GetProjectModelForType(string type)
+        private List<PortfolioProjectItem> GetProjectModelForType(string type, int page)
         {
             switch (type)
             {
                 case "web":
-                    return TransformProjectsIntoModels(_context.SoftwareProjects.Where(pr => pr is WebDevelopmentProject).Take(10).ToList());
+                    return TransformProjectsIntoModels(_context.SoftwareProjects.Where(pr => pr is WebDevelopmentProject).Skip(page * _settings.PortfolioProjectsCount).Take(_settings.PortfolioProjectsCount).ToList());
                     break;
                 case "cloud":
-                    return TransformProjectsIntoModels(_context.SoftwareProjects.Where(pr => pr is DistributedDevelopmentProject).Take(10).ToList());
+                    return TransformProjectsIntoModels(_context.SoftwareProjects.Where(pr => pr is DistributedDevelopmentProject).Skip(page * _settings.PortfolioProjectsCount).Take(_settings.PortfolioProjectsCount).ToList());
                     break;
                 case "mobile":
-                    return TransformProjectsIntoModels(_context.SoftwareProjects.Where(pr => pr is MobileDevelopmentProject).Take(10).ToList());
+                    return TransformProjectsIntoModels(_context.SoftwareProjects.Where(pr => pr is MobileDevelopmentProject).Skip(page * _settings.PortfolioProjectsCount).Take(_settings.PortfolioProjectsCount).ToList());
                     break;
                 default:
                     return new List<PortfolioProjectItem>();
@@ -96,6 +121,24 @@ namespace RadaCode.Web.Controllers
                                                                   {
                                                                       Id = softwareProject.Id.ToString(), DateFinished = softwareProject.DateFinished.ToString("yyyy-MM-dd"), Markup = softwareProject.ProjectDescriptionMarkup_Usr
                                                                   }).ToList();
+        }
+
+        private int GetTotalProjectsForType(string type)
+        {
+            switch (type)
+            {
+                case "web":
+                    return _context.SoftwareProjects.Count(pr => pr is WebDevelopmentProject);
+                    break;
+                case "cloud":
+                    return _context.SoftwareProjects.Count(pr => pr is DistributedDevelopmentProject);
+                    break;
+                case "mobile":
+                    return _context.SoftwareProjects.Count(pr => pr is MobileDevelopmentProject);
+                    break;
+                default:
+                    throw new Exception("Unknown project type polled");
+            }
         }
     }
 }

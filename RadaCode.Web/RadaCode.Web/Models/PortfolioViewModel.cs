@@ -6,7 +6,9 @@ namespace RadaCode.Web.Models
     {
         public string SelectedProjectTypeId { get; set; }
         public List<PortfolioSelectorItem> MenuItems { get; set; }
-        public List<PortfolioProjectItem> InitialProjects { get; set; } 
+        public List<PortfolioProjectItem> InitialProjects { get; set; }
+        public int ProjectsPerPageCount { get; set; }
+        public Dictionary<string, int> TotalProjectsPerType { get; set; } 
     }
 
     public class PortfolioSelectorItem
