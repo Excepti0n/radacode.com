@@ -1,1 +1,5 @@
-2012/11/30-22:13:46.701 1274 Delete type=3 #1
+2012/12/02-11:34:34.134 17dc Recovering log #3
+2012/12/02-11:34:34.404 17dc Level-0 table #5: started
+2012/12/02-11:34:34.730 17dc Level-0 table #5: 1445038 bytes OK
+2012/12/02-11:34:34.944 17dc Delete type=0 #3
+2012/12/02-11:34:34.944 17dc Delete type=3 #2

@@ -25,11 +25,11 @@
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Views/d:Access/f:Login.cshtml" caret="0" fromTop="0" />
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Views/d:Home/f:Index.en.cshtml" caret="0" fromTop="0" />
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Views/d:WebDevelopment/f:Index.cshtml" caret="0" fromTop="0" />
-    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Views/d:Portfolio/f:Index.cshtml" caret="789" fromTop="19" />
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Views/f:_ViewStart.cshtml" caret="0" fromTop="0" />
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Models/f:PortfolioViewModel.cs" caret="441" fromTop="10" />
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Controllers/f:PortfolioController.cs" caret="3513" fromTop="10" />
-    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Content/d:portfolio/f:portfolio.js" caret="3354" fromTop="20" />
+    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Views/d:Portfolio/f:Index.cshtml" caret="789" fromTop="19" />
+    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Content/d:portfolio/f:portfolio.js" caret="4442" fromTop="17" />
   </RecentFiles>
   <RecentEdits>
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Areas/d:SuperUser/d:Models/f:LoginModel.cs" caret="82" fromTop="2" />
@@ -61,6 +61,6 @@
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Views/d:Portfolio/f:Index.cshtml" caret="789" fromTop="19" />
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Models/f:PortfolioViewModel.cs" caret="441" fromTop="10" />
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Controllers/f:PortfolioController.cs" caret="2925" fromTop="19" />
-    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Content/d:portfolio/f:portfolio.js" caret="3354" fromTop="20" />
+    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Content/d:portfolio/f:portfolio.js" caret="4442" fromTop="20" />
   </RecentEdits>
 </RecentFiles>

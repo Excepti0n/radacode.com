@@ -50,7 +50,9 @@
         self.totalProjects = ko.observable(0);
 
         var currentModelsArray = jQuery.map(data.InitialProjects, function (val, i) {
-            self.currentProjects.push(new ProjectViewModel(val, self));
+            var vm = new ProjectViewModel(val, self);
+            self.currentProjects.push(vm);
+            return vm;
         });
 
         self.totalProjects = new Array();
@@ -68,6 +70,20 @@
 
         self.selectItem = function(newId) {
             self.selectedItemId(newId);
+            self.currentProjects.removeAll();
+            var someProjectsLoaded = false;
+            jQuery.each(self.projectModels, function (i, val) {
+                if (val.type == self.selectedItemId()) {
+                    self.currentProjects(val.models);
+                    var projectsPerPage = parseInt($('#ProjectsPerPage').val(), "10");
+                    self.page(val.models.length / projectsPerPage);
+                    someProjectsLoaded = true;
+                }
+            });
+            if (!someProjectsLoaded) {
+                self.page(1);
+                self.LoadMoreProjects();
+            }
         };
 
         var menuItemModelsArray = jQuery.map(data.MenuItems, function (val, i) {
@@ -86,15 +102,22 @@
                     //$("#ajaxload").show();
                 },
                 success: function (result) {
-                    var newlyAddedModelsArray = jQuery.map(result, function (i, val) {
-                        self.currentProjects.push(new ProjectViewModel(val, self));
+                    var newlyAddedModelsArray = jQuery.map(result, function (val, i) {
+                        var vm = new ProjectViewModel(val, self);
+                        self.currentProjects.push(vm);
+                        return vm;
                     });
                     self.page(parseInt(self.page(), "10") + 1);
+                    var typeAlreadyInChache = false;
                     jQuery.each(self.projectModels, function (i, val) {
                         if(val.type == self.selectedItemId()) {
                             val.models = val.models.concat(newlyAddedModelsArray);
+                            typeAlreadyInChache = true;
                         }
                     });
+                    if(!typeAlreadyInChache) {
+                        self.projectModels.push({ type: self.selectedItemId(), models: newlyAddedModelsArray });
+                    }
                 },
                 error: function () {
                     $("#error").show();
@@ -104,12 +127,11 @@
         
         $(window).scroll(function () {
             if ($(window).scrollTop() == $(document).height() - $(window).height()) {
-                var projectsPerPage = parseInt($('#ProjectsPerPage').val(), "10");
                 var currentTypeTotalProjects;
                 jQuery.each(self.totalProjects, function(i, val) {
                     if (val.type == self.selectedItemId()) currentTypeTotalProjects = parseInt(val.count, "10");
                 });
-                if (parseInt(self.page(), "10") * projectsPerPage < currentTypeTotalProjects) {
+                if (self.currentProjects().length < currentTypeTotalProjects) {
                     self.LoadMoreProjects();
                 }
             }
