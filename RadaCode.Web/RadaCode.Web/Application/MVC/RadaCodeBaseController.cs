@@ -27,9 +27,9 @@ namespace RadaCode.Web.Application.MVC
             }
         }
 
-        protected override void OnActionExecuted(ActionExecutedContext ctx)
+        protected override void OnActionExecuting(ActionExecutingContext ctx)
         {
-            base.OnActionExecuted(ctx);
+            base.OnActionExecuting(ctx);
             var request = ctx.HttpContext.Request;
 
             if (request.Cookies["language"] != null)
@@ -37,6 +37,13 @@ namespace RadaCode.Web.Application.MVC
                 Thread.CurrentThread.CurrentCulture =
                     Thread.CurrentThread.CurrentUICulture =
                     new CultureInfo(request.Cookies["language"].Value);
+            }
+
+            if (request.QueryString["lang"] != null)
+            {
+                Thread.CurrentThread.CurrentCulture =
+                    Thread.CurrentThread.CurrentUICulture =
+                    new CultureInfo(request.QueryString["lang"]);
             }
         }
 

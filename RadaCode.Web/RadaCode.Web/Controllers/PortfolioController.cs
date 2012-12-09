@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Web.Mvc;
+using RadaCode.Web.Application.MVC;
 using RadaCode.Web.Core.Setttings;
 using RadaCode.Web.Data.EF;
 using RadaCode.Web.Data.Entities;
@@ -9,7 +11,7 @@ using RadaCode.Web.Models;
 
 namespace RadaCode.Web.Controllers
 {
-    public class PortfolioController : Controller
+    public class PortfolioController : RadaCodeBaseController
     {
         private readonly IRadaCodeWebSettings _settings;
         private readonly RadaCodeWebStoreContext _context;
@@ -32,6 +34,27 @@ namespace RadaCode.Web.Controllers
                 portfolioViewModel.SelectedProjectTypeId = "web";
             }
 
+            if (Thread.CurrentThread.CurrentCulture.TwoLetterISOLanguageName == "en")
+            {
+                portfolioViewModel.MenuItems = new List<PortfolioSelectorItem>()
+                {
+                    new PortfolioSelectorItem
+                        {
+                            ItemId = "web",
+                            ItemText = "WEB"
+                        },
+                    new PortfolioSelectorItem
+                        {
+                            ItemId = "mobile",
+                            ItemText = "MOBILE"
+                        },
+                    new PortfolioSelectorItem
+                        {
+                            ItemId = "cloud",
+                            ItemText = "CLOUD"
+                        }
+                };
+            } else 
             portfolioViewModel.MenuItems = new List<PortfolioSelectorItem>()
                 {
                     new PortfolioSelectorItem
@@ -51,22 +74,24 @@ namespace RadaCode.Web.Controllers
                         }
                 };
 
-            portfolioViewModel.InitialProjects = GetFakeProjectModels(); //GetProjectModelForType(portfolioViewModel.SelectedProjectTypeId);
+            //portfolioViewModel.InitialProjects = GetFakeProjectModels(); 
+            portfolioViewModel.InitialProjects = GetProjectModelForType(portfolioViewModel.SelectedProjectTypeId, 0);
             portfolioViewModel.ProjectsPerPageCount = _settings.PortfolioProjectsCount;
-
-            //portfolioViewModel.TotalProjectsPerType = new Dictionary<string, int>
-            //                                              {
-            //                                                  {"cloud", GetTotalProjectsForType("cloud")},
-            //                                                  {"web", GetTotalProjectsForType("web")},
-            //                                                  {"mobile", GetTotalProjectsForType("mobile")}
-            //                                              };
 
             portfolioViewModel.TotalProjectsPerType = new Dictionary<string, int>
                                                           {
-                                                              {"cloud", 25},
-                                                              {"web", 13},
-                                                              {"mobile", 30}
+                                                              {"cloud", GetTotalProjectsForType("cloud")},
+                                                              {"web", GetTotalProjectsForType("web")},
+                                                              {"mobile", GetTotalProjectsForType("mobile")}
                                                           };
+
+            // Test stuff
+            //portfolioViewModel.TotalProjectsPerType = new Dictionary<string, int>
+            //                                              {
+            //                                                  {"cloud", 25},
+            //                                                  {"web", 13},
+            //                                                  {"mobile", 30}
+            //                                              };
 
             return View(portfolioViewModel);
         }
@@ -77,7 +102,8 @@ namespace RadaCode.Web.Controllers
             List<PortfolioProjectItem> res;
             int pageInt;
 
-            res = GetFakeProjectModels(); //GetProjectModelForType(type, int.TryParse(page, out pageInt) ? pageInt : 0);
+            //res = GetFakeProjectModels(); 
+            res = GetProjectModelForType(type, int.TryParse(page, out pageInt) ? pageInt : 0);
 
             return Json(res, JsonRequestBehavior.AllowGet);
         }
@@ -102,13 +128,13 @@ namespace RadaCode.Web.Controllers
             switch (type)
             {
                 case "web":
-                    return TransformProjectsIntoModels(_context.SoftwareProjects.Where(pr => pr is WebDevelopmentProject).Skip(page * _settings.PortfolioProjectsCount).Take(_settings.PortfolioProjectsCount).ToList());
+                    return TransformProjectsIntoModels(_context.SoftwareProjects.Where(pr => pr is WebDevelopmentProject).OrderBy(pr => pr.DateStarted).Skip(page * _settings.PortfolioProjectsCount).Take(_settings.PortfolioProjectsCount).ToList());
                     break;
                 case "cloud":
-                    return TransformProjectsIntoModels(_context.SoftwareProjects.Where(pr => pr is DistributedDevelopmentProject).Skip(page * _settings.PortfolioProjectsCount).Take(_settings.PortfolioProjectsCount).ToList());
+                    return TransformProjectsIntoModels(_context.SoftwareProjects.Where(pr => pr is DistributedDevelopmentProject).OrderBy(pr => pr.DateStarted).Skip(page * _settings.PortfolioProjectsCount).Take(_settings.PortfolioProjectsCount).ToList());
                     break;
                 case "mobile":
-                    return TransformProjectsIntoModels(_context.SoftwareProjects.Where(pr => pr is MobileDevelopmentProject).Skip(page * _settings.PortfolioProjectsCount).Take(_settings.PortfolioProjectsCount).ToList());
+                    return TransformProjectsIntoModels(_context.SoftwareProjects.Where(pr => pr is MobileDevelopmentProject).OrderBy(pr => pr.DateStarted).Skip(page * _settings.PortfolioProjectsCount).Take(_settings.PortfolioProjectsCount).ToList());
                     break;
                 default:
                     return new List<PortfolioProjectItem>();

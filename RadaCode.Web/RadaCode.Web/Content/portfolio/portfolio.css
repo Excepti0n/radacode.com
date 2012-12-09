@@ -1,4 +1,16 @@
-﻿#main {
+﻿@font-face {
+    font-family: 'PT-Sans';
+    src: url('fonts/PT-Sans/ptn77f-webfont.eot');
+    src: url('fonts/PT-Sans/ptn77f-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/PT-Sans/ptn77f-webfont.woff') format('woff'),
+         url('fonts/PT-Sans/ptn77f-webfont.ttf') format('truetype'),
+         url('fonts/PT-Sans/ptn77f-webfont.svg#pt_sans_narrowbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+#main {
     padding: 0px;
     margin-bottom: 0px;
     background-color: white;
@@ -90,4 +102,24 @@ div.timeline-column {
     float: left;
     width: 100%;
     position: relative;
+}
+
+table {
+    border: 0px;
+}
+
+table td {
+    border: 0px;
+    padding: 3px;
+}
+
+.site-title 
+{
+	font-family: "Myriad Pro",'PT-Sans';
+	font-size: 15px; 
+}
+
+.site-description {
+    font-family: 'OpenSansLight';
+	font-size: 12px; 
 }

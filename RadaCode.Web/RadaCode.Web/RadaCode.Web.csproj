@@ -1109,6 +1109,7 @@
     <Content Include="Content\global\logoRadaCode.png" />
     <Content Include="Content\global\logoRadaCodeNoText.png" />
     <Content Include="Content\global\radaGlow.png" />
+    <Content Include="Content\portfolio\fonts\PT-Sans\ptn77f-webfont.svg" />
     <Content Include="Content\portfolio\img\portfolio-menu-selected-item-marker.png" />
     <Content Include="Content\portfolio\img\portfolio-menu-webdevelopment-back-ru.png" />
     <Content Include="Content\portfolio\portfolio.css" />
@@ -1227,6 +1228,9 @@
     <Content Include="Areas\SuperUser\Views\Web.config" />
     <Content Include="Areas\SuperUser\Views\_ViewStart.cshtml" />
     <Content Include="Areas\SuperUser\Views\RadaCodeWebManagement\_Projects.cshtml" />
+    <Content Include="Content\portfolio\fonts\PT-Sans\ptn77f-webfont.eot" />
+    <Content Include="Content\portfolio\fonts\PT-Sans\ptn77f-webfont.ttf" />
+    <Content Include="Content\portfolio\fonts\PT-Sans\ptn77f-webfont.woff" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Scripts\history.js\amplify.store.js" />
