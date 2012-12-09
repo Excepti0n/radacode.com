@@ -55,7 +55,12 @@ namespace RadaCode.Web.Data.Migrations
                     PasswordVerificationTokenExpirationDate = SqlDateTime.MinValue.Value
                 };
 
+            mp.Roles.Add(context.WebUserRoles.First(rl => rl.RoleName == "Admin"));
+
+
             if (!context.WebUsers.Any(usr => usr.UserName == mp.UserName)) context.WebUsers.Add(mp);
+
+
 
             base.Seed(context);
 

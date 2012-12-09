@@ -70,7 +70,7 @@
 
         self.selectItem = function(newId) {
             self.selectedItemId(newId);
-            self.currentProjects.removeAll();
+            self.currentProjects([]);
             var someProjectsLoaded = false;
             jQuery.each(self.projectModels, function (i, val) {
                 if (val.type == self.selectedItemId()) {
