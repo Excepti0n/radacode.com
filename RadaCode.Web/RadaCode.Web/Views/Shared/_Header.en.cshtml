@@ -6,13 +6,13 @@
             @{ if (@HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString() == "Home")
                {
                    <div>
-                       <img src="@Url.Content("/Content/global/img/logo-ru.png")"/>
+                       <img src="@Url.Content("/Content/global/img/logo-en.png")"/>
                    </div>
                
                } else
                {
                    <a href="@Url.Action("Index", "Home")">
-                       <img src="@Url.Content("/Content/global/img/logo-ru.png")"/>
+                       <img src="@Url.Content("/Content/global/img/logo-en.png")"/>
                    </a>
                } 
             }
@@ -25,9 +25,9 @@
             @{Html.RenderAction("RenderTopMenu", "Navigation");}
         </menu>
 			
-        @*<div id="langSelect">
+        <div id="langSelect">
 		@{Html.RenderAction("RenderLanguages", "Navigation");}
-		</div>*@
+		</div>
 		
         <div class="clear"></div>
     </div>

@@ -1059,6 +1059,7 @@
     <Content Include="Content\global\fonts\OpenSans\OpenSans-Light-webfont.svg" />
     <Content Include="Content\global\fonts\OpenSans\OpenSans-Regular-webfont.svg" />
     <Content Include="Content\global\fonts\ProtoSans00\protosans00-webfont.svg" />
+    <Content Include="Content\global\fonts\ProtoSans20\protosans20-webfont.svg" />
     <Content Include="Content\global\header.js" />
     <Content Include="Content\global\img\logo-en-selected.png" />
     <Content Include="Content\global\img\logo-en.png" />
@@ -1231,6 +1232,9 @@
     <Content Include="Content\portfolio\fonts\PT-Sans\ptn77f-webfont.eot" />
     <Content Include="Content\portfolio\fonts\PT-Sans\ptn77f-webfont.ttf" />
     <Content Include="Content\portfolio\fonts\PT-Sans\ptn77f-webfont.woff" />
+    <Content Include="Content\global\fonts\ProtoSans20\protosans20-webfont.eot" />
+    <Content Include="Content\global\fonts\ProtoSans20\protosans20-webfont.ttf" />
+    <Content Include="Content\global\fonts\ProtoSans20\protosans20-webfont.woff" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Scripts\history.js\amplify.store.js" />
@@ -1285,6 +1289,8 @@
     <Content Include="Views\Portfolio\_ProjectTypesSelector.cshtml" />
     <Content Include="Views\Portfolio\_ProjectsStack.cshtml" />
     <Content Include="Views\Shared\_Header.en.cshtml" />
+    <Content Include="Views\Navigation\_TopMenu.en.cshtml" />
+    <Content Include="Views\Portfolio\Index.en.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\Expansion\Models\" />

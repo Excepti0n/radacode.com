@@ -1,0 +1,32 @@
+﻿@model RadaCode.Web.Models.PortfolioViewModel
+
+@using System.Web.Script.Serialization
+@{
+    ViewBag.Title = "RadaCode completed projects";
+
+    Html.RequiresCss("portfolio/portfolio.css", "Content", 101);
+    Html.RequiresJs("portfolio/portfolio.js", "Content", 25);
+
+    Html.RequiresJs("knockout-2.2.0.js", "Scripts", 2);
+    Html.RequiresJs("RadaCode.KOBindings.js", "Scripts", 20);
+    Html.RequiresJs("knockout.validation.js", "Scripts", 3);
+    
+    var initValue = @Html.Raw(new JavaScriptSerializer().Serialize(Model));
+}
+
+<div id="portfolio-control">
+    @Html.Hidden("initial-portfolio-view-model-data", (HtmlString)initValue)
+    @Html.Hidden("GetNextProjectsUrl", Url.Action("GetNextProjects"))
+    @Html.Hidden("ProjectsPerPage", Model.ProjectsPerPageCount)
+
+    @{ Html.RenderPartial("_ProjectTypesSelector"); }
+    
+    <div class="colmask">
+        <div class="colleft">
+            <div class="control-column">
+                @{ Html.RenderPartial("_ProjectsStack"); }
+            </div>
+            <div class="timeline-column"></div>
+        </div>
+    </div>
+</div>

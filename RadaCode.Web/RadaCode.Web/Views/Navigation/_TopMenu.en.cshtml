@@ -1,0 +1,53 @@
+﻿<ul id="menu">
+    @{
+        if (@HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString() == "WebDevelopment")
+        {
+            <li class="selected">
+                <h2 class="selected">WEB</h2>
+                <p>We create smart sites - unique web solutions that accelerate your business</p>
+            </li>
+        } else
+        {
+            <li>
+                <a href="@Url.Action("Index", "WebDevelopment")">
+                    <h2>WEB</h2>
+                </a>
+                <p>We create smart sites - unique web solutions that accelerate your business</p>
+            </li>
+        }
+    } 
+    @{
+    if (@HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString() == "SoftwareDevelopment")
+        {
+            <li class="selected">
+                <h2 class="selected">MOBILE & CLOUD</h2>
+                <p>We develop mobile applications and cloud services to put our client's ideas to life</p>
+            </li>
+        } else
+        {
+            <li>
+                <a href="#">
+                    <h2>MOBILE & CLOUD</h2>
+                </a>
+                <p>We develop mobile applications and cloud services to put our client's ideas to life</p>
+            </li>
+        }
+    } 
+    @{
+    if (@HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString() == "Portfolio")
+        {
+            <li class="selected">
+                <h2 class="selected">OUR WORK</h2>
+                <p>We have numerous successful projects in our portfolio</p>
+            </li>
+        } else
+        {
+            <li>
+                <a href="@Url.Action("Index", "Portfolio")">
+                    <h2>OUR WORK</h2>
+                </a>
+                <p>We have numerous successful projects in our portfolio</p>
+            </li>
+        }
+    } 
+</ul>

@@ -64,9 +64,21 @@ namespace RadaCode.Web.Application.MVC
 
                 if (File.Exists(request.MapPath(localizedViewPath)))
                     return localizedViewPath;
+
+                localizedViewPath = string.Format("~/Views/Shared/{0}.{1}.cshtml", viewName, Thread.CurrentThread.CurrentCulture.TwoLetterISOLanguageName);
+
+                localizedViewPath = localizedViewPath.Insert("~/".Length, area);
+
+                if (File.Exists(request.MapPath(localizedViewPath)))
+                    return localizedViewPath;
             }
             else
             {
+                if (File.Exists(request.MapPath(localizedViewPath)))
+                    return localizedViewPath;
+
+                localizedViewPath = string.Format("~/Views/Shared/{0}.{1}.cshtml", viewName, Thread.CurrentThread.CurrentCulture.TwoLetterISOLanguageName);
+
                 if (File.Exists(request.MapPath(localizedViewPath)))
                     return localizedViewPath;
             }
