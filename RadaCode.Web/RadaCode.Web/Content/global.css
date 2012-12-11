@@ -103,16 +103,34 @@ header
 
 #logo {
     float: left;
-    margin: 10px 5% 0 0;
+    margin: 10px 9% 0 0;
     width: 20%;
 }
 
 #langSelect {
     float: left;
-    margin-top: 40px;
+    margin-top: 36px;
     font-family: 'ProtoSans20';
-    font-size: 11px;
+    font-size: 12px;
     color: #fbfbf9;
+    text-align: center;
+}
+
+#langSelect a, #langSelect a:visited {
+    color: #fbfbf9;
+    text-decoration: none;
+}
+
+#langSelect > * {
+    width: 32px;
+    height: 20px;
+    display: inline-block;
+    padding-top: 3px;
+}
+
+#langSelect > span {
+    background-color: #e0b712;
+    cursor: auto;
 }
 
 #mobile_menu_link {
@@ -185,7 +203,7 @@ header
 menu
 {
     float: left;
-    width: 70%;
+    width: 65%;
     margin-top: 40px;
 }
 

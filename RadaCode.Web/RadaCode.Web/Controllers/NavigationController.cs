@@ -32,13 +32,13 @@ namespace RadaCode.Web.Controllers
                 switch (langCookie)
                 {
                     case "en":
-                        resHTML = "<a href=\"#\" id=\"setRus\">рус</a> | <span id=\"setUkr\">укр</span>";
+                        resHTML = "<a href=\"#\" id=\"setRus\">РУС</a>   <span id=\"setEng\">ENG</span>";
                         break;
                     case "ru":
-                        resHTML = "<span id=\"setRus\">рус</span> | <a href=\"#\" id=\"setUkr\">укр</a>";
+                        resHTML = "<span id=\"setRus\">РУС</span>   <a href=\"#\" id=\"setEng\">ENG</a>";
                         break;
                     default:
-                        resHTML = "<span id=\"setRus\">рус</span> | <a href=\"#\" id=\"setUkr\">укр</a>";
+                        resHTML = "<span id=\"setRus\">РУС</span>   <a href=\"#\" id=\"setEng\">ENG</a>";
                         break;
                 }
             }
@@ -47,10 +47,10 @@ namespace RadaCode.Web.Controllers
                 switch (Thread.CurrentThread.CurrentCulture.TwoLetterISOLanguageName)
                 {
                     case "en":
-                        resHTML = "<a href=\"#\" id=\"setRus\">рус</a> | <a href=\"#\" class=\"selected\" id=\"setUkr\">укр</a>";
+                        resHTML = "<a href=\"#\" id=\"setRus\">РУС</a>   <span id=\"setEng\">ENG</span>";
                         break;
                     default:
-                        resHTML = "<a href=\"#\" class=\"selected\" id=\"setRus\">рус</a> | <a href=\"#\" id=\"setUrk\">укр</a>";
+                        resHTML = "<a href=\"#\" class=\"selected\" id=\"setRus\">РУС</a>   <a href=\"#\" id=\"setEng\">ENG</a>";
                         break;
                 }
 

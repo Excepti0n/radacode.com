@@ -7,9 +7,9 @@ RadaCode.SwitchLanguage = function(lang) {
 
 $(function () {
     $("#setRus").click(function () {
-        RadaCode.SwitchLanguage.switchLanguage('ru');
+        RadaCode.SwitchLanguage('ru');
     });
     $("#setEng").click(function () {
-        RadaCode.SwitchLanguage.switchLanguage('en');
+        RadaCode.SwitchLanguage('en');
     });
 });
