@@ -29,7 +29,7 @@
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Controllers/f:NavigationController.cs" caret="840" fromTop="13" />
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Content/f:global.css" caret="4583" fromTop="28" />
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Content/d:home/f:home.css" caret="7947" fromTop="23" />
-    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Views/d:Home/f:Index.en.cshtml" caret="3949" fromTop="22" />
+    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Views/d:Home/f:Index.en.cshtml" caret="4827" fromTop="26" />
   </RecentFiles>
   <RecentEdits>
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Areas/d:SuperUser/d:Content/d:ViewScripts/f:projects-view-management.js" caret="10919" fromTop="29" />
@@ -61,6 +61,6 @@
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Scripts/f:global.js" caret="357" fromTop="12" />
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Content/f:global.css" caret="4583" fromTop="28" />
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Content/d:home/f:home.css" caret="7947" fromTop="23" />
-    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Views/d:Home/f:Index.en.cshtml" caret="3949" fromTop="22" />
+    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Views/d:Home/f:Index.en.cshtml" caret="4827" fromTop="26" />
   </RecentEdits>
 </RecentFiles>
