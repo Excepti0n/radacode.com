@@ -1,13 +1,11 @@
 ﻿<RecentFiles>
   <RecentFiles>
-    <File id="D2E694FC-88A0-46C9-9ADA-930B53CCB47A/d:EF/f:RadaCodeWebStoreContextInitializer.cs" caret="0" fromTop="0" />
     <File id="D2E694FC-88A0-46C9-9ADA-930B53CCB47A/d:Repositories/f:IWebUserRepository.cs" caret="968" fromTop="19" />
     <File id="D2E694FC-88A0-46C9-9ADA-930B53CCB47A/d:Repositories/f:WebUserRepository.cs" caret="2800" fromTop="21" />
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Application/d:Membership/f:WebUserRoleProvider.cs" caret="967" fromTop="12" />
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Areas/d:SuperUser/d:Controllers/f:RadaCodeWebManagementController.cs" caret="0" fromTop="0" />
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Areas/d:SuperUser/d:Controllers/f:AuthorizationController.cs" caret="925" fromTop="7" />
     <File id="D2E694FC-88A0-46C9-9ADA-930B53CCB47A/d:EF/f:RadaCodeWebStoreContext.cs" caret="0" fromTop="0" />
-    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/f:Web.config" caret="0" fromTop="0" />
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Content/d:portfolio/f:portfolio.js" caret="2280" fromTop="12" />
     <File id="D2E694FC-88A0-46C9-9ADA-930B53CCB47A/d:Migrations/f:AutomaticMigrationConfiguration.cs" caret="1506" fromTop="8" />
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Views/d:Shared/f:_Layout.cshtml" caret="0" fromTop="0" />
@@ -24,12 +22,14 @@
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Views/d:Navigation/f:_TopMenu.cshtml" caret="0" fromTop="0" />
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Views/d:Shared/f:_Header.en.cshtml" caret="1029" fromTop="30" />
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Views/d:Shared/f:_Header.cshtml" caret="931" fromTop="27" />
-    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Controllers/f:PortfolioController.cs" caret="5164" fromTop="20" />
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Scripts/f:global.js" caret="357" fromTop="12" />
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Controllers/f:NavigationController.cs" caret="840" fromTop="13" />
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Content/f:global.css" caret="4583" fromTop="28" />
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Content/d:home/f:home.css" caret="7947" fromTop="23" />
-    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Views/d:Home/f:Index.en.cshtml" caret="4827" fromTop="26" />
+    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/f:Web.config" caret="683" fromTop="8" />
+    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Views/d:Home/f:Index.en.cshtml" caret="0" fromTop="0" />
+    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Controllers/f:PortfolioController.cs" caret="7495" fromTop="33" />
+    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Application/d:Composition/f:WebCompositionModule.cs" caret="0" fromTop="0" />
   </RecentFiles>
   <RecentEdits>
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Areas/d:SuperUser/d:Content/d:ViewScripts/f:projects-view-management.js" caret="10919" fromTop="29" />
@@ -40,7 +40,6 @@
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Views/d:Shared/f:_Layout.cshtml" caret="2923" fromTop="21" />
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Views/d:Home/f:Index.cshtml" caret="2331" fromTop="30" />
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Content/d:home/f:home.js" caret="4490" fromTop="24" />
-    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/f:Web.config" caret="691" fromTop="8" />
     <File id="8D2C41C2-1E19-44E2-A384-55895B2181FE/d:Setttings/f:ProductionRadaCodeWebSettings.cs" caret="590" fromTop="19" />
     <File id="8D2C41C2-1E19-44E2-A384-55895B2181FE/d:Setttings/f:LocalRadaCodeWebSettings.cs" caret="227" fromTop="9" />
     <File id="8D2C41C2-1E19-44E2-A384-55895B2181FE/d:Setttings/f:IRadaCodeWebSettings.cs" caret="141" fromTop="5" />
@@ -62,5 +61,6 @@
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Content/f:global.css" caret="4583" fromTop="28" />
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Content/d:home/f:home.css" caret="7947" fromTop="23" />
     <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/d:Views/d:Home/f:Index.en.cshtml" caret="4827" fromTop="26" />
+    <File id="72221C3F-9742-4C90-A12C-F97F8493AF0B/f:Web.config" caret="683" fromTop="8" />
   </RecentEdits>
 </RecentFiles>
